@@ -29,7 +29,6 @@
        </div>
     </div>
      
-       
    </header> 
    
    <nav class="main-nav">
@@ -37,7 +36,7 @@
           <li class="main-nav__item"><a href="#" class="main-nav__anchor">Home</a></li>
           <li class="main-nav__item"><a href="#" class="main-nav__anchor">Services</a></li>
           <li class="main-nav__item"><a href="#" class="main-nav__anchor">News</a></li>
-          <li class="main-nav__item"><a href="#" class="main-nav__anchor">Services</a></li>
+          <li class="main-nav__item"><a href="#" class="main-nav__anchor">Blog</a></li>
           <li class="main-nav__item"><a href="#" class="main-nav__anchor">Contact Us</a></li>
       </ul> 
    </nav>
@@ -93,22 +92,75 @@
           <p>Officiis ratione necessitatibus id accusantium, magni qui placeat velit amet harum alias, dicta odit quod accusamus maiores labore esse sed reprehenderit architecto fugiat fugit, dolores maxime at repudiandae. Labore, vitae.</p>
           <button class="card__btn">More Info</button>
       </div>
-       
         
     </div>
    </div>
     
-    
-        
+     
     <div class="form-main-wrap">
        <div class="form-column">
-           
+           <ul class="form__list">
+               <li class="form__item">New York</li>
+               <li class="form__item">Los Angeles</li>
+               <li class="form__item">Chicago</li>
+           </ul>
+           <p class="form__para">More Locations in 2018</p>
        </div>
        <div class="form-wrap">
-           <form action="#">
-             <h2 class="flex-wrap">Contact Us</h2>  
+           <form action="#" class="form">
+             <h2 class="form__hdg">Contact Us</h2> 
+             
+             <div class="form__field-wrap">
+                 <p class="form__field">
+                    <label for="name">Name:</label>
+                    <span class="form__field-prefixed">
+                      <span class="form__field-prefix"><i class="fa fa-user"></i></span>
+                      <input name="name" id="name" type="text" class="form__text"/>
+                    </span>
+                </p>
                
-               
+              <p class="form__field">
+                <label for="email">Email:</label>
+                <span class="form__field-prefixed">
+                  <span class="form__field-prefix"><i class="fa fa-envelope"></i></span>
+                  <input name="email" id="email" type="text" class="form__email"/>
+                </span>
+              </p>
+              
+              <p class="form__field">
+                <label for="date">Date:</label>
+                <span class="form__field-prefixed">
+                  <span class="form__field-prefix"><i class="fa fa-calendar"></i></span>
+                  <input name="date" id="date" type="date" class="form__date"/>
+                </span>
+              </p>
+              
+              <p class="form__field">
+                <label for="applicant-date">Service:</label>
+                <span class="form__field-prefixed">
+                  <span class="form__field-prefix"><i class="fa fa-cog"></i></span>
+                  <select name="find-us" id="find-us">
+                    <option value="Item1">Item One</option>
+                    <option value="Item2">Item Two</option>
+                    <option value="Item3">Item Three</option>
+                    <option value="Item4">Item Four</option>
+                </select>
+                </span>
+             </p>
+              
+              <p class="form__field field-text full-width">
+                <label for="comments">Comments:</label>
+                <span class="form__field-prefixed">
+                  <span class="form__field-prefix"><i class="fa fa-pencil"></i></span>
+                  <textarea id="comments" class="form__textarea"></textarea>
+                </span>
+              </p>
+              
+              <p class="form__field full-width">
+                  <input type="submit" value="Submit Form" class="form__submit">
+              </p>
+             </div>
+              
            </form>
        </div>
         
@@ -116,11 +168,44 @@
         
     </div>    
 
-    <footer>
-        
-        
+    <footer class="footer">
+      <div class="footer-wrap">
+          <ul class="footer__list">
+              <li class="footer__item"><a href="#" class="footer__anchor">Home</a></li>
+              <li class="footer__item"><a href="#" class="footer__anchor">Services</a></li>
+              <li class="footer__item"><a href="#" class="footer__anchor">News</a></li>
+              <li class="footer__item"><a href="#" class="footer__anchor">Blog</a></li>
+              <li class="footer__item"><a href="#" class="footer__anchor">Contact Us</a></li>
+          </ul>
+          <div class="footer__social">
+         <a href="#" class="footer__anch"><i class="footer__icon fa fa-facebook"></i></a>
+         <a href="#" class="footer__anch"><i class="footer__icon fa fa-twitter"></i></a>
+         <a href="#" class="footer__anch"><i class="footer__icon fa fa-linkedin"></i></a>
+     </div>
+           
+      </div>
+       
     </footer>                
     
     <script src="js/script.js"></script>
 </body>
 </html>
+
+
+
+<!--
+
+<p class="field field-text">
+            <label for="applicant-name">Name:</label>
+            <span class="field-prefixed">
+              <span class="field-prefix" id="applicant-name-prefix"><i class="fa fa-user"></i></span>
+              <input name="applicant-name" id="applicant-name" type="text" />
+            </span>
+            
+          </p>
+
+-->
+
+
+
+
