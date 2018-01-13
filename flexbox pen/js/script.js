@@ -12,7 +12,6 @@ for (let item of imgs) {
 
 /********* HIGHLIGHT FORM ICON ON FOCUS **********/
 let fields = document.querySelectorAll('.form__field input:not([type="submit"]), .form__field select, .form__field textarea');
-console.log(fields);
 
 fields.forEach((el) => {
     el.addEventListener('focus', () => {
