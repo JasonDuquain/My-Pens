@@ -19,28 +19,63 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
     padding: 3em;
+    width: 80%;
+    max-width: 75em;
 }
 
+/*********** MAIN HEADING **********/
 .main-heading {
+    font-size: 2.2em;
+    text-transform: uppercase;
+    font-weight: 300;
     text-align: center;
-    margin-bottom: 2em;
-}
-
-.tab__list {
-    background-color: green;
+    margin: 2em 0;
     display: flex;
-    padding: 1em 0;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.main-heading::before, .main-heading::after {
+    content: "";
+    height: .2em;
+    width: 100%;
+    background-image: linear-gradient(to left, rgb(255, 140, 0), transparent);
+    margin-right: 1em;
+}
+
+.main-heading::after {
+   background-image: linear-gradient(to right, rgb(255, 140, 0), transparent);
+   margin-left: 1em;
+}
+
+/*********** LINKS **********/
+.tab-list__list {
+    display: flex;
     width: max-content;
-    
 }
 
-.tab__link--is-active {
-    background-color: grey;
+.tab-list__link {
+    color: black;
+    text-transform: uppercase;
+    background-color: rgb(167, 148, 148);
+    display: block;
+    padding: .8em 1.5em;
+    border-radius: 5px 5px 0 0;
+    transition: all 150ms ease-out;
 }
 
+.tab-list__link--is-active {
+    color: rgb(255, 140, 0);
+    background-color: rgb(242, 231, 207);
+    transform: scaleY(1.2);
+    transform-origin: center bottom;
+}
 
-.tab__container {
-    background-color: goldenrod;
+/*********** TAB CONTAINERS **********/
+.tab {
+    background-color: rgb(242, 231, 207);
+    border-radius: 0 3px 3px 3px;
+    padding: 1.5em;
 }
 
 .tab__box {
@@ -48,6 +83,54 @@ body {
 }
 
 .tab__box--is-visible {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+    grid-gap: 1.5em;
+    justify-content: space-around;
+}
+
+.tab__item {
+    padding: 1.5em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab__heading {
+    font-size: 1.6em;
+    color: rgb(41, 128, 185);
+    margin-bottom: auto;
+}
+
+.tab__icon {
+    font-size: 3em !important;
+    margin: .7em 0;
+    color: rgb(255, 140, 0);
+}
+
+.tab__para {
+    margin-bottom: 1.5em;
+}
+
+.tab__btn {
+    font-size: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: inherit;
+    padding: .8em 1.5em; 
+    border-radius: 2px;
+    border: 0;
+    background-image: linear-gradient(to bottom, rgb(52, 152, 219), rgb(41, 128, 185));
+    box-shadow: 2px 3px 2px rgba(0,0,0,.7);
+    cursor: pointer;
+}
+
+.tab__btn:hover {
+    background-image: linear-gradient(to bottom, rgb(60, 176, 253), rgb(52, 152, 219));
+}
+
+.tab__btn:active {
+    transform: translate(1px, 2px);
+    box-shadow: 1px 1px 2px rgba(0,0,0,.7);
 }
 
