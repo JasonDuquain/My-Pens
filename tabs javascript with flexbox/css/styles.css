@@ -18,7 +18,36 @@ body {
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
+    padding: 3em;
+}
+
+.main-heading {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.tab__list {
+    background-color: green;
+    display: flex;
+    padding: 1em 0;
+    width: max-content;
+    
+}
+
+.tab__link--is-active {
+    background-color: grey;
 }
 
 
+.tab__container {
+    background-color: goldenrod;
+}
+
+.tab__box {
+    display: none;
+}
+
+.tab__box--is-visible {
+    display: block;
+}
 
