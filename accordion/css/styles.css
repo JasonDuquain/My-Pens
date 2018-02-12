@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC:300i,400');
+
 :root {
     box-sizing: border-box;
 }
@@ -15,20 +17,42 @@
 }
 
 body {
-    margin: 0 auto;
+    color: #222;
     font-family: 'Lato', sans-serif;
     font-size: 100%;
-    padding: 2em;
+    padding: 4em 2em;
+    margin: 0 auto;
+    max-width: 70em;
+    width: 80%;
+    height: 100vh;
+    background-image: repeating-linear-gradient(165deg, #ccc, #ccc 60px, #dbdbdb 60px, #dbdbdb 120px);
+    background-color: #ccc; 
 }
 
 .main-heading {
+    font-family: 'Spectral SC', serif;
     margin-bottom: 1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;
+    grid-column-gap: .5em;
+    align-items: center;
+    color: rgb(6, 90, 27);
+}
+
+.main-heading::before, .main-heading::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: rgb(6, 90, 27);
 }
 
 .accord__link {
     display: block;
+    text-transform: uppercase;
     width: 100%;
-    background-color: rgb(221, 197, 161);
+    background-color: rgb(6, 72, 23);
     padding: 1em;
     display: flex;
     justify-content: space-between;
@@ -37,12 +61,12 @@ body {
 }
 
 .accord__link:hover {
-    background-color: rgba(222, 187, 135, 0.8);
+    background-color: rgb(6, 90, 27);
 }
 
 .accord__link::after {
     content: "\f13a";
-    line-height: 1.2; 
+    line-height: 1.2;  /*allows smooth rotate*/
     font-family: "fontawesome";
     transition: transform 400ms ease-out;
 }
@@ -54,8 +78,12 @@ body {
 .accord__cont {
     height: 0;
     overflow: hidden;
-    background-color: grey;
     transition: all 400ms ease-out;
+    background-color: rgba(255,255,255,.9);
+}
+
+.accord__cont:last-of-type {
+    border-radius: 0 0 5px 5px;
 }
 
 .accord__cont--is-visible {

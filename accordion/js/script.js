@@ -11,14 +11,15 @@ links.forEach((el, idx) => {
     }
     el.addEventListener('click', (e) => {
         e.preventDefault();
-        if (el.nextElementSibling.classList.contains('accord__cont--is-visible')) {
-           el.nextElementSibling.classList.remove('accord__cont--is-visible');
+        let nextSib = el.nextElementSibling;
+        if (nextSib.classList.contains('accord__cont--is-visible')) {
+           nextSib.classList.remove('accord__cont--is-visible');
             el.classList.remove('accord__link--has-arrow-up');
-            el.nextElementSibling.style.height = 0;
+            nextSib.style.height = 0;
         } else {
-           el.nextElementSibling.classList.add('accord__cont--is-visible');
+           nextSib.classList.add('accord__cont--is-visible');
             el.classList.add('accord__link--has-arrow-up');
-            el.nextElementSibling.style.height = `${el.nextElementSibling.scrollHeight}px`;
+            nextSib.style.height = `${nextSib.scrollHeight}px`;
             //remove height from all other divs
             divs.forEach((el, idx) => {
                 if (el.previousElementSibling !== e.target) {
@@ -31,4 +32,6 @@ links.forEach((el, idx) => {
         }
     });
 });
+
+
 
