@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: inherit;
 }
 
@@ -14,11 +14,13 @@
     width: 80vw;
     height: auto;
     max-width: 600px;
+    margin: 0 auto;
+    border-radius: 5px 5px 0 0;
 }
 
 .image-container {
-    display: flex;
     transition: transform 400ms ease-out;
+    display: flex;
 }
 
 .image {
@@ -27,6 +29,7 @@
 }
 
 .prev, .next {
+    transition: all 200ms ease-out;
   font-size: 28px;
   position: absolute;
   font-weight: bold;
@@ -37,13 +40,14 @@
   padding: .4em;
   border-radius: 0 3px 3px 0;
   background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
+  color: #fff;
 }
 
 .next {
-  left: auto;
-  right: 0;
-  border-radius: 3px 0 0 3px;
+    left: auto;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    
 }
 
 .prev:hover, .next:hover {
@@ -51,27 +55,33 @@
 }
 
 .dot-container {
-    position: absolute;
-    bottom: 1em;
-    left: 0;
-    right: 0;
     display: flex;
     justify-content: center;
+    margin-top: 1em;
+    width: 80vw;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1em 0;
+    background-color: #000;
+    border-radius: 0 0 5px 5px;
 }
 
 .dot {
-    width: 1.2em;
-    height: 1.2em;
+    transition: all 200ms ease-in;
+    width: 3em;
+    height: 3em;
     border-radius: 50%;
-    background-color: grey;
     margin: 0 .3em;
     cursor: pointer;
+    background-size: cover;
+    opacity: .6;
 }
 
-.dot:active {
-    background-color: green;
+.dot.active {
+    pointer-events: none;
+    opacity: 1;
 }
 
 .dot:hover {
-    background-color: #fff;
+    opacity: 1;
 }
