@@ -1,0 +1,340 @@
+
+:root {
+    box-sizing: border-box;
+    --timingfn: cubic-bezier(0.44, 2.08, 0.37, 0.82);
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 2em;
+    background-color: rgb(24, 190, 229);
+    font-family: Arial;
+}
+
+.heading {
+    color: #fff;
+    font-weight: 100;
+    font-size: 2.3em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto max-content auto;
+    grid-gap: .2em;
+    max-width: 960px;
+    margin-bottom: 1.5em;
+}
+
+.heading::before {
+    content: "";
+    width: 1em;
+    height: 3px;
+    background-color: #fff;
+}
+
+.heading::after {
+    content: "";
+    width: 1em;
+    height: 3px;
+    background-color: #fff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-auto-rows: minmax(100px, auto);
+    align-items: center;
+    justify-items: center;
+    max-width: 960px;
+    
+}
+
+div[class*="burger-"] {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+}
+
+div[class*="burger-"]::before, div[class*="burger-"]::after, span[class*="middle"] {
+    position: absolute;
+    content: "";
+    width: 75px;
+    height: 4px;
+    background-color: #fff;
+}
+
+/***********    BURGER ONE   *************/
+.burger-one::before {
+    top: 0;
+    transform-origin: left center;
+    transition: all 500ms var(--timingfn);
+}
+
+.burger-one__middle {
+    top: 50%;
+    transform: translateY(-50%) scaleX(1);
+    transition: all 500ms var(--timingfn);
+}
+
+.burger-one::after {
+    bottom: 0;
+    transform-origin: left center;
+    transition: all 500ms var(--timingfn);
+}
+
+.burger-one.active::before {
+    transform: rotate(45deg) scaleX(1.23);
+}
+
+.burger-one.active .burger-one__middle {
+    transform: translateY(-50%) scaleX(0);
+    opacity: 0;
+}
+
+.burger-one.active::after {
+    transform: rotate(-45deg) scaleX(1.23);
+}
+
+/***********    BURGER TWO   *************/
+.burger-two::before {
+    top: 0;
+    border-radius: 5px;
+    transition: all 500ms var(--timingfn);;
+}
+
+.burger-two__middle {
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    transition: all 500ms var(--timingfn);;
+}
+
+.burger-two__middle-two {
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    transition: all 500ms var(--timingfn);;
+}
+
+.burger-two::after {
+    bottom: 0;
+    border-radius: 5px;
+    transition: all 500ms var(--timingfn);;
+}
+
+.burger-two.active::before {
+    opacity: 0;
+}
+
+.burger-two.active .burger-two__middle {
+    transform: rotate(45deg) scaleX(1.2);
+}
+
+.burger-two.active .burger-two__middle-two {
+    transform: rotate(-45deg) scaleX(1.2);
+}
+
+.burger-two.active::after {
+    opacity: 0;
+}
+
+/***********    BURGER THREE   *************/
+.burgerthree-wrap {
+    transition: all 400ms ease-out 400ms;
+}
+
+.burger-three::before {
+    top: 0;
+    transition: all 400ms; 
+}
+
+.burger-three__middle {
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 400ms; 
+}
+
+.burger-three::after {
+    bottom: 0;
+    transition: all 400ms; 
+}
+
+.burgerthree-wrap.active {
+    transform: rotate(90deg);
+}
+
+.burger-three.active::before {
+    transform: rotate(135deg) translateX(30px) scaleX(.5);
+}
+
+.burger-three.active .burger-three__middle {
+    transform: translateY(-50%) scaleX(.95);
+}
+
+.burger-three.active::after {
+    transform: rotate(-135deg) translateX(30px) scaleX(.5);
+}
+
+/***********    BURGER FOUR   *************/
+.burger-four::before {
+    top: 0;
+    border-radius: 5px;
+    transition: transform 300ms var(--timingfn), top 300ms var(--timingfn) 300ms;
+}
+
+.burger-four__middle {
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    transition: all 0s var(--timingfn) 150ms;
+}
+
+.burger-four::after {
+    bottom: 0;
+    border-radius: 5px;
+    transition: transform 300ms var(--timingfn), bottom 300ms var(--timingfn) 300ms;
+}
+
+.burger-four.active::before {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    transition: top 300ms var(--timingfn), transform 300ms var(--timingfn) 300ms;
+}
+
+.burger-four.active .burger-four__middle {
+    opacity: 0;
+    transition: all 0s var(--timingfn) 150ms;
+}
+
+.burger-four.active::after {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+    transition: bottom 300ms var(--timingfn), transform 300ms var(--timingfn) 300ms;
+}
+
+/***********    BURGER FIVE   *************/
+.burgerfive-wrap {
+    transition: all 2s;
+}
+
+.burger-five::before {
+    top: 0;
+    transition: all 500ms;
+    transform-origin: right center;
+}
+
+.burger-five__middle {
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 500ms; 
+}
+
+.burger-five::after {
+    bottom: 0;
+    transition: all 500ms; 
+    transform-origin: right center;
+}
+
+.burgerfive-wrap.active {
+    transform: rotate(270deg);
+}
+
+.burger-five.active::before {
+    transform: rotate(-45deg) translateY(-50%) scaleX(.5);
+    top: 50%;
+    
+}
+
+.burger-five.active::after {
+    transform: rotate(45deg) translateY(50%) scaleX(.5);
+    bottom: 50%;
+}
+
+/***********    BURGER SIX   *************/
+/*
+
+.burger-six::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    top: 0;
+    transition: all 400ms ease-out;
+    
+}
+
+.burger-six__middle {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 400ms ease-out;
+    
+}
+
+.burger-six::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    bottom: 0;
+    transition: all 400ms ease-out;
+}
+
+.burger-six.active::before {
+    
+}
+
+.burger-six.active .burger-six__middle {
+    
+}
+
+.burger-six.active::after {
+    
+}
+
+*/
+
+/***********    BURGER SEVEN   *************/
+.burger-seven::before {
+    top: 0;
+    transition: all 500ms ease-out;
+}
+
+.burger-seven__middle {
+    top: 50%;
+    transform: translateY(-50%) scaleX(1);
+    transition: all 500ms ease-out;
+}
+
+.burger-seven::after {
+    bottom: 0;
+    transition: all 500ms ease-out;
+}
+
+.burger-seven.active::before {
+    transform: rotate(135deg) translateY(-50%);
+    top: 40%;
+}
+
+.burger-seven.active .burger-seven__middle {
+    transform: translateY(-50%) scaleX(0);
+}
+
+.burger-seven.active::after {
+    transform: rotate(-135deg) translateY(50%);
+    bottom: 45%;
+}
+
+
+
