@@ -1,0 +1,71 @@
+:root {
+        box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+ol {
+    padding: 2em;
+}
+
+/***** 3 VERTICAL LINES *******/
+.lines {
+    width: 3em;
+    height: 5em;
+    position: relative;
+}
+
+.line, .lines::before, .lines::after {
+    position: absolute;
+    content: "";
+    width: 1em;
+    height: 5em;
+    background-color: red;
+}
+
+.lines::before {
+    left: 100%
+}
+
+.lines::after {
+    left: 50%;
+    top: 0;
+}
+
+.lines--light {
+    width: 3em;
+    height: 5em;
+    position: relative;
+}
+
+.line--light, .lines--light::before, .lines--light::after {
+    position: absolute;
+    content: "";
+    width: 1em;
+    height: 5em;
+    background-color: gray;
+}
+
+.lines--light::before {
+    left: 100%
+}
+
+.lines--light::after {
+    left: 50%;
+    top: 0;
+}
+
+
+/***** FILMOGRAPHY *******/
+.films {
+    background-color: goldenrod;
+    column-count: 3;
+}
+
+
+

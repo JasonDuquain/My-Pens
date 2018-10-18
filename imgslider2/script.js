@@ -47,7 +47,7 @@ for (let i = 0; i < imgs.length; i++) {
     dotArr.push(dot);
 
     dotArr[i].addEventListener('click', function(e) {
-        clearInterval(interval);
+        //clearInterval(interval);
         imgContainer.style.transition = null;
         let imgWidth = imgs[0].scrollWidth;
         imgContainer.style.transform = `translateX(${-imgWidth * i}px)`;
@@ -80,7 +80,7 @@ function resetDotActive() {
 }
 
 prev.addEventListener('click', function(e) {
-    clearInterval(interval);
+    //clearInterval(interval);
     imgContainer.style.transition = null;
     console.log(`1st line of prev fn index is: ${index}`);
     let imgWidth = imgs[0].scrollWidth;
@@ -98,14 +98,14 @@ prev.addEventListener('click', function(e) {
         imgContainer.style.transform = `translateX(${-imgWidth * index}px)`;
         resetDotActive();
     }
-    interval = setInterval(() => {
+    /*interval = setInterval(() => {
         nextImgTimer();
-    }, 6000);
+    }, 6000);*/
     console.log(`last line of prev fn index is: ${index}`);
 });
 
 next.addEventListener('click', function (e) {
-    clearInterval(interval);
+    //clearInterval(interval);
     imgContainer.style.transition = null;
     console.log(`1st line of next fn index is: ${index}`);
     let imgWidth = imgs[0].scrollWidth;
@@ -123,9 +123,9 @@ next.addEventListener('click', function (e) {
         resetDotActive();
             
     }
-    interval = setInterval(() => {
+    /*interval = setInterval(() => {
         nextImgTimer();
-    }, 6000);
+    }, 6000);*/
     console.log(`last line of next fn index is: ${index}`);
 });
 
@@ -162,15 +162,15 @@ window.addEventListener('resize', function(e) {
     imgs.forEach((el, idx) => {
         el.style.width = '100%';
         el.style.height = '100%';
-        
+        el.style.objectFit = 'cover';
     });
     
     eqHeights(); // why does this make it so tall at narrow widths?
 });
 
-let interval = setInterval(() => {
+/*let interval = setInterval(() => {
     nextImgTimer();
-}, 2000);
+}, 2000);*/
 
 
 
