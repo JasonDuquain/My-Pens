@@ -9,8 +9,32 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Playfair Display', serif;
+    max-width: 1280px;
+    margin: 0 auto;
+    font-size: .65em;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.4), rgba(255,255,255,.9) 150px), url(../img/bg.jpg); 
+    background-repeat: repeat-x;
+}
+
 ol {
     padding: 2em;
+}
+
+.grid {
+    margin: 4em 0;
+    display: grid;
+    grid-template-areas: 
+        ". . hero hero hero hero hero . . ."
+        ". . hero hero hero hero hero imgtwo imgtwo lineslight"
+        "lines . hero hero hero hero hero parathree parathree ad"
+        ". paraone paraone paraone paraone paratwo paratwo parathree parathree ad"
+        ". paraone paraone paraone paraone films films films films .";
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 2em;
+    height: 100vh;
 }
 
 /***** 3 VERTICAL LINES *******/
@@ -18,14 +42,15 @@ ol {
     width: 3em;
     height: 5em;
     position: relative;
+    grid-area: lines;
 }
 
 .line, .lines::before, .lines::after {
     position: absolute;
     content: "";
     width: 1em;
-    height: 5em;
-    background-color: red;
+    height: 7em;
+    background-color: #bf3838;
 }
 
 .lines::before {
@@ -47,8 +72,9 @@ ol {
     position: absolute;
     content: "";
     width: 1em;
-    height: 5em;
-    background-color: gray;
+    height: 7em;
+    background-color: #535050;
+    opacity: .2;
 }
 
 .lines--light::before {
@@ -60,12 +86,116 @@ ol {
     top: 0;
 }
 
+.para-one::first-letter {
+    font-size: 10em;
+    line-height: .7;
+}
+
+.para-one {
+    margin-top: -7em;
+}
+
+.hero-image {
+    grid-area: hero;
+    width: 100%;
+    border: 2px solid black;
+}
+
+.small-image {
+    grid-area: imgtwo;
+    width: 100%;
+    border: 2px solid black;
+}
+
+[class^="para-"] {
+    text-indent: 2em;
+}
+
+.para-one {
+    text-indent: 0;
+}
+
+.para-wrap--one {
+    grid-area: paraone;
+    column-width: 20em;
+    column-gap: 2em;
+}
+
+.para-five {
+    grid-area: paratwo;    
+}
+
+.para-wrap--two {
+    grid-area: parathree;
+}
 
 /***** FILMOGRAPHY *******/
 .films {
     background-color: goldenrod;
+    border-radius: 10px 10px 0 0;
     column-count: 3;
+    grid-area: films;
+    padding: 
 }
 
+.films h4 {
+    font-size: 1.2em;
+    display: inline-block;
+    background-color: #fff;
+    padding: .2em 1.5em .6em .4em;
+    font-weight: 700;
+    border-radius: 0 0 12px 0;
+}
 
+.films .title {
+    font-weight: 700;
+}
 
+.ad {
+    grid-area: ad;
+    position: relative;
+}
+
+.ad::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: gray;
+    left: -16px;
+}
+
+.ad-image {
+    width: 100%;
+}
+
+.ad h4 {
+    margin: .4em 0;
+    padding-bottom: .5em;
+    text-transform: uppercase;
+    line-height: 1;
+    font-family: Arial;
+    font-size: .9em;
+    color: #d68f0d;
+    position: relative;
+}
+
+.ad h4::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 1px;
+    background-color: gray;
+    left: 0;
+    bottom: 0;
+}
+
+.ad p {
+    font-size: .85em;
+}
+
+.lines--light {
+    grid-area: lineslight;
+    justify-self: end;
+    align-self: center;
+}

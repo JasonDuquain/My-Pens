@@ -1,0 +1,125 @@
+:root {
+        box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    max-width: 1280px;
+    margin: 0 auto;
+    font-size: .75em;
+}
+
+ol {
+    padding: 2em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    height: 100vh;
+}
+
+/***** 3 VERTICAL LINES *******/
+.lines {
+    width: 3em;
+    height: 5em;
+    position: relative;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.line, .lines::before, .lines::after {
+    position: absolute;
+    content: "";
+    width: 1em;
+    height: 5em;
+    background-color: red;
+}
+
+.lines::before {
+    left: 100%
+}
+
+.lines::after {
+    left: 50%;
+    top: 0;
+}
+
+.lines--light {
+    width: 3em;
+    height: 5em;
+    position: relative;
+}
+
+.line--light, .lines--light::before, .lines--light::after {
+    position: absolute;
+    content: "";
+    width: 1em;
+    height: 5em;
+    background-color: gray;
+}
+
+.lines--light::before {
+    left: 100%
+}
+
+.lines--light::after {
+    left: 50%;
+    top: 0;
+}
+
+.para-one::first-letter {
+    font-size: 4em;
+    line-height: 1;
+}
+
+.hero-image {
+    grid-column: 3 / 9;
+    grid-row: 1 / 4;
+}
+
+.small-image {
+    grid-column: 8 / 9;
+    grid-row: 2 / 3;
+}
+
+.para-wrap--one {
+    grid-column: 2 / 6;
+    grid-row:  4 / 8;
+}
+
+.para-five {
+    grid-column:  6 / 9;
+    grid-row: 5 / 6;
+}
+
+.para-wrap--two {
+    grid-column: 8 / 9;
+    grid-row: 3 / 6;
+}
+
+/***** FILMOGRAPHY *******/
+.films {
+    background-color: goldenrod;
+    column-count: 3;
+    grid-column: 6 / 11;
+    grid-row: span 1 / -1
+}
+
+.ad {
+    grid-column: span 1 / -1;
+    grid-row: 3 / 6;
+}
+
+.lines--light {
+    grid-row: 2 / 3;
+    grid-column: span 1 / -1;
+}
