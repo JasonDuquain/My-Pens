@@ -34,7 +34,7 @@ ol {
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-gap: 2em;
-    height: 100vh;
+    //height: 100vh;
 }
 
 /***** 3 VERTICAL LINES *******/
