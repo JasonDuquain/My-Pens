@@ -19,11 +19,11 @@ body {
 }
 
 ol {
-    padding: 2em;
+    padding: 0 2em;
 }
 
 .grid {
-    margin: 4em 0;
+    margin: 6em 0;
     display: grid;
     grid-template-areas: 
         ". . hero hero hero hero hero . . ."
@@ -32,9 +32,8 @@ ol {
         ". paraone paraone paraone paraone paratwo paratwo parathree parathree ad"
         ". paraone paraone paraone paraone films films films films .";
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-gap: 2em;
-    //height: 100vh;
+    grid-template-rows: .75fr .75fr repeat(2, 1fr) .95fr;
+    grid-gap: 3em;
 }
 
 /***** 3 VERTICAL LINES *******/
@@ -87,17 +86,20 @@ ol {
 }
 
 .para-one::first-letter {
-    font-size: 10em;
+    font-size: 12em;
     line-height: .7;
 }
 
 .para-one {
-    margin-top: -7em;
+    margin-top: -8em;
 }
 
 .hero-image {
     grid-area: hero;
-    width: 100%;
+    width: calc(100% + 5em);
+    transform: translateX(-5em);
+    height: 100%;
+    object-fit: cover;
     border: 2px solid black;
 }
 
@@ -117,8 +119,8 @@ ol {
 
 .para-wrap--one {
     grid-area: paraone;
-    column-width: 20em;
-    column-gap: 2em;
+    column-width: 18em;
+    column-gap: 3em;
 }
 
 .para-five {
@@ -151,6 +153,10 @@ ol {
     font-weight: 700;
 }
 
+.films li {
+    padding-top: .25em
+}
+
 .ad {
     grid-area: ad;
     position: relative;
@@ -167,6 +173,7 @@ ol {
 
 .ad-image {
     width: 100%;
+    border: 1px solid gray;
 }
 
 .ad h4 {
