@@ -1,0 +1,89 @@
+:root {
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: serif;
+    font-size: .9em;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-areas: 
+        "mainhdg mainhdg mainimg mainimg . ."
+        "mainhdg mainhdg mainimg mainimg wrapfour ."
+        "mainhdg mainhdg mainimg mainimg wrapfour callouttwo"
+        "calloutone wrapone mainimg mainimg wrapfour callouttwo"
+        "calloutone wrapone wraptwo wrapthree wrapfour callouttwo";
+    grid-template-columns: .4fr 1fr 1fr 1fr 1fr .4fr;
+    grid-template-rows: repeat(5, auto); /* try auto if this doesnt work*/
+    grid-gap: 1em;
+}
+
+/****** GRID ITEM 1 ******/
+.main-heading {
+    grid-area: mainhdg;
+}
+
+.author {
+    border-radius: 50%;
+}
+
+.author-name {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: darkred;
+}
+
+.line {
+    height: 1px solid red;
+}
+
+/****** GRID ITEM 2 ******/
+.callout--one {
+    grid-area: calloutone;
+}
+
+/****** GRID ITEM 3 ******/
+.para-wrap--one {
+    grid-area: wrapone;
+}
+
+/****** GRID ITEM 4 ******/
+.hero {
+    grid-area: mainimg;
+    width: 100%;
+}
+
+/****** GRID ITEM 5 ******/
+.para-wrap--two {
+    grid-area: wraptwo;
+}
+
+/****** GRID ITEM 6 ******/
+.para-wrap--three {
+    grid-area: wrapthree;
+    
+}
+
+/****** GRID ITEM 7 ******/
+.para-wrap--four {
+    grid-area: wrapfour;  
+    
+}
+
+/****** GRID ITEM 8 ******/
+.callout--two {
+    grid-area: callouttwo;    
+}
