@@ -12,7 +12,7 @@
 
 body {
     font-family: serif;
-    font-size: .9em;
+    font-size: .8em;
     max-width: 1280px;
     margin: 0 auto;
 }
@@ -20,39 +20,120 @@ body {
 .grid {
     display: grid;
     grid-template-areas: 
-        "mainhdg mainhdg mainimg mainimg . ."
-        "mainhdg mainhdg mainimg mainimg wrapfour ."
+        "....... ....... mainimg mainimg ........ .........."
+        "mainhdg mainhdg mainimg mainimg wrapfour .........."
         "mainhdg mainhdg mainimg mainimg wrapfour callouttwo"
         "calloutone wrapone mainimg mainimg wrapfour callouttwo"
         "calloutone wrapone wraptwo wrapthree wrapfour callouttwo";
     grid-template-columns: .4fr 1fr 1fr 1fr 1fr .4fr;
-    grid-template-rows: repeat(5, auto); /* try auto if this doesnt work*/
-    grid-gap: 1em;
+    grid-template-rows: 80px auto auto auto auto auto; /* try auto if this doesnt work*/
+    grid-gap: 1.5em;
+    margin: 3em 0;
 }
 
 /****** GRID ITEM 1 ******/
 .main-heading {
     grid-area: mainhdg;
+    margin-bottom: -80px;
 }
 
 .author {
     border-radius: 50%;
+    width: 20%;
 }
 
 .author-name {
     font-family: sans-serif;
     text-transform: uppercase;
     font-weight: bold;
-    color: darkred;
+    color: #d01e1e;
+    margin: .3em 0;
 }
 
 .line {
-    height: 1px solid red;
+    border-top: 1px solid #f4a514;
+    height: 1px;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.heading {
+    font-size: 2em;
+    line-height: .9;
+    padding: .3em 0;
+}
+
+.enemy {
+    display: block;
+    font-size: 1.6em;
+}
+
+.tagline {
+    font-family: sans-serif;
+    padding: .5em 1.5em;
+    position: relative;
+    margin-bottom: .5em;
+    font-size: .9em;
+}
+
+.tagline::before {
+    content: "";
+    position: absolute;
+    border: 10px solid transparent;
+    border-left-color: #f4a514;
+    border-left-width: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+.tagline::after {
+    content: "";
+    position: absolute;
+    border: 10px solid transparent;
+    border-left-color: #f4a514;
+    border-left-width: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: .5em;
+}
+
+.opponent {
+    font-weight: bold;
 }
 
 /****** GRID ITEM 2 ******/
 .callout--one {
+    transform: translateY(45px);
+    color: #d01e1e;
+    font-family: sans-serif;
     grid-area: calloutone;
+    border-top: 6px solid black;
+    padding: .5em;
+    position: relative;
+    text-align: center;
+    line-height: 1.4;
+    width: 90%;
+}
+
+.callout--one::before {
+    color: #000;
+    content: '\201C';
+    position: absolute;
+    font-size: 5em;
+    top: -.75em;
+    line-height: .95;
+    width: .5em;
+    height: .5em;
+    border: 3px solid #f4a514;
+    border-radius: 50%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.noone {
+    font-style: italic;
 }
 
 /****** GRID ITEM 3 ******/
@@ -60,10 +141,26 @@ body {
     grid-area: wrapone;
 }
 
+.close {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8em;
+    font-family: sans-serif;
+}
+
+.para-title {
+    color: #d01e1e;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: .8em;
+    margin-top: 1.5em 
+}
+
 /****** GRID ITEM 4 ******/
 .hero {
     grid-area: mainimg;
     width: 100%;
+    height: 100%;
 }
 
 /****** GRID ITEM 5 ******/
@@ -85,5 +182,44 @@ body {
 
 /****** GRID ITEM 8 ******/
 .callout--two {
-    grid-area: callouttwo;    
+    grid-area: callouttwo; 
+    font-family: sans-serif;
+    border-top: 6px solid black;
+    padding: .5em;
+    position: relative;
+    width: 90%;
 }
+
+.callout--two::before {
+    content: '\f041';
+    font-family: fontawesome;
+    position: absolute;
+    font-size: 3em;
+    top: -1.25em;
+    line-height: .95;
+    width: .5em;
+    height: .5em;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f4a514;
+}
+
+.onemore {
+    text-transform: uppercase;
+    color: #d01e1e;
+    font-size: .8em;
+    text-decoration: underline;
+    white-space: nowrap;
+    margin: .5em 0;
+}
+
+.callout-main {
+    font-size: .75em;
+    color: #3232a5;
+    text-align: center;
+    line-height: 1.3;
+    width: 90%;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
