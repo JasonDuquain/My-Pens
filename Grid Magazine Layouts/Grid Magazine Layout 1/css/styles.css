@@ -26,11 +26,11 @@ ol {
     margin: 6em 0;
     display: grid;
     grid-template-areas: 
-        "..... ....... hero hero hero hero hero ...... ...... .........."
-        "..... ....... hero hero hero hero hero imgtwo imgtwo lineslight"
-        "lines ....... hero hero hero hero hero parathree parathree ad"
+        "..... ....... hero    hero    hero    hero    hero    ......    ......    .........."
+        "..... ....... hero    hero    hero    hero    hero    imgtwo    imgtwo    lineslight"
+        "lines ....... hero    hero    hero    hero    hero    parathree parathree ad"
         "..... paraone paraone paraone paraone paratwo paratwo parathree parathree ad"
-        "..... paraone paraone paraone paraone films films films films ..";
+        "..... paraone paraone paraone paraone films   films   films     films     .........";
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: .75fr .75fr repeat(2, 1fr) .95fr;
     grid-gap: 3em;
@@ -142,16 +142,18 @@ ol {
     border-radius: 10px 10px 0 0;
     column-count: 3;
     grid-area: films;
-    padding: 
+    padding: 1em 0;
 }
 
 .films h4 {
     font-size: 1.2em;
     display: inline-block;
     background-color: #fff;
-    padding: .2em 1.5em .6em .4em;
+    padding: .2em 1.5em .5em .4em;
+    transform: translateY(-1em);
     font-weight: 700;
     border-radius: 0 0 12px 0;
+    line-height: 1.8;
 }
 
 .films .title {
@@ -235,11 +237,11 @@ ol {
     .grid {
         margin: 4em 1em;
         grid-template-areas: 
-            "..... hero hero hero hero ...... ...... .........."
-            "lines hero hero hero hero imgtwo imgtwo lineslight"
-            "..... hero hero hero hero parathree parathree ad"
+            ".....   hero    hero    hero    hero    ......    ......    .........."
+            "lines   hero    hero    hero    hero    imgtwo    imgtwo    lineslight"
+            ".....   hero    hero    hero    hero    parathree parathree ad"
             "paraone paraone paraone paraone paratwo parathree parathree ad"
-            "paraone paraone paraone paraone paratwo films films films";
+            "paraone paraone paraone paraone paratwo films     films     films";
         grid-template-columns: repeat(8, 1fr);
         grid-template-rows: .25fr .75fr repeat(2, 1fr) .95fr;
         grid-gap: 2em;
@@ -255,13 +257,13 @@ ol {
 @media (max-width: 1000px) {
     .grid {
         grid-template-areas: 
-            "lines . . . . lineslight"
-            "paraone paraone paraone hero hero hero"
-            "paraone paraone paraone hero hero hero"
-            "films films films paratwo paratwo ad"
-            "parathree . . . imgtwo ad";
+            "lines     ......    ......  ......  ......  lineslight"
+            "paraone   paraone   paraone hero    hero    hero"
+            "paraone   paraone   paraone hero    hero    hero"
+            "parathree parathree imgtwo  imgtwo  paratwo paratwo"
+            "......... films     films   films   ad      ad";
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: .25fr .5fr .5fr .5fr 1fr;
+        grid-template-rows: .25fr .5fr .5fr .5fr auto;
     }
     
     .hero-image {
@@ -271,26 +273,161 @@ ol {
     
     .para-wrap--one {
         align-self: center;
-        margin-top: 
+        margin-top: 7em;
     }
 
     .para-one::first-letter {
-        font-size: 10em;
+        font-size: 8em;
     }
     
     .films {
         align-self: start;
+        
+    }
+    
+    .lines--light {
+        justify-self: end;
+        transform: translateX(-50%);
+    }
+    
+    .ad::before {
+        display: none;
+    }
+    
+    .ad {
+        display: flex;
+        align-items: center;
+    }
+    
+    .ad-wrap {
+        margin-left: 1em;
+    }
+    
+    .ad-image {
+        width: 30%;
     }
     
 }
 
-/*
+@media (max-width: 850px) {
+    
+    .grid {
+        grid-template-areas: 
+            "lines     ......    ......     ......    ......  lineslight"
+            "paraone   paraone   paraone    hero      hero    hero"
+            "paraone   paraone   paraone    hero      hero    hero"
+            "parathree parathree parathree  parathree imgtwo  imgtwo"
+            "films     films     films      films     paratwo paratwo"   
+            "......    ......    ad         ad        ......  ......"; 
+        grid-template-rows: .25fr .5fr .5fr .5fr auto auto;
+    }
+    
+    .para-wrap--two {
+        column-width: 20em;
+    }
+    
+    .ad {
+        margin-top: 2em;
+    }
+    
+}
 
-grid-template-areas: 
-    "..... hero hero hero hero ...... ...... lineslight"
-    "lines hero hero hero hero imgtwo imgtwo ad"
-    "..... hero hero hero hero parathree parathree ad"
-    "paraone paraone paraone paraone paratwo parathree parathree ad"
-    "paraone paraone paraone paraone paratwo films films films";
-*/
+@media (max-width: 650px) {
+    
+    .grid {
+        margin: 2em 1em;
+        grid-template-areas: 
+            "lines   ......    ......    ......    ......    lineslight"
+            "hero    hero      hero      hero      hero      hero"
+            "hero    hero      hero      hero      hero      hero"
+            "paraone paraone   paraone   paraone   paraone   paraone"
+            "paratwo paratwo   paratwo   imgtwo    imgtwo    imgtwo"   
+            "....... parathree parathree parathree parathree ......"
+            "films   films     films     films     ad        ad";
+    }
+    
+    .hero-image {
+        width: 100%;
+        transform: none;
+        height: 80vw;
+    }
+    
+    .lines {
+        width: 2em;
+        height: 3.5em;
+    }
+    
+    .lines--light {
+        width: 2em;
+        height: 3.5em;
+    }
+    
+    .line, .lines::before, .lines::after {
+        position: absolute;
+        content: "";
+        width: .7em;
+        height: 5em;
+        background-color: #bf3838;
+    }
+    
+    .line--light, .lines--light::before, .lines--light::after {
+        width: .7em;
+        height: 5em;
+    }
+    
+    .ad {
+        display: block;
+    }
+    
+    .ad-wrap {
+        margin-left: 0;
+    }
+    
+    .ad-image {
+        width: 50%;
+    }
+    
+}
+
+@media (max-width: 550px) {
+    
+    .grid {
+        margin: 2em 1em;
+        grid-template-areas: 
+            "lines     ......    ......   ......     ......    lineslight"
+            "hero      hero      hero      hero      hero      hero"
+            "paraone   paraone   paraone   paraone   paraone   paraone"
+            "imgtwo    imgtwo    imgtwo    imgtwo    imgtwo    imgtwo" 
+            "paratwo   paratwo   paratwo   paratwo   paratwo   paratwo"
+            "parathree parathree parathree parathree parathree parathree"
+            "films     films     films     films     films     films"
+            "ad        ad        ad        ad        ad        ad";
+    }
+    
+    .hero-image {
+        height: 100vw;
+    }
+    
+    .para-one {
+        margin-top: -5em;
+    }
+    
+    .ad {
+        display: flex;
+    }
+    
+    .ad-wrap {
+        margin-left: 1em;
+    }
+    
+    .ad-image {
+        width: 50%;
+    }
+    
+    .films li {
+        font-size: .9em;
+    }
+    
+}
+
 
