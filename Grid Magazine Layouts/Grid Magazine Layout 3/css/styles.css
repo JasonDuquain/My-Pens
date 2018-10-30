@@ -11,30 +11,43 @@
 }
 
 body {
-    font-family: serif;
+    font-family: 'Unna', serif;
     font-size: .8em;
     max-width: 1280px;
     margin: 0 auto;
+    color: #222;
 }
 
 .grid {
     display: grid;
     grid-template-areas: 
-        "....... ....... mainimg mainimg ........ .........."
-        "mainhdg mainhdg mainimg mainimg wrapfour .........."
-        "mainhdg mainhdg mainimg mainimg wrapfour callouttwo"
-        "calloutone wrapone mainimg mainimg wrapfour callouttwo"
+        ".......    ....... mainimg mainimg   ........ .........."
+        "mainhdg    mainhdg mainimg mainimg   wrapfour .........."
+        "mainhdg    mainhdg mainimg mainimg   wrapfour callouttwo"
+        "calloutone wrapone mainimg mainimg   wrapfour callouttwo"
         "calloutone wrapone wraptwo wrapthree wrapfour callouttwo";
     grid-template-columns: .4fr 1fr 1fr 1fr 1fr .4fr;
-    grid-template-rows: 80px auto auto auto auto auto; /* try auto if this doesnt work*/
+    grid-template-rows: 80px repeat(5, auto); 
     grid-gap: 1.5em;
     margin: 3em 0;
+}
+
+.inspiration {
+    font-family: 'Krub', sans-serif;
+    color: #333;
+    position: absolute;
+    top: 2em;
+    left: 1.8em;
+    text-decoration: underline;
+}
+
+.inspiration:hover, .inspiration:focus {
+    color: #000;
 }
 
 /****** GRID ITEM 1 ******/
 .main-heading {
     grid-area: mainhdg;
-    margin-bottom: -80px;
 }
 
 .author {
@@ -43,11 +56,12 @@ body {
 }
 
 .author-name {
-    font-family: sans-serif;
+    font-family: 'Arimo', sans-serif;
     text-transform: uppercase;
     font-weight: bold;
     color: #d01e1e;
     margin: .3em 0;
+    text-indent: 0 !important;
 }
 
 .line {
@@ -58,18 +72,20 @@ body {
 }
 
 .heading {
-    font-size: 2em;
-    line-height: .9;
+    font-size: 2.5em;
+    line-height: .8;
     padding: .3em 0;
+    font-weight: 400;
 }
 
 .enemy {
     display: block;
     font-size: 1.6em;
+    font-weight: 700;
 }
 
 .tagline {
-    font-family: sans-serif;
+    font-family: 'Arimo', sans-serif;
     padding: .5em 1.5em;
     position: relative;
     margin-bottom: .5em;
@@ -142,15 +158,15 @@ body {
 }
 
 .close {
+    font-family: 'Arimo', sans-serif;
     text-transform: uppercase;
     font-weight: bold;
     font-size: .8em;
-    font-family: sans-serif;
 }
 
 .para-title {
+    font-family: 'Arimo', sans-serif;
     color: #d01e1e;
-    font-family: sans-serif;
     font-weight: bold;
     font-size: .8em;
     margin-top: 1.5em 
@@ -168,6 +184,14 @@ body {
     grid-area: wraptwo;
 }
 
+p:not(:first-child) {
+    text-indent: 1em;
+}
+
+.para-three, .para-five, .para-seven, .para-eight, .para-eleven {
+    text-indent: 0 !important;
+}
+
 /****** GRID ITEM 6 ******/
 .para-wrap--three {
     grid-area: wrapthree;
@@ -177,13 +201,14 @@ body {
 /****** GRID ITEM 7 ******/
 .para-wrap--four {
     grid-area: wrapfour;  
-    
+    border-right: 1px solid #847f7f;
+    padding-right: .6em;
 }
 
 /****** GRID ITEM 8 ******/
 .callout--two {
     grid-area: callouttwo; 
-    font-family: sans-serif;
+    font-family: 'Arimo', sans-serif;
     border-top: 6px solid black;
     padding: .5em;
     position: relative;
@@ -221,5 +246,148 @@ body {
     width: 90%;
     margin: 0 auto;
     font-weight: bold;
+}
+
+
+@media screen and (max-width: 1280px) {
+    body {
+        font-size: .75em;
+        padding: 0 1.5em;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .grid {
+        grid-template-areas: 
+            ".......    ....... mainimg mainimg   ........"
+            "mainhdg    mainhdg mainimg mainimg   wrapfour"
+            "mainhdg    mainhdg mainimg mainimg   wrapfour"
+            "calloutone wrapone mainimg mainimg   wrapfour"
+            "calloutone wrapone wraptwo wrapthree wrapfour"
+            ".......... ....... callouttwo callouttwo .";
+        grid-template-columns: .4fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 80px auto auto auto auto auto;
+        margin: 2em 0; 
+    }
+    
+    .para-wrap--four { 
+        border-right: none;
+        padding-right: 0;
+    }
+    
+    .callout--two {
+        margin-top: 5em;
+        width: 100%;
+        text-align: center;
+        margin-left: -4em;
+    }
+    
+    .callout-main {
+        font-size: .9em;
+        font-weight: 400;
+    }
+    
+}
+
+@media screen and (max-width: 900px) {
+    .grid {
+        grid-template-areas: 
+            ".......    ....... mainimg mainimg"
+            "mainhdg    mainhdg mainimg mainimg"
+            "mainhdg    mainhdg mainimg mainimg"
+            "calloutone wrapone mainimg mainimg"
+            "calloutone wrapone wraptwo wrapthree"
+            "........   wrapfour wrapfour callouttwo"
+            "........   wrapfour wrapfour callouttwo";
+        grid-template-columns: .4fr 1fr 1fr 1fr;
+        grid-template-rows: 80px repeat(6, auto);
+    }
+    
+    .para-wrap--four {
+        column-width: 16em;
+    }
+    
+    .para-wrap--four > .para-title:first-child {
+        margin-top: 0;
+    }
+    
+    .callout--two {
+        margin-left: 0;
+        width: 60%;
+        justify-self: end;
+    }
+    
+}
+
+@media screen and (max-width: 750px) {
+    .grid {
+        grid-template-areas: 
+            ".......    mainhdg   mainhdg   ......."
+            ".......    wrapone   wrapone   ......."
+            "mainimg    mainimg   mainimg   mainimg"
+            ".......... wraptwo   wraptwo   ......."
+            "calloutone wrapthree wrapthree ......."
+            "calloutone wrapfour  wrapfour  callouttwo"
+            "........   wrapfour  wrapfour  callouttwo";
+        grid-template-columns: .6fr 1fr 1fr .6fr;
+        grid-template-rows: repeat(7, auto);
+        grid-gap: 2em 1em;
+        margin: 5em 0;
+    }
+    
+    .author {
+        width: 15%;
+    }
+    
+    .hero {
+        height: 80vw;
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .callout--two {
+        width: 100%;
+        margin: 2em 0 0 0;
+        font-size: .85em;
+        align-self: end;
+    }
+    
+    .para-wrap--four {
+        column-width: initial;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .grid {
+        grid-template-areas: 
+            ".......    mainhdg    ......."
+            ".......    wrapone    ......."
+            "mainimg    mainimg    mainimg "
+            ".......... wraptwo    ......."
+            ".......... wrapthree  .........."
+            "calloutone calloutone calloutone"
+            ".......... wrapfour   .........."
+            "callouttwo callouttwo callouttwo";
+        grid-template-columns: .2fr 1fr .2fr;
+        grid-template-rows: repeat(7, auto);
+    }
+    
+    .hero {
+        width: 90%;
+    }
+    
+    .callout--one {
+        width: 90%;
+        margin: 0 auto 2em 0;
+        border-top-width: 4px;
+        height: 20vw;
+    }
+    
+    .callout--two {
+        width: 90%;
+        margin: 3em auto 0 auto;
+        border-top-width: 4px;
+    }
+    
 }
 
