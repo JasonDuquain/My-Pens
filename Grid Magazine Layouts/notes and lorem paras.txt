@@ -7,3 +7,6 @@ All strings must have the same number of columns, or else the declaration is inv
 
 If a named grid area spans multiple grid cells, but those cells do not form a single filled-in rectangle, the declaration is invalid.*******
 
+If using grid area and you do not use all the grid area names it may cause the layout to look incomplete
+
+DISPLAY: GRID   !^&w#%^%^%$

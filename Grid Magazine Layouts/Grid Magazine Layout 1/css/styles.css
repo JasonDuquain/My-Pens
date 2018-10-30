@@ -36,6 +36,18 @@ ol {
     grid-gap: 3em;
 }
 
+.inspiration {
+    color: #333;
+    position: absolute;
+    top: 3em;
+    right: 8em;
+    text-decoration: underline;
+}
+
+.inspiration:hover, .inspiration:focus {
+    color: #000;
+}
+
 /****** GRID ITEM 1 *******/
 .lines {
     width: 3em;
@@ -172,14 +184,14 @@ ol {
 }
 
 /****** GRID ITEM 9 *******/
-.ad {
+.addy {
     grid-area: ad;
     position: relative;
     font-family: Arial;
     font-size: 1.1em;
 }
 
-.ad::before {
+.addy::before {
     content: "";
     position: absolute;
     width: 2px;
@@ -188,12 +200,12 @@ ol {
     left: -16px;
 }
 
-.ad-image {
+.addy-image {
     width: 100%;
     border: 1px solid gray;
 }
 
-.ad h4 {
+.addy h4 {
     margin: .4em 0;
     padding-bottom: .5em;
     text-transform: uppercase;
@@ -204,7 +216,7 @@ ol {
     position: relative;
 }
 
-.ad h4::after {
+.addy h4::after {
     content: "";
     position: absolute;
     width: 40%;
@@ -214,7 +226,7 @@ ol {
     bottom: 0;
 }
 
-.ad p {
+.addy p {
     font-size: .85em;
 }
 
@@ -231,7 +243,7 @@ ol {
 @media (max-width: 1100px) {
     
     body {
-        background-image: linear-gradient(to bottom, rgba(255,255,255,.4), rgba(255,255,255,.9) 30px), url('https://res.cloudinary.com/jduquain/image/upload/q_auto,f_auto/v1540473632/bg-1_vqnkbu.jpg'); 
+        background-image: linear-gradient(to bottom, rgba(255,255,255,.4), rgba(255,255,255,1) 130px), url('https://res.cloudinary.com/jduquain/image/upload/q_auto,f_auto/v1540473632/bg-1_vqnkbu.jpg'); 
     }
 
     .grid {
@@ -290,20 +302,20 @@ ol {
         transform: translateX(-50%);
     }
     
-    .ad::before {
+    .addy::before {
         display: none;
     }
     
-    .ad {
+    .addy {
         display: flex;
         align-items: center;
     }
     
-    .ad-wrap {
+    .addy-wrap {
         margin-left: 1em;
     }
     
-    .ad-image {
+    .addy-image {
         width: 30%;
     }
     
@@ -326,7 +338,7 @@ ol {
         column-width: 20em;
     }
     
-    .ad {
+    .addy {
         margin-top: 2em;
     }
     
@@ -344,6 +356,7 @@ ol {
             "paratwo paratwo   paratwo   imgtwo    imgtwo    imgtwo"   
             "....... parathree parathree parathree parathree ......"
             "films   films     films     films     ad        ad";
+        grid-template-rows: .15fr .5fr .5fr .5fr auto auto;
     }
     
     .hero-image {
@@ -375,15 +388,15 @@ ol {
         height: 5em;
     }
     
-    .ad {
+    .addy {
         display: block;
     }
     
-    .ad-wrap {
+    .addy-wrap {
         margin-left: 0;
     }
     
-    .ad-image {
+    .addy-image {
         width: 50%;
     }
     
@@ -402,30 +415,40 @@ ol {
             "parathree parathree parathree parathree parathree parathree"
             "films     films     films     films     films     films"
             "ad        ad        ad        ad        ad        ad";
+        grid-template-rows: .15fr .5fr .5fr .25fr auto auto;
     }
     
     .hero-image {
         height: 100vw;
     }
     
+    .small-image {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
     .para-one {
         margin-top: -5em;
     }
     
-    .ad {
+    .addy {
         display: flex;
     }
     
-    .ad-wrap {
+    .addy-wrap {
         margin-left: 1em;
     }
     
-    .ad-image {
+    .addy-image {
         width: 50%;
     }
     
     .films li {
         font-size: .9em;
+    }
+    
+    .para-five {
+        column-width: 20em;
     }
     
 }

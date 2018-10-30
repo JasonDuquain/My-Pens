@@ -1,0 +1,3 @@
+p*8>lorem70
+
+8 paras with 70 words
