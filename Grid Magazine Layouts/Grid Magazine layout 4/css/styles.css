@@ -14,7 +14,7 @@ body {
     font-family: 'Source Serif Pro', serif;
     max-width: 1280px;
     margin: 0 auto;
-    font-size: .8em;
+    font-size: .75em;
     color: #222;
 }
 
@@ -34,14 +34,26 @@ body {
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: repeat(6, auto);
     grid-gap: 1.5em;
+    border-left: 1px solid #bebcbc;
+    position: relative;
+    margin-bottom: 3em;
+}
+
+.grid::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: -6px;
+    border-left: 1px solid #bebcbc;
 }
 
 /********  GRID ITEM 1  ********/
 .blackbar {
-    width: 95%;
-    margin: 3em auto;
+    width: 97%;
+    margin: 3em 3px 3em auto; /* fix for space to right of bar */
     height: 1.5em;
     background-color: #fff;
     border-top: .7em solid black;
@@ -54,11 +66,10 @@ body {
 .blackbar::before, .blackbar::after {
     position: absolute;
     content: "";
-    background-color: dimgray;
+    background-color: #bebcbc;
     width: 1px;
     top: -1em;
-    bottom: -.1em;
-    
+    bottom: -1em;
 }
 
 .blackbar::after {
@@ -77,12 +88,30 @@ body {
     font-weight: 600;
     letter-spacing: 1px;
     color: #000;
+    text-align: center;
+}
+
+.forbe {
+    display: block;
+    position: relative;
+    padding-bottom: .3em;
+    font-weight: 900;
+}
+
+.forbe::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    background-color: #bebcbc;
+    left: -1em;
+    right: -1em;
+    bottom: 0;
 }
 
 .four {
     display: block;
-    font-size: 1.8em;
-    color: orange;
+    font-size: 3em;
+    color: #d38b08;
 }
 
 /********  GRID ITEM 3  ********/
@@ -98,17 +127,18 @@ body {
     line-height: .75;
     color: #000;
     text-align: center;
+    margin-right: -14px; /* fix to add length to rightside to meet the hero border */
 }
 
 .momandpop {
     display: block;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #bebcbc;
     margin-bottom: .3em;
 }
 
 .bff {
     display: block;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #bebcbc;
 }
 
 /********  GRID ITEM 4  ********/
@@ -116,6 +146,9 @@ body {
     grid-column: 1 / 3;
     grid-row: 4 / 5;
     font-family: 'Muli', sans-serif;
+    border-bottom: 4px solid #000;
+    padding-bottom: .75em;
+    margin-right: -14px; /* fix to add length to rightside to meet the hero border */ 
 }
 
 .tagline {
@@ -125,30 +158,54 @@ body {
     text-align: center;
     width: 80%;
     margin: 0 auto .75em auto;
-    color: #a24343;
+    color: #c66767;
 }
 
 .author {
      text-transform: uppercase;
      color: #000;
      text-align: center;
-     font-size: .8em;
+     font-size: .7em;
+     font-weight: 700;
 }
-
 
 /********  GRID ITEM 5  ********/
 .para-wrap {
     grid-column: 1 / 3;
     grid-row: 5 / 6;
+    padding-left: 1.5em;
+    column-width: 20em;
+    column-gap: 2em;
+    column-rule: 1px double #bebcbc;
+    hyphens: auto;
+    -webkit-hyphens: auto;
 }
 
-.para-wrap p:first-of-type::first-letter {
+/*.para-wrap p:first-of-type::first-letter {
     font-family: 'Muli', sans-serif;
     font-weight: 900;
     font-size: 6em;
     background: blue;
     line-height: 1;
     color: #fff;
+}*/
+
+.first-letter {
+    display: inline-block;
+    color: #fff;
+    padding: 0 .1em;
+    line-height: 1;
+    font-family: 'Muli', sans-serif;
+    font-weight: 900;
+    font-size: 6em;
+    background: rgba(40, 40, 183, 0.9);
+    float: left;
+    margin: 0 .1em 0 0;
+    position: relative;
+}
+
+.para-wrap p:not(:first-of-type) {
+    text-indent: 1em;
 }
 
 /********  GRID ITEM 6  ********/
@@ -158,6 +215,7 @@ body {
     margin: 0 auto;
     grid-column: 1 / 3;
     grid-row: 6 / 7;
+    padding-bottom: 1em;
 }
 
 .border {
@@ -176,10 +234,44 @@ body {
     grid-row: 1 / -1;
     background-image: url('http://res.cloudinary.com/jduquain/q_auto,f_auto/v1540860615/hero-4_sytw0u.jpg');
     background-size: cover;
+    background-position: 25% top;
+    border-left: 1px solid #bebcbc;
+    border-right: 1px solid #bebcbc;
+    position: relative;
 }
 
+.hero::before, .hero::after {
+    position: absolute;
+    content: "";
+    right: -6px;
+    top: 0;
+    bottom: 0;
+    left: -6px;
+}
 
+.hero::before {
+    border-left: 1px solid #bebcbc;
+}
 
+.hero::after {
+    border-right: 1px solid #bebcbc;
+}
 
+@media screen and (max-width: 1280px) {
+    body {
+        font-size: .7em;
+        padding: 0 1.5em;
+    }
+    
+    .main-heading {
+        margin-right: -12px; /* fix to add length to rightside to meet the hero border */
+    }
+    
+    .heading-two-wrap {
+        margin-right: -12px; /* fix to add length to rightside to meet the hero border */ 
+    }
+}
 
-
+@media screen and (max-width: 1050px) {
+    
+}
