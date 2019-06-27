@@ -1,0 +1,42 @@
+%header#main-header
+  .container
+    %a{href: '#', class: 'logo'} Guided Tours
+
+    %nav
+      %a{href: '#'} Tours
+      %a{href: '#'} Pricing
+
+#intro
+  .cta.container
+    %img{class: 'splash', src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/adventure-splash.svg', alt: 'Splash'}
+    %h1 Explore and Discover
+    %p Delectus illum corporis laundantium illo repudiandae et doloemque.
+    %a{href: '#', class: 'button'}
+      %span Start your adventure
+
+#tours
+  .container
+    %h2 Where would you like to go?
+    %form{action: '#'}
+      %input#location{type: 'text', placeholder: 'Location'}
+      %button{type: 'submit', class: 'button'} Get Moving
+
+  %ul
+    = list_of ([ {title: 'Denali', subtitle: 'Alaska', comment: '<!-- Image by Maureen [CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Flickr, https://www.flickr.com/photos/amerune/9374725724 -->', img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/denali_alaska.jpg'}, {title: 'Mirror Lake', subtitle: 'California', comment: '<!-- Image By chensiyuan (chensiyuan) [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC BY-SA 4.0-3.0-2.5-2.0-1.0 (http://creativecommons.org/licenses/by-sa/4.0-3.0-2.5-2.0-1.0)], via Wikimedia Commons, https://upload.wikimedia.org/wikipedia/commons/7/70/Yosemite_national_park_mirror_lake_2010u.JPG -->', img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/mirror-lake_california.jpg'}, {title: 'Antelope Canyon', subtitle: 'Arizona', comment: '<!-- Image By Moyan Brenn [CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Flickr, https://www.flickr.com/photos/aigle_dore/5951674773 -->', img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/antelope-canyon_arizona.jpg'}, {title: 'Key West', subtitle: 'Florida', comment: '<!-- Image By Ricymar Photography [CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Flickr, https://www.flickr.com/photos/ricardo_mangual/5749480168 -->', img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/key-west_florida.jpg'}, {title: 'Saint Mary Lake', subtitle: 'Montana', comment: '<!-- Image By Ricymar Photography [CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Flickr, https://www.flickr.com/photos/ricardo_mangual/5749480168 -->', img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/saint-mary-lake_montana.jpg'}, {title: 'Moab', subtitle: 'Utah', comment: '<!-- Image By Gridge [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC BY-SA 4.0-3.0-2.5-2.0-1.0 (http://creativecommons.org/licenses/by-sa/4.0-3.0-2.5-2.0-1.0)], via Wikimedia Commons, https://upload.wikimedia.org/wikipedia/commons/0/06/Delicatearch1.jpg -->', img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/moab_utah.jpg'}, {title: 'Waipio Valley', subtitle: 'Hawaii', comment: '<!-- Image By Paul Bica [CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Flickr, https://www.flickr.com/photos/dexxus/5652914929 -->', img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/waipio-valley_hawaii.jpg'}, {title: 'Carlsbad Caverns', subtitle: 'New Mexico', comment: '<!-- Image By Guinther [GFDL (http://www.gnu.org/copyleft/fdl.html) or CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons, https://upload.wikimedia.org/wikipedia/commons/d/dd/Carlsbad_Interior_Formations.jpg -->', img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/carlsbad-caverns_new-mexico.jpg'} ]) do |location|
+      %div
+        %h3= location[:title]
+        %h4= location[:subtitle]
+      = location[:comment]
+      %img{src: location[:img], alt: location[:title] + ', ' + location[:subtitle]}
+
+#pricing.container
+  - 3.times do |i|
+    %article
+      %h3 Tier #{i+1}
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius adipisci, sed libero. Iste asperiores suscipit, consequatur debitis animi impedit numquam facilis iusto porro labore dolorem, maxime magni incidunt. Delectus, est!
+      %p Possimus deserunt nisi perferendis, consequuntur odio et aperiam, est, dicta dolor itaque sunt laborum, magni qui optio illum dolore laudantium similique harum. Eveniet quis, libero eligendi delectus repellendus repudiandae ipsum.
+      %a{href: '#', class: 'button'}
+        %span Learn More
+        
+#main-footer
+  %p &copy 2016

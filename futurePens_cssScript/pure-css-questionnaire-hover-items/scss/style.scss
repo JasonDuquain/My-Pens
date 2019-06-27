@@ -1,0 +1,284 @@
+//@import "compass/css3";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+$openSans: 'Open Sans', Helvetica, Arial, sans-serif;
+html, body {
+  font-size: 62.5%;
+  height: 100%;
+  
+  @media (max-width: 768px) {
+    
+  }
+}
+body {
+  
+}
+
+$liHeight: 7rem;
+$contentPTop: 22rem;
+$trans: 0.4s;
+$transFast: 0.2s;
+$cub: cubic-bezier(.59,.04,.3,1.43);
+@mixin hoverLi($y) {
+  transform: translateY($y);
+
+    .demo__elems {
+      transform: translateY(0 - $y);
+    }
+}
+@mixin notFirst {
+  .demo__examples {
+    .example-adv__top,
+    .example-adv__mid,
+    .example-adv__line {
+      transform: translateY(100%);
+      opacity: 0;
+      transition: transform $transFast, opacity $transFast;
+    }
+  }
+}
+.demo {
+  
+  
+  &__content {
+    
+  }
+  &__heading {
+    
+  }
+  &__elems {
+    
+  }
+  &__elem {
+    
+  }
+  
+  &__hover {
+    
+    
+    &-1 {
+      
+
+      &:hover ~ {
+        .demo__highlighter {
+          
+        }
+      }
+    }
+    &-2 {
+      
+
+      &:hover ~ {
+        .demo__highlighter {
+          
+        }
+        
+        
+        
+        .demo__examples {
+          .example-web__top,
+          .example-web__left {
+            
+          }
+          .example-web__right-line {
+            
+            
+            @for $i from 1 through 6 {
+              &:nth-child(#{$i}) {
+                
+              }
+            }
+          }
+        }
+      }
+    }
+    &-3 {
+      
+      
+      &:hover ~ {
+        .demo__highlighter {
+          
+        }
+        
+        @include notFirst;
+        
+        .demo__examples {
+          .example-both {
+            
+            
+            &__half {
+              
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  &__highlighter {
+    
+    
+    .demo__elems {
+      
+    }
+    .demo__elem {
+      
+    }
+  }
+  
+  &__examples {
+    
+    
+    &-nb {
+      
+    }
+  }
+}
+
+.nb-inner {
+  
+}
+.example {
+  
+  
+  &-adv {
+    
+    &__top {
+      
+      
+      &-search {
+        
+        
+        &:after {
+          content: "";
+          position: absolute;
+          
+        }
+      }
+    }
+    
+    &__mid {
+      
+      
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        
+      }
+      &:before {
+        
+      }
+      &:after {
+        
+      }
+    }
+    
+    &__line {
+      
+      
+      &.long {
+        
+      }
+    }
+  }
+  
+  &-web {
+    
+    
+    &__top {
+      
+    }
+    
+    &__left {
+      
+    }
+    &__right {
+      
+      
+      &-line {
+        
+        
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i}) {
+            
+          }
+        }
+      }
+    }
+  } //&-web
+
+  &-both {
+    
+    
+    &__half {
+      
+    }
+    
+    &__left {
+      
+      
+      &-top {
+        
+        
+        &:before {
+          content: "";
+          
+        }
+        &:after {
+          content: "";
+          
+        }
+      }
+      
+      &-mid {
+        
+      }
+      
+      &:before,
+      &:after {
+        content: "";
+        
+      }
+      &:before {
+        
+      }
+      &:after {
+        
+      }
+    }
+    
+    &__right {
+
+      &-top {
+        
+      }
+      &-mid {
+        
+      }
+      
+      &:before,
+      &:after {
+        content: "";
+        
+      }
+      
+      &:before {
+        
+      }
+    }
+  }
+}
+
+.check-out {
+  
+  
+  a {
+    
+  }
+  
+}

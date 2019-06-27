@@ -1,0 +1,70 @@
+
+@keyframes animatePath {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  10% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  20% {
+    -webkit-clip-path: polygon(55% 35%, 75% 35%, 75% 45%, 55% 45%);
+            clip-path: polygon(55% 35%, 75% 35%, 75% 45%, 55% 45%);
+  }
+  30% {
+    -webkit-clip-path: polygon(55% 35%, 75% 35%, 75% 45%, 55% 45%);
+            clip-path: polygon(55% 35%, 75% 35%, 75% 45%, 55% 45%);
+  }
+  40% {
+    -webkit-clip-path: polygon(40% 57%, 65% 57%, 65% 67%, 40% 67%);
+            clip-path: polygon(40% 57%, 65% 57%, 65% 67%, 40% 67%);
+  }
+  50% {
+    -webkit-clip-path: polygon(40% 57%, 65% 57%, 65% 67%, 40% 67%);
+            clip-path: polygon(40% 57%, 65% 57%, 65% 67%, 40% 67%);
+  }
+  60% {
+    -webkit-clip-path: polygon(75% 30%, 100% 30%, 100% 75%, 75% 75%);
+            clip-path: polygon(75% 30%, 100% 30%, 100% 75%, 75% 75%);
+  }
+  70% {
+    -webkit-clip-path: polygon(75% 30%, 100% 30%, 100% 75%, 75% 75%);
+            clip-path: polygon(75% 30%, 100% 30%, 100% 75%, 75% 75%);
+  }
+  80% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 0;
+  }
+}
+
+@keyframes revealPicture {
+  0% {
+    -webkit-filter: blur(30px);
+            filter: blur(30px);
+  }
+  100% {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+}
+
+body {
+    
+}
+
+.background {
+    
+}
+
+.girl {
+    
+}

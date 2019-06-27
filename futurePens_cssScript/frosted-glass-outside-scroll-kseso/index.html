@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>DYNAMIC OUTSIDE BLUR PURE CSS</title>
+  
+  
+  
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url(http://fonts.googleapis.com/css?family=Roboto:100,300);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+*, *:after, *:before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+* {margin:0;padding:0;border: 0 none;}
+[class*="entypo-"]:before {font-family: 'entypo', sans-serif; display: inline-block; margin-right: 1rem; color: #C3F76E;}
+
+html {
+  background: url(http://farm9.staticflickr.com/8204/8237429748_216c68cda0_b.jpg) no-repeat 50% fixed;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: roboto;
+  font-weight: 100;
+  text-shadow: 1px 1px 0 #000;
+  padding: 0 20%;
+}
+body {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  background: inherit;
+}
+html:before,
+html:after {
+  content: '';
+  background: inherit;
+  position: fixed;
+  filter: blur(10px); 
+  -webkit-filter: blur(10px); 
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: url(#blur);  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='10');
+}
+html:before,
+html:after {
+  width: 20%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+html:after {
+  left: auto;
+  right: 0;
+}
+h1 {
+  font-size: 5rem;
+  font-weight: 100;
+  text-align: center;
+  color: #fff;
+}
+hr {
+ width: 100%;
+  height: 25vh;
+ position: relative;
+ background: inherit;
+  filter: blur(10px); 
+  -webkit-filter: blur(5px); 
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: url(#blur);  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='5');
+}
+article {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  top: 20%;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 10px solid rgba(255,255,255,.15);
+  box-shadow: 1px 1px 4px rgba(0,0,0,.3);
+  z-index: 5;
+  color: #fff;
+  font-size: 1.4rem;
+}
+h2 {
+  background: rgba(255,255,255,.15);
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  color: #C3F76E;
+  border-bottom: 1px solid #666;
+  position: relative;
+  margin: 0 0 2rem 0;
+  padding: 1rem 0;
+}
+h2:after {content:"\2606";font-family: 'entypo', sans-serif; display: inline-block; margin-left: 1rem; color:#C3F76E;
+}
+form {
+  background: rgba(255,255,255,.15);
+  border-top: 1px solid #ddd;
+  text-align: justify;
+  position: relative;
+  padding: 1.5rem 1rem 0;
+  
+}
+form [class*="entypo-"]:before {
+  color: yellow;
+  text-shadow: 1px 1px 0 #000;
+}
+form [class*="entypo-"]:last-child:before {
+  margin-right: 0;
+}
+form:after {
+  content:'';
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+}
+form span {
+  display: inline-block;
+}
+input[type='text'] {
+  background: none;
+  display: inline-block;
+  border: 1px solid yellow;
+  border-radius: 5px;
+  line-height: 20px;
+  vertical-align: middle;
+  width: 45%;
+  margin: 0 .5rem 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0 1rem;
+  font-weight: 300;
+}
+li {margin-bottom: .5rem;}
+a {
+  background: rgba(255,255,255,.4);
+  color: blue;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #ddd;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  display: inline-block;
+  padding: 0 5px;
+}
+svg {
+  height:0;
+  width: 0;
+  position: absolute;
+}
+.aviso {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: orange;
+  color: #fff;
+  font-weight: 400;
+  padding: .5rem;
+  border-radius: 5px 0 0;
+  box-shadow: 0 0 4px rgba(0,0,0,.4);
+  z-index: 100;
+}
+.aviso a {
+  text-decoration: none;
+  color: #000;
+}
+
+
+    </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+  <hr/>
+<article>
+  <h2 class='entypo-star-empty'>Outside blur pure CSS</h2>
+  <ul>
+    <li class='entypo-user'>by <a href='http://escss.blogspot.com/'>EsCss</a> blog</li>
+    <li class='entypo-arrows-ccw'>under Beerware licence</li>
+    <li class='entypo-heart'>if you can imagine, <a href=''>CSS</a> will make it real</li>
+    <li class='entypo-camera'>Image from <a href='http://www.flickr.com/photos/nonoesp/'>nonoesp</a></li>
+    <li class='entypo-address'>other demos css: here, in codepen, and in my blog</li>
+    <li class='entypo-resize-full'>Please, resize the window and</li>
+    <li class='entypo-flow-parallel'>Scroll down &amp; up</li>
+  </ul>
+  <form>
+    <span class='entypo-mic'></span>
+    <span class='entypo-sound'></span>
+    <span class='entypo-adjust'></span>
+    <input type='text' name='q' id='search-box'>
+    <label class='entypo-search' for='search-box'></label>
+    <span class='entypo-tools'></span>
+    <span class='entypo-cog'></span>
+  </form>
+</article>
+
+<hr/>
+<article>
+  <h1>DINAMYC OUTSIDE BLUR<br/> PURE CSS</h1>
+</article>
+<hr/>
+<article class='notice'>
+  <h2 class='entypo-attention'>Outside blur: warning!</h2>
+  <ul>
+    <li class='entypo-block'>Don´t use in a real work!</li>
+    <li class='entypo-lamp'>This is only a Css play</li>
+    <li class='entypo-eye'>so that you can see the power of</li>
+    <li class='entypo-light-up'>the Imagination and Css working together</li>
+    <li class='entypo-thumbs-up'>Now it's your turn, because</li>
+    <li class='entypo-hourglass'>I'm waiting to play with your demos</li>
+  </ul>
+  <form>
+    <span class='entypo-attention'></span>
+    <span class='entypo-alert'></span>
+    <input type='text' name='q' id='search-box'>
+    <label class='entypo-search' for='search-box'></label>
+    <span class='entypo-paper-plane'></span>
+  </form>
+</article>
+<hr/>
+<p class='aviso'>Link the <a href='http://escss.blogspot.com/2013/11/dinamyc-easy-rwd-blur-pure-css.html'>POST</a>, show the PEN</p>
+
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <filter id="blur">
+   <feGaussianBlur stdDeviation="5" />
+   </filter>
+</svg>
+  
+  
+</body>
+</html>
