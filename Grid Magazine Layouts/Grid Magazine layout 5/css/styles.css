@@ -1,0 +1,48 @@
+:root {
+	box-sizing: border-box;
+}
+
+*, ::before, ::after {
+	box-sizing: inherit;
+	text-decoration: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    max-width: 1280px;
+    margin: 0 auto;
+    color: #222;
+}
+
+.inspiration {
+    font-family: Arial, sans-serif;
+    color: #333;
+    position: absolute;
+    top: 8em;
+    right: .5em;
+    text-decoration: underline;
+}
+
+.inspiration:hover, .inspiration:focus {
+    color: #000;
+}
+
+.ski {
+    background-image: url('https://res.cloudinary.com/jduquain/q_auto,f_auto/v1561652914/ski_rk51xj.jpg');
+    background-size: cover;
+    height: 100vh;
+    clip-path: polygon(0 0, 92% 0, 85% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 92% 0, 85% 100%, 0 100%);
+}
+
+
+.ski__heading {
+    font-family: 'Noto Serif', serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    word-spacing: 3px;
+}
