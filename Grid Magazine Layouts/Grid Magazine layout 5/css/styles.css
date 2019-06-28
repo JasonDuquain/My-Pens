@@ -52,24 +52,34 @@ body {
     justify-items: center;
     
     padding-top: 3em;
+	
+	perspective: 300px; /* needed for the split text animation? */
 }
 
 .svg-fire {
     fill: #dd1515;
+	opacity: 0;
+	transform: scale(0);
 }
 
 .svg-earth {
     fill: #2c9f2c;
     transform: rotate(180deg);
+	opacity: 0;
+	transform: scale(0);
 }
 
 .svg-water {
     fill: #268b8b;
     transform: rotate(180deg);
+	opacity: 0;
+	transform: scale(0);
 }
 
 .svg-air {
     fill: #6e93ba;
+	opacity: 0;
+	transform: scale(0);
 }
 
 .ski__heading {
@@ -81,6 +91,8 @@ body {
     grid-column: 1 / -1;
     white-space: nowrap;
     color: #525252;
+	
+	opacity: 0;
 }
 
 .ski__element {
@@ -93,31 +105,38 @@ body {
    background-clip: text;
    -webkit-background-clip: text;
    color: transparent; 
-    
-    opacity: 0;
+	
+}
+
+[class*="fire--"], [class*="earth--"], [class*="water--"], [class*="air--"] {
+	opacity: 0;
+	transform: translateY(-75px);
 }
 
 .ski__element--earth {
    background-image: linear-gradient(to bottom, #2c9f2c, rgb(17, 142, 36, .7));
    background-clip: text;
    -webkit-background-clip: text;
-   color: transparent; 
-    
-    opacity: 0;
+   color: transparent; */
+   
+   /* -webkit-text-fill-color: transparent; */
+   
 }
 
 .ski__element--water {
-   background-image: linear-gradient(to bottom, #268b8b, rgb(27, 147, 147, .7));
+   /*background-image: linear-gradient(to bottom, #268b8b, rgb(27, 147, 147, .7));
    background-clip: text;
    -webkit-background-clip: text;
-   color: transparent; 
+   color: transparent; */
+   color: purple;
 }
 
 .ski__element--air {
-   background-image: linear-gradient(to bottom, #6e93ba, #a0c2e6);
+   /*background-image: linear-gradient(to bottom, #6e93ba, #a0c2e6);
    background-clip: text;
    -webkit-background-clip: text;
-   color: transparent; 
+   color: transparent; */
+	color: yellow;
 }
 
 .fire--two, .air--two {
