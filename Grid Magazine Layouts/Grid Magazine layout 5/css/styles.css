@@ -50,8 +50,10 @@ body {
     grid-template-rows: auto auto auto;
     grid-gap: 1.2em;
     justify-items: center;
-    
     padding-top: 3em;
+    
+    /* overflow-x is causing vertical scrollbar */
+    overflow: hidden;
 }
 
 .svg-fire {
@@ -89,35 +91,42 @@ body {
 }
 
 .ski__element--fire {
-   background-image: linear-gradient(to bottom, #dd1515, #cc5414);
+   /*background-image: linear-gradient(to bottom, #dd1515, #cc5414);
    background-clip: text;
    -webkit-background-clip: text;
-   color: transparent; 
+    color: transparent; */ 
+    color: #dd1515;
     
-    opacity: 0;
 }
 
+[class*=fire--], [class*=water--], [class*=earth--], [class*=air--]  {
+    opacity: 0;
+    transform: translateY(-6em) scale(10);
+}
+
+
 .ski__element--earth {
-   background-image: linear-gradient(to bottom, #2c9f2c, rgb(17, 142, 36, .7));
+   /*background-image: linear-gradient(to bottom, #2c9f2c, rgb(17, 142, 36, .7));
    background-clip: text;
    -webkit-background-clip: text;
-   color: transparent; 
-    
-    opacity: 0;
+   color: transparent; */
+   color: #2c9f2c; 
 }
 
 .ski__element--water {
-   background-image: linear-gradient(to bottom, #268b8b, rgb(27, 147, 147, .7));
+   /*background-image: linear-gradient(to bottom, #268b8b, rgb(27, 147, 147, .7));
    background-clip: text;
    -webkit-background-clip: text;
-   color: transparent; 
+   color: transparent; */
+    color: #268b8b;
 }
 
 .ski__element--air {
-   background-image: linear-gradient(to bottom, #6e93ba, #a0c2e6);
+   /*background-image: linear-gradient(to bottom, #6e93ba, #a0c2e6);
    background-clip: text;
    -webkit-background-clip: text;
-   color: transparent; 
+   color: transparent; */
+    color: #6e93ba;
 }
 
 .fire--two, .air--two {
@@ -220,7 +229,7 @@ body {
         display: block;
         background-image: url('https://res.cloudinary.com/jduquain/q_auto,f_auto/v1561652914/ski_rk51xj.jpg');
         background-size: cover;
-        height: 75vw;
+        height: 80vh;
     }
     
     .ski__embrace-wrap {
@@ -248,9 +257,29 @@ body {
     
     .ski__para-wrap {
         width: 80%;
-        margin: 4em 10% 0 10%;
+        margin: 15em 10% 3em 10%;
     }
     
+}
+
+
+@media (max-width: 570px) {
+    .ski {
+        background-position: center center
+    }
+}
+
+@media (max-width: 400px) {
+    .ski__heading {
+        font-size: 1.2em;
+    }
+    
+    .ski__para-wrap {
+        width: 90%;
+        font-size: .85em;
+        margin: 8em 5% 3em 5%;
+    }
+
 }
 
 
