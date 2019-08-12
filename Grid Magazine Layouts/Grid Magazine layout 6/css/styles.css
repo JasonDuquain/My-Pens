@@ -14,18 +14,17 @@ body {
     background-color: #000;
     max-width: 1920px;
     margin: 0 auto;
+    font-family: 'Playfair Display', serif;
 }
 
 .inspiration {
-    color: #333;
+    font-size: .9em;
+    color: #fff;
     position: absolute;
-    top: 8em;
-    right: .5em;
+    top: 4em;
+    right: 1.5em;
     text-decoration: underline;
-}
-
-.inspiration:hover, .inspiration:focus {
-    color: #000;
+    z-index: 19500;
 }
 
 .venus__grid {
@@ -33,38 +32,41 @@ body {
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
    grid-template-rows: auto auto auto auto auto auto;
    height: 100vh;
-    
    max-width: 1600px;
-    
-    position: relative;
+   position: relative;
 }
 
 .venus__tagline {
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     grid-column: 1 / 3;
     background-color: #fff;
     color: gray;
-    padding: 2em;
+    padding: .75em 2em 1.5em 1.8em;
 }
 
 .venus__summary-wrap {
     grid-column: 1 / 3;
     color: #fff;
-    padding: 1em;
+    padding: 1.25em .75em 1.25em 1.75em;
 }
 
 .venus__summary {
-    
-    font-size: 1.4em;
+    line-height: 1.3;
+    font-size: 1.3em;
+    margin-bottom: 1.25em;
 }
 
 .venus__author {
-    font-family: sans-serif;
-    
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8em;
+    font-weight: 600;
 }
 
 .venus__backdrop {
-    height: 110px;
+    
+    height: 8em;
+    
     background: #222;
     overflow: hidden;
     position: relative;
@@ -79,45 +81,44 @@ body {
 
 .venus__heading {
     font-family: sans-serif;
-    font-size: 120px;
+    font-size: 9em;
     width: 100%;
     height: 100%;
-    line-height: 1;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); 
-    text-transform: uppercase;
-    mix-blend-mode: multiply;
     background-color: #000;
-    letter-spacing: -5px
+    line-height: .9;
+    text-transform: uppercase;
+    -webkit-mix-blend-mode: multiply;
+    mix-blend-mode: multiply;
+    letter-spacing: -5px;
 }
 
 .venus__heading-two {
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 4em;
-    line-height: 1;
-    color: darkorange;
+    font-size: 6.7em;
+    line-height: .9;
+    color: #efaf48;
     letter-spacing: -2px;
+    margin-top: -.1em;
 }
 
 .venus__para-wrap {
     grid-column: 1 / 3;
     background-color: #fff;
     grid-row: 3 / 7;
-    padding: 2.5em;
-    font-size: .8em;
+    padding: 2.5em 1em 1em 2em;
+    font-size: .75em;
     column-count: 2;
+    color: #000;
+    line-height: 1.2;
     
     position: relative;
 }
 
 .venus__para-wrap p:first-of-type::first-line {
     font-weight: bold;
-    
-    /* this is causing issues - due to using multicolumn layout?
+    /* uppercase is causing issues - due to using multicolumn layout?
     text-transform: uppercase; */
 }
 
@@ -126,39 +127,53 @@ body {
 }
 
 .venus__first-letter {
-    color: darkorange;
-    opacity: .5;
-    font-size: 8em;
+    color: #fa9b46;
+    opacity: .3;
+    font-size: 10em;
     font-family: sans-serif;
-    
+    font-weight: bold;
     position: absolute;
-    left: 0;
-    top: .05em
+    left: -.08em;
+    top: 0em;
+    
 }
 
 .venus__para-hdg {
-    color: orange;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #c97428;
     font-size: 1.4em;
     margin-top: .5em
 }
 
-
 .venus__border-wrap {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .7em;
     color: #000;
     background-color: #fff;
     grid-column: 1 / 3;
+    padding: 0 2em 1.5em 2em;
+}
+
+.venus__writer {
+    border-top: 2px solid #888;
+    width: 50%;
+    font-style: italic;
+    padding-top: .5em
+}
+
+.venus__writer-name {
+    font-weight: 600;
+    font-style: normal;
 }
 
 .venus__image {
     grid-column: 3 / 7;
-    
     /* changed -1 to 8 to go all the way to bottom of viewport */
     grid-row: 1 / 8;
-    /*background-image: url('../img/venus.jpg'); */
-    background-size: 100% auto;
-    background-repeat: no-repeat;
+    padding: 0 1em;
     
-    background-color: red;
+    /* background-color: red; */
     
     align-self: center;
     justify-self: center;
@@ -170,24 +185,186 @@ body {
 }
 
 .venus__caption {
+    font-family: 'Open Sans', sans-serif;
     color: #fff;
     position: absolute;
     bottom: 2em;
     right: 2em;
     width: 150px;
-    font-size: .8em;
+    font-size: .7em;
+    line-height: 1.1;
+    font-weight: 600;
 }
 
-@media screen and (max-width: 1380px) {
+
+@media screen and (max-width: 1560px) {
+    
+    .venus__tagline {
+        font-size: .95em;
+        padding: .5em 2em .5em 1.8em;
+    }
+    
+    .venus__summary {
+        font-size: 1.15em;
+        margin-bottom: .75em;
+        line-height: 1.2;
+    }
     
     .venus__backdrop {
-        height: 100px;
+        height: 8vw;
     }
     
     .venus__heading {
-        font-size: 98px;
+        font-size: 9vw;
+    }
+    
+    .venus__heading-two {
+        font-size: 6.7vw;
+        
     }
     
 }
 
+
+@media screen and (max-width: 1200px) {
+    
+    .venus__tagline {
+        font-size: 1.1em
+    }
+    
+    .venus__backdrop {
+        height: 8em;
+        text-align: center;
+    }
+    
+    .venus__heading {
+        font-size: 9em;
+    }
+    
+    .venus__heading-two {
+        font-size: 6.7em;
+        text-align: center;
+    }
+    
+    .inspiration {
+        top: 1em;
+        color: #000;
+        font-size: .8em
+    }
+    
+    .venus__grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+    .venus__tagline {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        grid-column: 1 / 2;
+        background-color: #fff;
+        color: gray;
+        padding: .75em 2em 1.5em 1.8em;
+    }
+
+    .venus__summary-wrap {
+        grid-column: 1 / 2;
+        color: #fff;
+        padding: 1.25em 1.75em 1.25em 1.75em;
+    }
+    
+    .venus__summary {
+        width: 75%;
+        margin: 0 auto 1.25em auto;
+    }
+    
+    .venus__para-wrap {
+        grid-column: 1 / 2;
+        grid-row: auto;
+        font-size: .9em;
+    }
+
+    .venus__border-wrap {
+        grid-column: 1 / 2;
+    }
+
+    .venus__image {
+        grid-column: 1 / 2;
+        grid-row: auto;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        position: relative;
+
+    }
+    
+    .venus__caption {
+        right: 1em;;
+    }
+    
+    .inspiration--one {
+        display: none;
+    }
+    
+}
+
+
+@media screen and (max-width: 540px) { 
+
+    .venus__summary-wrap {
+        padding: 1.25em 1em;
+    }
+    
+    .venus__summary {
+        width: 100%;
+        font-size: 1em;
+    }
+    
+    .venus__backdrop {
+        height: 7em;
+        text-align: center;
+    }
+    
+    .venus__heading {
+        font-size: 7.5em;
+    }
+    
+    .venus__heading-two {
+        font-size: 5.5em;
+    }
+    
+    .venus__para-wrap {
+        column-count: 1;
+    }
+
+}
+
+
+@media screen and (max-width: 440px) { 
+
+    .venus__tagline {
+        padding: 1em;
+    }
+    
+    .venus__summary {
+        width: 100%;
+        font-size: .9em;
+    }
+    
+    .venus__backdrop {
+        height: 6.5em;
+    }
+    
+    .venus__heading {
+        font-size: 6.4em;
+        line-height: 1;
+    }
+    
+    .venus__heading-two {
+        font-size: 4.7em;
+    }
+    
+    .venus__para-wrap {
+        column-count: 1;
+    }
+
+}
 
