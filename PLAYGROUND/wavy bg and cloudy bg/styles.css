@@ -13,6 +13,38 @@ html, body {
 }
 
 
+/*** PICS ALTERNATING WITH CLIPPATH****/
+.white {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    grid-gap: 1.5em;
+}
+
+div.pic-wrap {
+    width: 500px;
+    clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 90%);
+}
+
+div.pic-wrap--two {
+    clip-path: polygon(0% 0%, 100% 15%, 100% 85%, 0% 100%);
+}
+
+
+svg.pic-wrap--three {
+    height: 500px;
+    width: 500px;
+}
+
+.pic-wrap--three image {
+     clip-path: url(#my-clip-path);
+}
+
+.pic-wrap img {
+    max-width: 100%;
+    height: auto;
+}
+
 /******* WAVES SECT *****/
 .waves {
     padding: 400px 0;
