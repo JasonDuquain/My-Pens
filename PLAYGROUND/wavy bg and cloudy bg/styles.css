@@ -1,0 +1,120 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.white, .gray, .white--two, footer {
+    padding: 400px 2em;
+}
+
+.gray {
+    background-color: darkgreen;
+}
+
+
+/******* WAVES SECT *****/
+.waves {
+    padding: 400px 0;
+    background-color: hsl(187, 51%, 59%);
+    position: relative;
+}
+
+.waves::before {
+    content: "";
+    position: absolute;
+    background: url(bg-waves.png) top left repeat-x;
+    top: -52px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    z-index: 99;
+}
+
+
+
+/******* CLOUD SECT *****/
+.clouds {
+    padding: 150px 1.5em;
+    font-family: 'Bubblegum Sans', Arial;
+    color: #fff;
+   background-color: hsl(185, 100%, 30%);
+   background-image: url(cloud-bg.png);
+    background-attachment: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+::selection {
+    background-color: hsl(185, 100%, 30%);
+}
+
+.cell--one {
+   display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-gap: 1.5em;
+}
+
+.one {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: .25em 1em;
+    align-items: center;
+}
+
+.one p {
+    grid-column: 1 / -1;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.one h3 {
+    letter-spacing: 2px;
+    font-size: 1.3em;
+    background-color: hsl(194, 100%, 30%);
+    justify-self: start;
+    padding: .3em;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid hsl(187, 51%, 40%);
+}
+
+svg {
+    width: 15px;
+    height: 15px;
+    align-self: center;
+}
+
+.cell--two {
+    align-self: center;
+}
+
+
+/******* FOOTER *****/
+footer {
+    position: relative;
+}
+
+footer::before {
+    background: url(footer_top_clouds.png) center top no-repeat;
+    background-size: cover;
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 200;
+}
+
+
