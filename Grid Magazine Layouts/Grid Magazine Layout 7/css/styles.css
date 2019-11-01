@@ -1,0 +1,98 @@
+:root {
+   box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+ol {
+    
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5em;
+}
+
+.inspiration {
+    color: #333;
+    position: absolute;
+    top: 3em;
+    right: 8em;
+    text-decoration: underline;
+}
+
+.inspiration:hover, .inspiration:focus {
+    color: #000;
+}
+
+
+.page--one {
+    
+}
+
+.bubbles--one {
+    font-weight: bold;
+    height: 150px;
+    width: 100%;
+    clip-path: url(#svg-path);
+}
+
+.page--two {
+   position: relative;
+    
+    
+}
+
+.para--wrap p {
+    font-size: .85em;
+}
+
+.surfer {
+    display: block;
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    border: 30px solid #fff;
+}
+
+.quote--3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial;
+    font-weight: bold;
+    position: absolute;
+    top: 60px;
+    left: -65px;
+    padding-right: 25px;
+    text-transform: uppercase;
+    font-size: 1.75em;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+}
+
+.bubbles {
+    box-sizing: content-box;
+    position: absolute;
+    bottom: -75px;
+    left: -90px;
+    width: 300px;
+    height: auto;
+    border: 25px solid #fff;
+}
+
+
+
