@@ -15,22 +15,13 @@ body {
     margin: 0 auto;
 }
 
-ol {
-    
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 5em;
-}
-
 .inspiration {
     color: #333;
     position: absolute;
     top: 3em;
     right: 8em;
     text-decoration: underline;
+    z-index: 99;
 }
 
 .inspiration:hover, .inspiration:focus {
@@ -38,8 +29,16 @@ ol {
 }
 
 
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10em;
+    padding-left: 5em;
+}
+
 .page--one {
-    
+    padding: 0 2em;
 }
 
 .bubbles--one {
@@ -49,39 +48,76 @@ ol {
     clip-path: url(#svg-path);
 }
 
-.page--two {
-   position: relative;
-    
-    
+.para--wrap  {
+    padding-bottom: .5em;
+    border-bottom: 5px solid #000;
+    column-width: 12em;
 }
 
 .para--wrap p {
     font-size: .85em;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.quote {
+    font-size: 1.3em;
+    font-style: italic;
+    line-height: 1.5;
+    padding: 1em 0;
+}
+
+.quote--one {
+    width: 126%;
+    transform: translateX(-22%);
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.quote--two {
+    width: 125%;
+    text-align: left;
+}
+
+.page--two {
+   
+}
+
+.surfer--wrap {
+   position: relative; 
 }
 
 .surfer {
     display: block;
-    width: 100%;
-    height: 80vh;
+    width: 115%;
+    height: auto;
     object-fit: cover;
     border: 30px solid #fff;
 }
 
-.quote--3 {
+.quote--three {
+    font-size: 1.65em;
+    font-family: 'Maven Pro';
+    font-weight: 900;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Arial;
-    font-weight: bold;
     position: absolute;
     top: 60px;
     left: -65px;
     padding-right: 25px;
     text-transform: uppercase;
-    font-size: 1.75em;
     width: 300px;
     height: 200px;
     background-color: #fff;
+}
+
+.quotemark {
+    color: hsl(188, 99%, 40%);
+    font-size: 1.4em;
+    line-height: .7;
 }
 
 .bubbles {
@@ -89,9 +125,9 @@ ol {
     position: absolute;
     bottom: -75px;
     left: -90px;
-    width: 300px;
-    height: auto;
-    border: 25px solid #fff;
+    width: 325px;
+    height: 240px;
+    border: 35px solid #fff;
 }
 
 
