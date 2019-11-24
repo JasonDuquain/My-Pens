@@ -1,0 +1,64 @@
+:root {
+  box-sizing: border-box;
+  --length: 0;
+  --duration: 0;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background: hsl(0, 0%, 20%);
+    padding: 5em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    color: hsl(43, 74%, 49%);
+}
+
+[class*="typewriter"] {
+    margin: 1em 0;
+}
+
+[class*="typewriter"] h1  {
+    opacity: 0;
+    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 100;
+    overflow: hidden;
+    border-right: .1em solid;
+    padding-right: .15em;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+[class*="typewriter"] .animated {
+    opacity: 1;
+    animation: 
+        typing calc(var(--duration) * 1ms) steps(var(--length), end),
+        cursor 1000ms step-end infinite; 
+}
+
+
+@keyframes typing {
+  from { width: 0 ;}
+  to { width: 100%; }
+}
+
+@keyframes cursor {
+  from, to { border-color: transparent; }
+  50% { border-color: currentColor; }
+}
+
+
+
+
