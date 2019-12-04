@@ -13,12 +13,16 @@
 }
 
 body {
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 100;
+    color: #fff;
     background: hsl(0, 0%, 20%);
     padding: 5em;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('https://res.cloudinary.com/jduquain/f_auto,q_auto/milky-way-over-lake_q6ru2j.jpg')
 }
 
 a {
@@ -31,11 +35,9 @@ a {
 
 [class*="typewriter"] h1  {
     opacity: 0;
-    color: #fff;
-    font-family: 'Share Tech Mono', monospace;
     font-weight: 100;
     overflow: hidden;
-    border-right: .1em solid;
+    border-right: .1em solid #fff;
     padding-right: .15em;
     white-space: nowrap;
     margin: 0 auto;
@@ -56,8 +58,44 @@ a {
 
 @keyframes cursor {
   from, to { border-color: transparent; }
-  50% { border-color: currentColor; }
+  50% { border-color: #fff; }
 }
+
+
+/*** repeat and erase text ***/
+.repeat {
+    font-weight: 100;
+    display: flex;
+    width: 100%;
+    margin-top: 3em;
+    opacity: 0;
+    transition: opacity 150ms ease-in;
+}
+
+.repeat h1 {
+    font-weight: 100;
+}
+
+.repeat.is-active {
+    opacity: 1;
+}
+
+.typing {
+    position: relative;
+    margin-left: 10px;
+}
+
+.typing::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    width: 1px;
+    height: 100%;
+    border-right: .1em solid #fff;
+    padding-right: .15em;
+    animation: cursor 1000ms infinite ease;
+}
+
 
 
 

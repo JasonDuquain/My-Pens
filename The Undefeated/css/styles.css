@@ -1,0 +1,72 @@
+:root {
+	box-sizing: border-box;
+}
+
+*, ::before, ::after {
+	box-sizing: inherit;
+	text-decoration: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+    visibility:hidden;
+    
+}
+
+.first-quote {
+    font-family: 'Kelly Slab', cursive;
+    background-color: goldenrod;
+    width: 900px;
+    height: 545px;
+    position: relative;
+    text-transform: uppercase; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center {
+    
+}
+
+.lquote, .rquote {
+    font-family: sans-serif;
+    position: absolute;
+    font-size: 12em;
+    line-height: .8;
+}
+
+.lquote {
+    left: 0;
+    top: 0;
+}
+
+.rquote {
+    right: 0;
+    bottom: -.52em;
+}
+
+.not {
+   display: block;
+    font-size: 25em;
+    line-height: .7;
+}
+
+.conventional {
+    display: block;
+    font-size: 7em;
+    letter-spacing: -.04em
+}
+
