@@ -14,13 +14,20 @@ body {
     
 }
 
+.container-wrap {
+    position: relative;
+    width: 900px;
+    height: 545px;
+}
+
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
+    
     height: 100vh;
     
-    visibility:hidden;
+    visibility: hidden;
     
 }
 
@@ -31,10 +38,11 @@ body {
     height: 545px;
     position: relative;
     text-transform: uppercase; 
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    overflow: hidden; 
 }
 
 .center {
@@ -67,6 +75,84 @@ body {
 .conventional {
     display: block;
     font-size: 7em;
-    letter-spacing: -.04em
+    letter-spacing: -.04em;
 }
 
+.never {
+    position: absolute;
+    right: -80%;
+    top: 38%;
+    letter-spacing: -.04em;
+    font-family: 'Kelly Slab', cursive;
+    font-size: 14em;
+    text-transform: uppercase;
+    line-height: .8;
+}
+
+.boring {
+    font-family: 'Kelly Slab', cursive;
+    font-size: 13em;
+    text-transform: uppercase;
+    line-height: .8;
+    letter-spacing: -.04em;
+    
+    position: absolute;
+    left: 10%;
+    bottom: -65%;
+    
+    opacity: 0;
+}
+
+/*.period {
+    display: inline-block;
+    transform: translateX(-5px);
+}*/
+
+/* THE INTERSECTON OF RACE SPORT CULTURE */
+.container-wrap--two {
+    position: relative;
+    width: 900px;
+    height: 545px;
+    border: 1px solid #333;
+    
+    display: none;
+}
+
+.container-wrap--two::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-color: hsl(350, 61%, 62%);
+    left: 40%;
+    right: 40%;
+}
+
+.container--two {
+    
+}
+
+.second-quote {
+    font-family: sans-serif;
+    
+    width: 900px;
+    height: 545px;
+    position: relative;
+    text-transform: uppercase; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /*overflow: hidden; */
+} 
+
+.center--two {
+    
+}
+
+.intersection {
+    display: block;
+}
+
+.race {
+   display: block;
+}
