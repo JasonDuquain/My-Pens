@@ -51,13 +51,16 @@ function init() {
     .to(containerWrapThree, { display: 'block', duration: .2})
     .to(body, {backgroundColor: '#000', duration: .2}, "<")
     .to(undefeated, {display: 'none'}, ">2")
+    
+    /* UNCOMMENT LATER -- THIS TAKES A LONG TIME
     .to(presents, {display: 'block'})
     .to(presents, {display: 'none', duration: 1.5})
     .to(wrappy, {display: 'block'})
     .to(wrappy, {display: 'none', duration: 1.5})
     .to(of, {display: 'block'})
-    .to(of, {display: 'none', duration: 1.5})
-    .to(containerWrapThree, { scale: .4, backgroundColor: 'red' })
+    .to(of, {display: 'none', duration: 1.5})*/
+    
+    .to(containerWrapThree, { scale: .4, duration: 0.05 })
     
     /* if you need to add a class to the above tween this is 1 way
     .to(containerWrapThree, { scale: .4, backgroundColor: 'red', onComplete: function() {
@@ -67,7 +70,8 @@ function init() {
     
     .add('myLabel')
     
-    .to(containerWrapThree, { scale: 1, duration: 6})
+    .to(roundtable, {display: 'block'})
+    .to(containerWrapThree, { scale: 1, duration: 6}, "<")
     
     .to(containerWrapThreeAfter, {
         duration: .3,
@@ -98,43 +102,111 @@ function init() {
         } 
     }, ">")
     
+    /* remove border */
     .to(containerThreeAfter, {
-        duration: .3,
+        duration: .4,
         cssRule: {
-            bottom: '100%'
+            bottom: '100%',
+            boxShadow: 'none',
+            width: 0
         } 
-    }, ">.3")
+    }, ">.25")
     .to(containerWrapThreeBefore, {
-        duration: .3,
+        duration: .4,
         cssRule: {
-            right: '100%'
+            right: '100%',
+            boxShadow: 'none',
+            width: 0
         } 
     }, ">")
     
-    /* WHY IS THIS ONE NOT WORKING?? */
+    /* dont undo boxshadow and width on this one as it is overrided in the css style for the .try class */
     .to(containerWrapThreeAfter, {
-        duration: .3,
+        duration: .4,
         cssRule: {
             right: '100%' /* this one goes opposite so NOT left: '100% */
         } 
-    }, ">-.2") /* "<" doesnt work -- glitchy */
+    }, ">-.35") /* "<" doesnt work -- glitchy */
     
     .to(containerThreeBefore, {
-        duration: .5,
+        duration: .55,
         cssRule: {
-            top: '100%'
-        } 
+            top: '100%',
+            boxShadow: 'none',
+            width: 0
+        } ,
+        onComplete: function() {
+            containerWrapThree.classList.add('try')
+
+            let wrapAfter = window.getComputedStyle(containerWrapThree, ':after');
+            let computedStyles = getComputedStyle(containerWrapThree);
+
+            containerWrapThree.classList.add('has--gradient')
+
+            let first = 40;
+            let second = 50;
+            let third = 60;
+            let fourth = -10;
+            let fifth = 0;
+            let sixth = 10;
+
+            let opacity = .4;
+
+            function animateGradientAfter() {
+                fourth += .5;
+                fifth += .5;
+                sixth += .5;
+
+                document.documentElement.style.setProperty('--fourth', fourth)
+                document.documentElement.style.setProperty('--fifth', fifth)
+                document.documentElement.style.setProperty('--sixth', sixth) 
+
+                if (fourth <= 100) {
+                    requestAnimationFrame(animateGradientAfter);    
+                    /* trying to run if (fourth >= 100) { cancelAnimationFrame(clearIt); doesnt work } */
+                }
+
+                if (fourth == 40) {
+                    containerWrapThree.classList.add('has--gradient')
+                    animateGradient();
+                }
+
+                if (fourth > 40) {
+                    opacity -= .005;
+                    document.documentElement.style.setProperty('--opacity', opacity)
+                }
+
+            }
+
+            let clearIt = requestAnimationFrame(animateGradientAfter);
+
+            function animateGradient() {
+                first -= .1;
+                second -= .1;
+                third -= .1;
+
+                document.documentElement.style.setProperty('--first', first)
+                document.documentElement.style.setProperty('--second', second)
+                document.documentElement.style.setProperty('--third', third) 
+
+                if (third >= 0) {
+                    requestAnimationFrame(animateGradient);    
+                    /* trying to run if (third <= 0) { cancelAnimationFrame(clearIt); doesnt work } */
+                }
+            }
+
+        }
     }, ">-.15")
+    .to(roundtable, {color: 'yellow'}, "<")
     
     
-    
-    tl.play('myLabel')
+    //tl.play('myLabel')
     
 }
 
 
 
-tl.timeScale(.75);
+//tl.timeScale(.5);
 //GSDevTools.create(); /* had to use minifed file to remove error */
 
 
