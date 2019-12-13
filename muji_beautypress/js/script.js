@@ -3,20 +3,13 @@ let docElement = document.documentElement;
 let body = document.body;
 
 
-
 let tl = gsap.timeline();
 let duration = 1.3;
 
 let heroAfter = CSSRulePlugin.getRule('.hero::after');
 let heroSectOneAfter = CSSRulePlugin.getRule('.hero__sect--one::after');
 let heroSubheadingWrapAfter = CSSRulePlugin.getRule('.hero__subheading--wrap::after');
-
 let heroHeadingWrapAfter = CSSRulePlugin.getRule('.hero__heading-wrap::after');
-
-//let heroHeadingWrapAfter = CSSRulePlugin.getRule('.hero__heading--span-wrap--one::after');
-//let heroHeadingWrapAfterTwo = CSSRulePlugin.getRule('.hero__heading--span-wrap--two::after');
-//let heroHeadingWrapAfterThree = CSSRulePlugin.getRule('.hero__heading--span-wrap--three::after');
-
 let heroButtonWrapAfter = CSSRulePlugin.getRule('.hero__button--wrap::after');
 
 
@@ -115,6 +108,14 @@ function init() {
     //tl.timeScale(.7)
     
 }
+
+
+let afterImage = document.querySelector('.before__after');
+let inputRange = document.querySelector('.before__range');
+
+inputRange.addEventListener('input', function(e) {
+    afterImage.style.width = `${this.value}%`;
+})
 
 
 

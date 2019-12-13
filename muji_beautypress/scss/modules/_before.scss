@@ -1,0 +1,91 @@
+.before {
+    padding: 2em;
+    
+    &__wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 2em 0;
+    }
+    
+    &__sect-one {
+        
+    }
+    
+    &__sect-one-wrap {
+        margin: 2em auto;
+        padding: 2em 1em;
+        width: 60%;
+        border: 10px solid $purple;
+        border-right: none;
+        position: relative;
+        
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            height: 40px;
+            right: 0;
+            background-color: $purple;
+            border-right: 10px solid $purple;
+            
+            top: 0;
+        }
+        
+        &::after {
+            bottom: 0;
+            top: auto;
+        }
+    }
+    
+    &__heading {
+        margin: 1em 0;
+        font-size: 1.75em;
+        line-height: 1;
+    }
+    
+    &__subheading {
+        font-size: 1.3em;
+        margin-top: 2em;
+    }
+    
+    &__paragraph {
+        margin: 1em 0 2em 0;
+        line-height: 1.4;
+        width: 120%;
+    }
+    
+    &__sect-two {
+        width: 549px;
+        height: 400px;
+        position: relative;
+    }
+    
+    &__before {
+        background-image: url('../img/before-after-2.jpg');
+        background-repeat: no-repeat;
+        width: 549px;
+        height: 400px;
+    }
+    
+    &__after {
+        position: absolute;
+        z-index: 99;
+        background-image: url('../img/before-after-1.jpg');
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+    }
+    
+    &__range {
+        cursor: w-resize;
+        filter: contrast(.5);
+        position: absolute;
+        bottom: 1em;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+    }
+    
+}
