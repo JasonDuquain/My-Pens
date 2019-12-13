@@ -1,0 +1,81 @@
+
+.nav {
+    background-color: $purple;
+    color: #fff;
+    
+    transform-origin: top center;
+    transition: transform 900ms ease-out;
+    
+    transform: perspective(525px) rotateX(0deg);
+    
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20000;
+    
+    &.is--scrolling {
+        transform: perspective(525px) rotateX(-140deg);
+    }
+    
+    &__wrap {
+        max-width: 1280px;
+        padding: 0 2.5em;
+        display: flex;
+        align-items: center;
+    }
+    
+    &__logo {
+        color: #222;
+        flex: 1;
+        text-align: center;
+        align-self: stretch;
+        background-color: #fff;
+        text-transform: uppercase;
+        margin-left: 3em;
+        padding: 1em 1.5em;
+        font-weight: 700;
+        font-size: 1.3em;
+        line-height: 3.5em;
+        
+        position: relative;
+        
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            height: 0;
+            width: 0;
+            
+            /* width of logo divided by 2 (border left + border right === logo width -- using css vars to make width adjust to whatever logo width is at any brkpt) */
+            //border: calc(195px / 2) solid transparent;
+            
+            /* logowidth is already in px so the dividing is working?? */
+            border: calc(var(--logowidth) / 2) solid transparent;
+            
+            /* make border shorter */
+            border-top: 2.5em solid #fff;
+            left: 0;
+            top: 100%;
+            z-index: 19500;
+            //filter: drop-shadow(0 6px 5px rgba(0,0,0,.5));
+        
+        }
+    }
+    
+    &__list {
+        flex: 9;
+        display: flex;
+        justify-content: center;
+        padding: 2.5em;
+
+    }
+    
+    &__item:not(:last-of-type) {
+        margin-right: 1.5em;
+    }
+    
+    
+    
+    
+}

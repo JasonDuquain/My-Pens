@@ -1,3 +1,34 @@
+let nav = document.querySelector('.nav');
+//let navHeight = nav.getBoundingClientRect().height;
+let hero = document.querySelector('.hero');
+
+let styles = window.getComputedStyle(nav);
+let navHeight = styles.getPropertyValue('height');
+hero.style.setProperty('--navheight', navHeight)
+
+
+/* get navlogo width for use in the logo border triangle */
+let navLogo = document.querySelector('.nav__logo');
+let navLogoStyles = getComputedStyle(navLogo);
+let navLogoWidth = navLogoStyles.getPropertyValue('width');
+document.documentElement.style.setProperty('--logowidth', navLogoWidth)
+
+
+
+/* https://stackoverflow.com/questions/31223341/detecting-scroll-direction */
+var lastScrollTop = 0;
+window.addEventListener("scroll", function(){ // or 
+   var st = window.pageYOffset || document.documentElement.scrollTop; 
+   if (st > lastScrollTop){
+      nav.classList.add('is--scrolling');
+   } else {
+      nav.classList.remove('is--scrolling');
+   }
+   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
+
+
+
 
 let docElement = document.documentElement;
 let body = document.body;
@@ -81,8 +112,13 @@ function init() {
         cssRule: {
             left: '100%'
         } 
-    }, "<-.2")
-    
+    }, "<")
+    tl.to(heroSectOneAfter, {
+        duration: .1,
+        cssRule: {
+            backgroundColor: 'transparent'
+        } 
+    }, ">")
     .to(heroButtonWrapAfter, {
         duration: .35,
         cssRule: {

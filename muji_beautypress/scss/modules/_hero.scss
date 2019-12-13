@@ -14,6 +14,9 @@
     overflow: hidden;
     visibility: hidden;
     
+    /* no need to use calc and multiply times 1px as the getPropertyValue pull the px */
+    margin-top: var(--navheight);
+    
     &::after {
         content: "";
         position: absolute;

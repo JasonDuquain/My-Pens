@@ -1,47 +1,54 @@
 
 .skew {
-    margin-top: 6em;
+    margin: 6em 0;
     background-color: rgba($purple, .4);
+    clip-path: polygon(0% 3vw, 50% 0%, 100% 3vw, 100% 100%, 0% 100%);
     
     &__wrap {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-column-gap: 1em;
         align-items: center;
     }
     
     &__sect-one {
-        position: relative;
+        //position: relative;
         
-        &::before {
+        /*&::before {
             content: "";
             position: absolute;
             height: 130px;
-            width: 900px;
+            width: 100%;
             background-color: red;
-            top: -100px;
-            transform: rotate(-10deg) translate(-50px, 20px);
-        }
+            top: 0;
+            left: -50px;
+            transform: rotate(-10deg);
+            transform-origin: left center;
+        }*/
     }
     
     &__image {
         max-width: 100%;
         height: auto;
+        display: block;
     }
     
     
     &__sect-two {
-        position: relative;
+        padding: 2em;
+        color: #fff;
+        //position: relative;
         
-        &::before {
+        /*&::before {
             content: "";
             position: absolute;
+            right: -50px;
             height: 130px;
-            width: 900px;
+            width: 100%;
             background-color: red;
-            top: -100px;
-            transform: rotate(10deg) translate(-50px, -40px);
-        }
+            top: 0;
+            transform: rotate(10deg);
+            transform-origin: right center;
+        }*/
         
     }
     

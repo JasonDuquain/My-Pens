@@ -1,5 +1,8 @@
 :root {
 	box-sizing: border-box;
+    
+    --navheight: 0; 
+    --logowidth: 0;
 }
 
 *, ::before, ::after {
@@ -16,6 +19,7 @@ body {
 	scroll-behavior: smooth;
     font-family: 'Frank Ruhl Libre', serif;
     color: #333;
+    
 }
 
 // less vivid red for active links
