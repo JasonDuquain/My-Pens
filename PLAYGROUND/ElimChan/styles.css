@@ -1,0 +1,86 @@
+
+:root {
+    box-sizing: border-box;
+}
+
+*::before, *::after, * {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(58,53,80,1); 
+    
+}
+
+.grid {
+    max-width: 1280px;
+    margin: 0 auto; 
+    display: grid;
+    grid-template-columns: 20% 80%;
+    height: 110vh;
+}
+
+.col-1 {
+    
+}
+
+.col-2 {
+    background-image: url(bg.jpg);
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    animation: moveRight 1300ms 1 both;
+}
+
+.col-2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #222; 
+    animation: overlayRight 1300ms 1 both;
+}
+
+.next {
+    background-color: #fff;
+    padding: 500px;
+}
+
+@keyframes moveRight {
+    
+    0% { 
+        
+        background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,1)), url(bg.jpg);
+       transform: translate(-2em, 10em); 
+    }
+    
+    30% {
+        transform: translate(-2em, 10em); 
+    }
+    
+    100% {
+        width: 100%;
+        background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0)), url(bg.jpg);
+        transform: translate(0, 10em);
+    }
+    
+}
+
+@keyframes overlayRight {
+    
+    0% {
+        left: -100%;
+        right: 100%;
+    }
+    
+    100% {
+        left: 100%;
+        right: -100%;    
+    }
+    
+}
+
+
+
