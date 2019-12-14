@@ -1,0 +1,18 @@
+
+.totals {
+    margin: 8em 0 40em 0;
+    padding: 0 10em;
+    
+    &__wrap {
+        display: flex;
+    }
+    
+    &__box {
+        margin: 0 3em;
+    }
+}
+
+
+.totals p {
+    font-size: 3em;
+}

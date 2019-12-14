@@ -45,6 +45,7 @@ let heroButtonWrapAfter = CSSRulePlugin.getRule('.hero__button--wrap::after');
 
 
 function init() {
+
     tl.to(heroHeadingWrapAfter, {
         duration: .5,
         cssRule: {
@@ -119,6 +120,7 @@ function init() {
             backgroundColor: 'transparent'
         } 
     }, ">")
+    
     .to(heroButtonWrapAfter, {
         duration: .35,
         cssRule: {
@@ -146,12 +148,60 @@ function init() {
 }
 
 
+/****** BEFORE/AFTER image *****/
 let afterImage = document.querySelector('.before__after');
 let inputRange = document.querySelector('.before__range');
 
 inputRange.addEventListener('input', function(e) {
     afterImage.style.width = `${this.value}%`;
 })
+
+
+/****** TOTALS *****/
+let number = Array.from(document.querySelectorAll('.totals__number'));
+let totalOne = 0;
+let totalTwo = 0;
+
+/***** TODO: improve this to make each counter take the same amount of time and slow up at the end ******/
+
+function increaseNumber(element, total, duration) {
+    let start = 0;
+    let clearIt = setInterval(() => {
+        start++;
+        element.textContent = start;
+        
+        /* slow counter down at end */
+        /* https://stackoverflow.com/questions/4372902/javascript-calculate-x-of-a-number */
+        if (start > (((95 / 100) * total))) {
+            
+            clearInterval(clearIt);
+            
+            let clearItAgain = setInterval(() => {
+                start++;
+                element.textContent = start;
+                
+                if (start >= total) {
+                    clearInterval(clearItAgain);
+                }
+                
+            }, 70)
+        }
+
+        /* dont think this will ever be reached 
+        if (start >= total) {
+            clearInterval(clearIt);
+        }
+        */
+
+    }, duration)
+}
+
+increaseNumber(number[0], 500, 6);
+increaseNumber(number[1], 30, 120);
+increaseNumber(number[2], 780, 4);
+
+
+
 
 
 
