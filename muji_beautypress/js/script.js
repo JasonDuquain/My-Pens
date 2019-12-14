@@ -1,5 +1,4 @@
 let nav = document.querySelector('.nav');
-//let navHeight = nav.getBoundingClientRect().height;
 let hero = document.querySelector('.hero');
 
 let styles = window.getComputedStyle(nav);
@@ -162,43 +161,64 @@ let number = Array.from(document.querySelectorAll('.totals__number'));
 let totalOne = 0;
 let totalTwo = 0;
 
+/* use this to make sure each fn only runs once in the scroll event:
+https://stackoverflow.com/questions/32134451/call-function-on-scroll-only-once
+*/
+var counter = 0; // Global Variable
+
 /***** TODO: improve this to make each counter take the same amount of time and slow up at the end ******/
 
+let totalsWrap = document.querySelector('.totals__wrap');
+
+window.addEventListener('scroll', (e) => {
+    if (totalsWrap.getBoundingClientRect().bottom < (window.innerHeight - 100)) {
+        increaseNumber(number[0], 500, 6);
+        increaseNumber(number[1], 30, 120);
+        increaseNumber(number[2], 780, 4);
+    }
+})
+
+/* cannot use 'if (counter === 0)' since there are 3 fns but it an attempt to make it dynamic compare it to the array.length */
 function increaseNumber(element, total, duration) {
-    let start = 0;
-    let clearIt = setInterval(() => {
-        start++;
-        element.textContent = start;
+
+    if (counter < number.length) {
         
-        /* slow counter down at end */
-        /* https://stackoverflow.com/questions/4372902/javascript-calculate-x-of-a-number */
-        if (start > (((95 / 100) * total))) {
-            
-            clearInterval(clearIt);
-            
-            let clearItAgain = setInterval(() => {
-                start++;
-                element.textContent = start;
-                
-                if (start >= total) {
-                    clearInterval(clearItAgain);
-                }
-                
-            }, 70)
-        }
+        counter++;
+        
+        let start = 0;
+        let clearIt = setInterval(() => {
+            start++;
+            element.textContent = start;
 
-        /* dont think this will ever be reached 
-        if (start >= total) {
-            clearInterval(clearIt);
-        }
-        */
+            /* slow counter down at end */
+            /* https://stackoverflow.com/questions/4372902/javascript-calculate-x-of-a-number */
+            if (start > (((95 / 100) * total))) {
 
-    }, duration)
+                clearInterval(clearIt);
+
+                let clearItAgain = setInterval(() => {
+                    start++;
+                    element.textContent = start;
+
+                    if (start >= total) {
+                        clearInterval(clearItAgain);
+                    }
+
+                }, 70)
+            }
+
+            /* dont think this will ever be reached 
+            if (start >= total) {
+                clearInterval(clearIt);
+            }
+            */
+
+        }, duration)
+        
+    } 
+    
 }
 
-increaseNumber(number[0], 500, 6);
-increaseNumber(number[1], 30, 120);
-increaseNumber(number[2], 780, 4);
 
 
 

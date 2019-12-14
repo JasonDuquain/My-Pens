@@ -1,18 +1,26 @@
 
 .totals {
-    margin: 8em 0 40em 0;
+    margin: 12em 0 12em 0;
     padding: 0 10em;
     
     &__wrap {
         display: flex;
+        justify-content: center;
+    }
+    
+    &__heading {
+       color: $purple; 
     }
     
     &__box {
+        padding: 1em;
         margin: 0 3em;
+        border: 1px solid #444;
+    }
+    
+    &__number {
+        font-size: 3em;
+        text-align: center;
     }
 }
 
-
-.totals p {
-    font-size: 3em;
-}
