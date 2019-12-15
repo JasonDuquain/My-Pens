@@ -1,7 +1,6 @@
 
 
 body {
-    background-color: purple;
     height: 100vh;
     padding: 0;
     margin: 0;
@@ -39,6 +38,7 @@ body {
     grid-template-columns: 1fr 1fr;
     margin-top: -80px;
     overflow: hidden;
+    background-color: purple;
 }
 
 .hay--one {
@@ -49,6 +49,7 @@ body {
 .pic {
     width: 100%;
     height: auto;
+    display: block;
 }
 
 .hay--two {

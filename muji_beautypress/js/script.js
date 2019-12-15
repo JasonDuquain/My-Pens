@@ -33,6 +33,8 @@ let docElement = document.documentElement;
 let body = document.body;
 
 
+
+/****** HERO ANIMATION *******/
 let tl = gsap.timeline();
 let duration = 1.3;
 
@@ -42,6 +44,10 @@ let heroSubheadingWrapAfter = CSSRulePlugin.getRule('.hero__subheading--wrap::af
 let heroHeadingWrapAfter = CSSRulePlugin.getRule('.hero__heading-wrap::after');
 let heroButtonWrapAfter = CSSRulePlugin.getRule('.hero__button--wrap::after');
 
+window.addEventListener("load", function(event) {
+  gsap.set(".hero", {autoAlpha:1})
+  init(); 
+});
 
 function init() {
 
@@ -157,31 +163,60 @@ inputRange.addEventListener('input', function(e) {
 
 
 /****** TOTALS *****/
-let number = Array.from(document.querySelectorAll('.totals__number'));
+let numbers = Array.from(document.querySelectorAll('.totals__number'));
 let totalOne = 0;
 let totalTwo = 0;
 
 /* use this to make sure each fn only runs once in the scroll event:
 https://stackoverflow.com/questions/32134451/call-function-on-scroll-only-once
 */
-var counter = 0; // Global Variable
+var counter = 0; 
 
-/***** TODO: improve this to make each counter take the same amount of time and slow up at the end ******/
+/***** TODO: improve this to make each counter take the same amount of time and still slow up at the end ******/
+if ("IntersectionObserver" in window) {
+    const appearOptions = {
+    threshold: 0,
+    rootMargin: "0px 0px -200px 0px"
+};
 
-let totalsWrap = document.querySelector('.totals__wrap');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } 
+            increaseNumber(numbers[0], 500, 6);
+            increaseNumber(numbers[1], 30, 120);
+            increaseNumber(numbers[2], 780, 4);
 
-window.addEventListener('scroll', (e) => {
-    if (totalsWrap.getBoundingClientRect().bottom < (window.innerHeight - 100)) {
-        increaseNumber(number[0], 500, 6);
-        increaseNumber(number[1], 30, 120);
-        increaseNumber(number[2], 780, 4);
-    }
-})
+            /* the counter var already ensures that the counters will only run once but this might help perf */
+            observer.unobserve(entry.target);
+
+        })
+    }, appearOptions)
+
+    numbers.forEach(el => {
+        observer.observe(el);
+    });
+
+} else {
+    /*** Fallback for older browsers ****/
+    let totalsWrap = document.querySelector('.totals__wrap');
+    
+    window.addEventListener('scroll', (e) => {
+        if (totalsWrap.getBoundingClientRect().bottom < (window.innerHeight - 100)) {
+            increaseNumber(numbers[0], 500, 6);
+            increaseNumber(numbers[1], 30, 120);
+            increaseNumber(numbers[2], 780, 4);
+        }
+    });  
+}
+
+
 
 /* cannot use 'if (counter === 0)' since there are 3 fns but it an attempt to make it dynamic compare it to the array.length */
 function increaseNumber(element, total, duration) {
 
-    if (counter < number.length) {
+    if (counter < numbers.length) {
         
         counter++;
         
@@ -207,12 +242,6 @@ function increaseNumber(element, total, duration) {
                 }, 70)
             }
 
-            /* dont think this will ever be reached 
-            if (start >= total) {
-                clearInterval(clearIt);
-            }
-            */
-
         }, duration)
         
     } 
@@ -225,7 +254,3 @@ function increaseNumber(element, total, duration) {
 
 
 
-window.addEventListener("load", function(event) {
-  gsap.set(".hero", {autoAlpha:1})
-  init(); 
-});
