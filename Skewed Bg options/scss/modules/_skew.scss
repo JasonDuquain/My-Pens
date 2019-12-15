@@ -1,0 +1,133 @@
+
+/***** clip-path *****/
+.skew {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    clip-path: polygon(0% 6vw, 50% 0%, 100% 6vw, 100% 100%, 0% 100%);
+    
+    &__image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    &__sect-two {
+        text-align: center;
+    }
+    
+    &__para {
+        font-size: 1.3em;
+        transform: translateY(10px);
+    }
+    
+}
+
+/***** SVG *****/
+.skew-one {
+    
+    &__svg {
+        height: 80px;
+        display: block;
+        width: calc(100% + 1.3px);
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%) rotate(180deg);
+        vertical-align: middle; 
+    }
+    
+    &__shape {
+        fill: #fff; 
+    }
+    
+    &__grid {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       margin-top: -80px;
+       overflow: hidden;
+       
+       align-items: center;
+    }
+    
+    &__sect-one {
+       grid-column: 1 / 2; 
+    }
+    
+    &__image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    &__sect-two {
+        grid-column: 2 / 3;
+        text-align: center;
+    }
+    
+    &__para {
+        font-size: 1.3em;
+        transform: translateY(10px);
+    }
+    
+}
+
+/***** generated content *****/
+.skew-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &__sect-one {
+        position: relative;
+        
+        &::before {
+            content: "";
+            position: absolute;
+            height: 10.7vw;
+            width: 150%;
+            background-color: #fff;
+            top: 0;
+            left: -50px;
+            transform: rotate(-10deg);
+            transform-origin: left center;
+        }
+    }
+    
+    &__image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    &__sect-two {
+        position: relative;
+        
+        &::before {
+            content: "";
+            position: absolute;
+            right: -50px;
+            height: 10.7vw;
+            width: 150%;
+            background-color: #fff;
+            top: 0;
+            transform: rotate(10deg);
+            transform-origin: right center;
+        }
+        
+    } 
+    
+    &__sect-two {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    &__para {
+        font-size: 1.3em;
+        transform: translateY(10px);
+    }
+    
+}
+
+
+

@@ -1,0 +1,36 @@
+:root {
+	box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	outline: none;
+}
+
+body {
+    font-size: 100%;
+	scroll-behavior: smooth;
+    font-family: 'Frank Ruhl Libre', serif;
+    color: #fff;
+    max-width: 1280px;
+    margin: 0 auto;
+    
+    overflow-x: hidden;
+    
+}
+
+// less vivid red for active links
+a:active {
+    color: rgb(191, 43, 88);
+}
+
+section {
+    margin: 5em 0 11em 0;
+    background-color: darken($purple, 5%);
+}
+
+
