@@ -1,0 +1,46 @@
+body {
+    padding: 2em;
+    font-family: 'Muli', sans-serif;
+    font-size: 100%;
+    color: #222;
+    background-color: #eee;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+#title {
+    font-family: 'Gelasio', serif;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+#description {
+    margin-bottom: 4em;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.form, .form * {
+    font-family: inherit;
+    color: inherit;
+}
+
+.form__sect {
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    grid-gap: 1em;
+}
+
+.form__sect > :first-child {
+    text-align: right;
+}
+
+.wrappy {
+    display: block;
+}
+
+.form__submit {
+    justify-self: end;
+    padding: .5em 1.25em
+}

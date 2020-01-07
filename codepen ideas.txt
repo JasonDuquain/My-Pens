@@ -1,0 +1,12 @@
+img sliders
+
+progress (nums increasing, horizontal progress bars increasing, round circles increasing (svg and non-svg))
+
+img gallery that filters by type ()
+
+hero animations collection
+
+css grid newspapers
+
+lazy loading with cloudinary LQIPs
+

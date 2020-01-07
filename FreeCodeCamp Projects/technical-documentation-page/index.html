@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" id="hay">
+    <head>
+        <meta charset="UTF-8">
+        <title>FreeCodeCamp Responsive Web Design Project #1 - Build a Tribute Page</title>
+        <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700|Muli:300,400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        
+        <nav id="navbar">
+            <header>Cloudinary NodeJS API</header>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#Upload_API_reference" class="nav-link active">
+                        Upload API reference
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#Image_transformation_reference" class="nav-link">
+                        Image transformation reference
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#Video_transformation_reference" class="nav-link">
+                        Video transformation reference
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#Admin_API" class="nav-link">
+                        Admin API
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#Search_API" class="nav-link">
+                        Search API
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <p class="intro">The following sections contain reference information on effectively using Cloudinary and its wide variety of features:</p>
+            <section class="main-section" id="Upload_API_reference">
+                <header>
+                    <h3>Upload API reference</h3>
+                </header>
+                <p class="main-paragraph">
+                    The upload API consists of a number of methods for uploading and managing media assets in the cloud. The REST API methods can be called directly from within your own custom code or by using one of Cloudinary's SDKs that wrap the REST API and greatly simplify using its methods.
+                </p>
+                <p class="main-paragraph">
+                    After you upload files, you can use the Cloudinary Admin API, which has useful methods for managing and organizing your media assets, such as listing all uploaded assets, listing tags, finding all assets that share a given tag, updating transformations, bulk deleting, and more.
+                </p>
+                <ul>
+                    <li>For more in depth documentation and general information on uploading media assets see the Media upload documentation.</li>
+                    <li>SDK-specific documentation can be found in the SDK Guides.</li>
+                    <li>For more information on calling the REST API methods directly, see the documentation on Uploading with a direct call to the API.</li>
+                </ul>
+                <h4>Upload method</h4>
+                <p class="main-paragraph">
+                    The upload method is used to upload assets to the cloud.
+                </p>
+                <p class="main-paragraph syntax">
+                    Syntax:
+                </p>
+                <code>
+                    cloudinary.v2.uploader.upload(file, options, callback);
+                </code>
+                <h4>Rename method</h4>
+                <p class="main-paragraph">
+                    Renamed assets are immediately and permanently updated in your cloud storage with the rename method. The existing URLs of renamed assets and their associated derived resources are no longer valid, although delivery URLs already requested by visitors of your web site or application might still be accessible for a certain period of time through cached copies on the CDN.
+                </p>
+                <p class="main-paragraph syntax">
+                    Syntax:
+                </p>
+                <code>
+                    cloudinary.v2.uploader.rename(from_public_id, to_public_id, options, callback);
+                </code>
+                <h4>Destroy method</h4>
+                <p class="main-paragraph">
+                    The destroy method is used to immediately and permanently delete a single asset from your Cloudinary account (to delete multiple assets see the Admin API Delete resources method). Backed up assets are not deleted, and any assets and transformed assets already downloaded by visitors to your website might still be accessible through cached copies on the CDN.
+                </p>
+                <p class="main-paragraph syntax">
+                    Syntax:
+                </p>
+                <code>
+                    cloudinary.v2.uploader.destroy(public_id, options, callback);
+                </code>
+            </section>
+            <section class="main-section" id="Image_transformation_reference">
+                <header>
+                    <h3>Image transformation reference</h3>
+                </header>
+                <p class="main-paragraph">
+                    The list on this page lists all transformation parameters currently supported by Cloudinary. For each parameter you can see the short name that you can use for manually building transformation URLs and the longer name that is accepted by the relevant methods of all our client libraries.
+                </p>
+                <p class="main-paragraph">
+                    Except where specifically noted, the parameter names are relevant for the HTTP API and all SDKs. However, you may need to adjust the case style to fit the language you are using. For example, for some languages, you may need to use camelCase or PascalCase instead of snake_case. For details, see the 'Capitalization and data type guidelines' section of the relevant Framework guide.
+                </p>
+                <ul>
+                    <li><span>SDK Parameter: </span><span>Width</span></li>
+                    <li><span>SDK Parameter: </span><span>Height</span></li>
+                    <li><span>SDK Parameter: </span><span>Crop</span></li>
+                    <li><span>SDK Parameter: </span><span>Aspect Ratio</span></li>
+                    <li><span>SDK Parameter: </span><span>Gravity</span></li>
+                    <li><span>SDK Parameter: </span><span>Zoom</span></li>
+                    <li><span>SDK Parameter: </span><span>X</span></li>
+                    <li><span>SDK Parameter: </span><span>Y</span></li>
+                    <li><span>SDK Parameter: </span><span>Format</span></li>
+                    <li><span>SDK Parameter: </span><span>Quality</span></li>
+                </ul>
+                <p class="main-paragraph">
+                    The following example showcases a complex example of image transformations that includes resizing, cropping, multiple image overlays, dynamic text overlay, image rotation and more.
+                </p>
+                <code>
+                    <pre>
+    cloudinary.image("yellow_tulip.jpg", {transformation: [
+      {
+          width: 220, 
+          height: 140, 
+          crop: "fill"
+      },
+      {
+          overlay: "brown_sheep", 
+          width: 220, 
+          height: 140, 
+          x: 220, 
+          crop: "fill"
+      },
+      {
+          overlay: "horses", 
+          width: 220, 
+          height: 140,
+          y: 140,
+          x: -110,
+          crop: "fill"
+      },
+      {
+          overlay: "white_chicken",
+          width: 220,
+          height: 140,
+          y: 70,
+          x: 110,
+          crop: "fill"
+      },
+      {
+          overlay: "butterfly.png", 
+          height: 200, 
+          x: -10, 
+          angle: 10
+      },
+      {
+          width: 400, 
+          height: 260, 
+          radius: 20, 
+          crop: "crop"
+      },
+      {
+          overlay: {
+              font_family: "Parisienne", 
+              font_size: 35, 
+              font_weight: "bold", 
+              text: "Memories from our trip"
+          }, 
+          color: "#990C47", 
+          y: 155
+      },
+      {
+          effect: "shadow"
+      }
+    ]})
+                      </pre>
+                </code>
+            </section>
+            <section class="main-section" id="Video_transformation_reference">
+                <header>
+                    <h3>Video transformation reference</h3>
+                </header>
+                <p class="main-paragraph">
+                    The list below lists all supported video transformation parameters. For each parameter, you can see the short name, which is used when manually building transformation URLs, and the longer name for use when delivering videos using our SDKs.
+                </p>
+                <p class="main-paragraph">
+                    You can create a wide range of effects and transformations by chaining together any combination of the parameters listed below.
+                </p>
+                <p class="main-paragraph">
+                    <span>Note:</span> Except where specifically noted, the parameter names are relevant for all SDKs. However, you may need to adjust the case style to fit the language you are using. For example, for some languages, you may need to use camelCase or PascalCase instead of snake_case. For details, see the Capitalization and data type guidelines section of the relevant SDK guide.
+                </p>
+                <ul>
+                    <li><span>SDK Parameter: </span><span>Width</span></li>
+                    <li><span>SDK Parameter: </span><span>Height</span></li>
+                    <li><span>SDK Parameter: </span><span>Crop</span></li>
+                    <li><span>SDK Parameter: </span><span>Aspect Ratio</span></li>
+                    <li><span>SDK Parameter: </span><span>Gravity</span></li>
+                    <li><span>SDK Parameter: </span><span>Zoom</span></li>
+                    <li><span>SDK Parameter: </span><span>X</span></li>
+                    <li><span>SDK Parameter: </span><span>Y</span></li>
+                    <li><span>SDK Parameter: </span><span>Format</span></li>
+                    <li><span>SDK Parameter: </span><span>Quality</span></li>
+                </ul>
+            </section>
+            <section class="main-section" id="Admin_API">
+                <header>
+                    <h3>Admin API</h3>
+                </header>
+                <p class="main-paragraph">
+                    The Admin API is a rate-limited API that provides full control of all uploaded media assets (resources), fetched social profile pictures, generated transformations and more.
+                </p>
+                <p class="main-paragraph syntax">
+                    Syntax:
+                </p>
+                <code>
+                    cloudinary.v2.api.resources(function(error, result) {console.log(result, error); });
+                </code>
+                <h4>Get resources</h4>
+                <p class="main-paragraph">
+                    Lists resources (assets) uploaded to your account.
+                </p>
+                <p class="main-paragraph syntax">
+                    Syntax:
+                </p>
+                <code>
+                    cloudinary.v2.api.resources(options, callback);
+                </code>
+                <h4>Search resources</h4>
+                <p class="main-paragraph">
+                    Search allows you fine control on filtering and retrieving information on all the resources (assets) in your account.
+                </p>
+                <p class="main-paragraph syntax">
+                    Syntax:
+                </p>
+                <code>
+                    cloudinary.v2.search.execute().then(result=>console.log(result));
+                </code>
+                <h4>Restore resources</h4>
+                <p class="main-paragraph">
+                    Restores one or more resources (assets) from backup.
+                </p>
+                <p class="main-paragraph syntax">
+                    Syntax:
+                </p>
+                <code>
+                    cloudinary.v2.api.restore(public_ids, options, callback);
+                </code>
+                <h4>Delete resources</h4>
+                <p class="main-paragraph">
+                    Deletes resources (assets) uploaded to your account
+                </p>
+                <p class="main-paragraph syntax">
+                    Syntax:
+                </p>
+                <code>
+                    cloudinary.v2.api.delete_resources(public_ids, options, callback);
+                </code>
+            </section>
+            <section class="main-section" id="Search_API">
+                <header>
+                    <h3>Search API</h3>
+                </header>
+                <p class="main-paragraph">
+                    The Cloudinary API search method allows you fine control on filtering and retrieving information on all the assets in your account
+                </p>
+                <p class="main-paragraph syntax">
+                    Syntax:
+                </p>
+                <code>
+                    cloudinary.v2.search.execute().then(result=>console.log(result));
+                </code>
+                <p class="main-paragraph">
+                    The following example finds assets containing 'cat' in any field (attribute), include context metadata and tags in the details of each resource, and limit the returned results to 10 resources
+                </p>
+                <code>
+                    <pre>
+    cloudinary.v2.search
+      .expression('cat')
+      .with_field('context')
+      .with_field('tags')
+      .max_results(10)
+      .execute().then(result=>console.log(result));
+                      </pre>
+                </code>
+                <p class="main-paragraph">
+                    The following example finds assets containing 'cat' in any field but not 'kitten' in the tags field, sort the results by public_id in descending order, and calculate an aggregation count based on the values of the format field.
+                </p>
+                <code>
+                    <pre>
+    ccloudinary.v2.search
+      .expression('cat -tags:kitten')
+      .sort_by('public_id','desc')
+      .aggregate('format')
+      .execute().then(result=>console.log(result));
+                      </pre>
+                </code>
+                <h4>Response</h4>
+                <p class="main-paragraph">
+                    The response includes the total count of assets matching the search criteria, the time taken to process the request, any aggregation counts requested (tier 2 only), and the details of each of the assets (resources) found.
+                </p>
+                <p class="main-paragraph">
+                    Sample JSON Response:
+                </p>
+                <code>
+                    <pre>
+                        
+  {
+      "total_count": 32,
+      "time": 30,
+      "aggregations": {
+        "format": {
+          "png": 4,
+          "jpg": 21,
+          "mp4": 3,
+          "doc": 4
+        }
+      },
+      "next_cursor": "b16b8bd80426df43a107f26b0348",
+      "resources": [
+      {
+        "public_id": "sample",
+        "folder": "",
+        "filename": "sample",
+        "format": "png",
+        "version": 1492606756,
+        "resource_type": "image",
+        "type": "upload",
+        "created_at": "2017-04-03T09:56:49+00:00",
+        "uploaded_at": "2017-04-19T12:59:16+00:00",
+        "bytes": 3381,
+        "backup_bytes": 16905,
+        "width": 241,
+        "height": 51,
+        "aspect_ratio": 4.7254901960784315,
+        "pixels": 12291,
+        "context": {},
+        "image_analysis": { 
+          "face_count": 0,
+          "faces": [],
+          "grayscale": true,
+          "illustration_score": 1,
+          "transparent": false,
+          "colors": {
+            "gray": 96.7
+          }
+        },
+        "url": "http://res.cloudinary.com/demo/image/upload/v1492606756/sample.png",
+        "secure_url": "https://res.cloudinary.com/demo/image/upload/v1492606756/sample.png",
+        "status": "active",
+        "access_mode": "public"
+      },
+      {
+        "public_id": "dog",
+         …
+         …
+      }
+      …
+   }
+                        
+                        
+                    </pre>
+                </code>
+            </section>
+        </main>
+        
+        
+        
+        <script src="./script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>FreeCodeCamp Responsive Web Design Project #1 - Build a Tribute Page</title>
+        <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700|Muli:300,400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+       <h1 id="title">Contact Me</h1>
+       <p id="description">This form will allow you to submit new site requests or any questions you might have</p>
+       
+       <form action="" id="survey-form" class="form">
+           <p class="form__sect">
+               <label for="name" class="form__label" id="name-label">Name: </label>
+               <input type="text" id="name" class="form__input" placeholder="Enter your name" required />
+           </p>
+           <p class="form__sect">
+              <label for="email" class="form__label" id="email-label">Email: </label> 
+              <input type="email" name="email" id="email" class="form__input" placeholder="Enter your email address" required />
+           </p>
+           <p class="form__sect">
+              <label for="number" class="form__label" id="number-label">Age: </label> 
+              <input type="number" name="number" id="number" class="form__input" min="1" max="130" placeholder="Enter your age" />
+           </p>
+           <p class="form__sect">
+              <label for="dropdown" class="form__label">What would you like built? </label>
+              <select name="select" id="dropdown" class="form__select">
+                  <option value="website">Website</option>
+                  <option value="webapplication">Web Application</option>
+                  <option value="mobileapplication">Mobile Application</option>
+                  <option value="notsure">Not sure</option>
+              </select>
+           </p>
+           <p class="form__sect">
+              <span class="form__question">How did you hear about me? </span> 
+              <span class="wrappy">
+                  <input type="radio" name="hear" id="search" value="hear">
+                  <label for="search" class="form__label">Search Engine</label><br>
+                  <input type="radio" name="hear" id="word of mouth" value="word of mouth">
+                  <label for="wordofmouth" class="form__label">Word of Mouth</label><br>
+                  <input type="radio" name="hear" id="other" value="other">
+                  <label for="other" class="form__label">Other</label>
+              </span> 
+           </p>
+           <p class="form__sect">
+              <span class="form__question">Would you like our monthly newsletter? </span> 
+              <span class="wrappy">
+                  <input type="checkbox" name="yes" id="yes" value="yes">
+                  <label for="yes" class="form__label">Yes</label><br>
+                  <input type="checkbox" name="no" id="no" value="no">
+                  <label for="no" class="form__label">No</label>
+              </span>
+           </p>
+           <p class="form__sect">
+               <label for="number" class="form__label" id="number-label">Comments or Questions: </label> 
+               <textarea class="form__input" placeholder="Enter any comments or questions here.." rows="8"></textarea>
+           </p>
+           <p class="form__sect">
+             <input type="submit" class="form__submit" value="Send" id="submit">
+           </p>
+       </form>
+        
+        
+        <script src="./script.js"></script>
+    </body>
+</html>

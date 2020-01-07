@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" id="hay">
+    <head>
+        <meta charset="UTF-8">
+        <title>FreeCodeCamp Responsive Web Design Project #1 - Build a Tribute Page</title>
+        <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700|Muli:300,400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+        
+        <header id="header">
+           <nav id="nav-bar">
+               <ul class="nav-bar__list">
+                   <li class="nav-bar__item">
+                       <a href="#" class="nav-linky">Home</a>
+                   </li>
+                   <li class="nav-bar__item">
+                       <a href="#about" class="nav-linky nav-link">About</a>
+                   </li>
+                   <li class="nav-bar__item nav-bar__item--logo">
+                       <a href="#" class="nav-linky">
+                           <img src="https://res.cloudinary.com/dkvl8jjtp/f_auto,q_auto/logo.png" alt="logo picture of stack of pancackes" id="header-img">
+                       </a>
+                   </li>
+                   <li class="nav-bar__item">
+                       <a href="#projects" class="nav-linky nav-link">Projects</a>
+                   </li>
+                   <li class="nav-bar__item">
+                       <a href="#contact" class="nav-linky nav-link">Contact</a>
+                   </li>
+               </ul>
+           </nav>
+            
+        </header>
+        
+        <div class="hero">
+            <div class="hero__wrap">
+                <h1 class="hero__heading">Welcome</h1>
+                <h2 class="hero__heading--two">to Full Stack Inc.</h2>
+                <a href="#contact" class="hero__link"><span>Contact Me</span></a>
+            </div>
+            
+        </div>
+        
+        <section id="about" class="about">
+            <h2 class="about__heading heading--sect">
+               About Me
+           </h2>
+            <p class="about__summary">
+                Welcome to Full Stack Inc. Whether you need a website, web application, or mobile application I have you covered. Please see the video below for our pitch.  
+            </p>
+            
+            <iframe id="video" src="https://www.youtube.com/embed/7knFT9aXKNE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   
+        </section>
+        
+        <section id="projects" class="projects">
+            <h2 class="projects__heading heading--sect">
+               My Projects
+           </h2>
+           <div class="projects__grid">
+               <a href="http://www.parkwaypreschool.com" class="projects__link" target="_blank"><div class="projects__cell"></div></a>
+               <a href="https://www.elmandbelle.com" class="projects__link highlight" target="_blank"><div class="projects__cell"></div></a>
+               <a href="http://www.parkwaypreschool.com" class="projects__link" target="_blank"><div class="projects__cell"></div></a>
+               <a href="https://www.elmandbelle.com" class="projects__link" target="_blank"><div class="projects__cell"></div></a>
+               <a href="http://www.parkwaypreschool.com" class="projects__link" target="_blank"><div class="projects__cell"></div></a>
+               <a href="https://www.elmandbelle.com" class="projects__link" target="_blank"><div class="projects__cell"></div></a>
+               <a href="http://www.parkwaypreschool.com" class="projects__link" target="_blank"><div class="projects__cell"></div></a>
+               <a href="https://www.elmandbelle.com" class="projects__link" target="_blank"><div class="projects__cell"></div></a>
+               <a href="http://www.parkwaypreschool.com" class="projects__link" target="_blank"><div class="projects__cell"></div></a>
+               <a href="https://www.elmandbelle.com" class="projects__link" target="_blank"><div class="projects__cell"></div></a>
+               <a href="http://www.parkwaypreschool.com" class="projects__link highlight" target="_blank"><div class="projects__cell"></div></a>
+               <a href="https://www.elmandbelle.com" class="projects__link" target="_blank"><div class="projects__cell"></div></a>
+               <a href="http://www.parkwaypreschool.com" class="projects__link" target="_blank"><div class="projects__cell"></div></a>
+               <a href="https://www.elmandbelle.com" class="projects__link" target="_blank"><div class="projects__cell"></div></a>
+           </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <h2 class="about__heading heading--sect">
+               Contact Me
+           </h2>
+           
+           <form action="https://www.freecodecamp.com/email-submit" id="form" class="form">
+               <input type="email" name="email" id="email" placeholder="please enter your email address.." class="form__email">
+               <input type="submit" value="Send" id="submit" class="form__submit">
+           </form>
+        </section>
+        
+        <footer class="footer">
+            <p>Copyright &copy; 2020 Full Stack Inc.</p>
+        </footer>
+
+       
+        
+        
+        <script src="./script.js"></script>
+    </body>
+</html>
