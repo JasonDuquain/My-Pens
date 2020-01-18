@@ -20,9 +20,11 @@ body {
 .container {
     width: 800px;
     height: 400px;
-    background-color: red;
+    background-color: aqua;
     overflow: hidden;
     position: relative;
+    
+    visibility: hidden;
 }
 
 
@@ -35,9 +37,10 @@ body {
 }
 
 .image {
-    width: 100%;
+    width: 120%;
     height: 400px;
     display: block;
+    object-fit: cover;
 }
 
 .triangle {
@@ -56,6 +59,8 @@ body {
     
     clip-path: polygon(0 0, 15% 0, 40% 50%, 15% 100%, 0 100%);
     
+    z-index: 3;
+    
 }
 
 .para-wrap {
@@ -67,7 +72,42 @@ body {
 .para {
     font-size: 1.75em;
     flex: 0 0 100%;
+}
+
+.image--two {
+    position: absolute;
+    bottom: 0;
+    left: 55%;
+    width: 25%;
+    top: 10%;
+    opacity: .9;
+}
+
+.triangle--image {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://res.cloudinary.com/jduquain/q_auto,f_auto/tea05_qp0nzl.jpg);
+    clip-path: polygon(0 0, 25% 0, 50% 50%, 25% 100%, 0 100%);
     
+    z-index: 19500;
+}
+
+.final-para {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%; 
+    
+    z-index: 2;
+}
+
+.wrap {
+    width: 100%;
+    padding: 5% 5% 5% 55%;
 }
 
 
