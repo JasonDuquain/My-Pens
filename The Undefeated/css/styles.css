@@ -1,15 +1,12 @@
 :root {
-	box-sizing: border-box;
-    
+	box-sizing: border-box;  
     --first: 40;
     --second: 50;
     --third: 60;
     --fourth: -10;
     --fifth: 0;
     --sixth: 10;
-    
     --opacity: .4;
-    
 }
 
 *, ::before, ::after {
@@ -31,7 +28,6 @@ body {
     position: relative;
     width: 900px;
     height: 545px;
-    
     overflow: hidden;
 }
 
@@ -39,7 +35,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
     visibility: hidden;
 }
 
@@ -53,12 +48,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
     overflow: hidden; 
-}
-
-.center {
-    
 }
 
 .lquote, .rquote {
@@ -94,7 +84,6 @@ body {
     position: absolute;
     right: -80%;
     top: 18%;
-    
     letter-spacing: -.04em;
     font-family: 'Kelly Slab', cursive;
     font-size: 14em;
@@ -106,7 +95,6 @@ body {
     position: absolute;
     left: 10.2%;
     bottom: -65%;
-    
     font-family: 'Kelly Slab', cursive;
     font-size: 13em;
     text-transform: uppercase;
@@ -116,17 +104,12 @@ body {
     opacity: 0;
 }
 
-/*.period {
-    display: inline-block;
-    transform: translateX(-5px);
-}*/
 
 /* THE INTERSECTON OF RACE SPORT CULTURE */
 .container-wrap--two {
     position: relative;
     width: 900px;
     height: 545px;
-    
     display: none;
     
 }
@@ -151,11 +134,10 @@ body {
     bottom: 35%;
 }
 
-/* work on this and how to get it to not effect the text
-.container--two {
-   mix-blend-mode: saturation;
-}
-*/
+/* work on this and how to get it to not effect the text */
+/*.container--two {
+   mix-blend-mode: color-burn;
+}*/
 
 .second-quote {
     position: relative;
@@ -176,9 +158,7 @@ body {
     font-size: 2.5em;
     line-height: 1.05;
     text-align: center;
-
     position: relative;
-    
 }
 
 .intersection {
@@ -190,7 +170,6 @@ body {
 
 .race {
     display: block;
-    
     transform: scaleY(0);
     transform-origin: 50% 100%;
 }
@@ -201,10 +180,8 @@ body {
     position: relative;
     width: 900px;
     height: 545px;
-    
     display: none;
     background-color: #000;
-    
     color: yellow;
 }
 
@@ -218,7 +195,6 @@ body {
     position: relative;
     z-index: 10;
     font-size: 1.7em;
-
     width: 900px;
     height: 545px;
     position: relative;
@@ -227,10 +203,6 @@ body {
     align-items: center;
     justify-content: center;
 } 
-
-.undefeated {
-    
-}
 
 .presents {
    display: none; 
@@ -262,7 +234,8 @@ body {
     z-index: 5000;
 }
 
-.container-wrap--three::before, .container-wrap--three::after {
+.container-wrap--three::before, 
+.container-wrap--three::after {
     position: absolute;
     content: "";
     background-color: #fff;
@@ -284,7 +257,8 @@ body {
     left: 0;
 }
 
-.container--three::before, .container--three::after {
+.container--three::before, 
+.container--three::after {
     position: absolute;
     content: "";
     width: 3px;
@@ -333,4 +307,14 @@ body {
     height: 100%;
     background-color: transparent;
     box-shadow: none;
+}
+
+.inspiration {
+    color: orangered;
+    display: block;
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    z-index: 25888;
+    text-decoration: underline;
 }

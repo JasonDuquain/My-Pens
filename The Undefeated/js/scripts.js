@@ -52,13 +52,12 @@ function init() {
     .to(body, {backgroundColor: '#000', duration: .2}, "<")
     .to(undefeated, {display: 'none'}, ">2")
     
-    /* UNCOMMENT LATER -- THIS TAKES A LONG TIME
     .to(presents, {display: 'block'})
     .to(presents, {display: 'none', duration: 1.5})
     .to(wrappy, {display: 'block'})
     .to(wrappy, {display: 'none', duration: 1.5})
     .to(of, {display: 'block'})
-    .to(of, {display: 'none', duration: 1.5})*/
+    .to(of, {display: 'none', duration: 1.5})
     
     .to(containerWrapThree, { scale: .4, duration: 0.05 })
     
@@ -67,8 +66,6 @@ function init() {
         containerWrapThree.classList.add('add--border')
     }  })
     */
-    
-    .add('myLabel')
     
     .to(roundtable, {display: 'block'})
     .to(containerWrapThree, { scale: 1, duration: 6}, "<")
@@ -120,7 +117,7 @@ function init() {
         } 
     }, ">")
     
-    /* dont undo boxshadow and width on this one as it is overrided in the css style for the .try class */
+    /* dont undo boxshadow and width on this one as it is overridden in the css style for the .try class */
     .to(containerWrapThreeAfter, {
         duration: .4,
         cssRule: {
@@ -197,17 +194,10 @@ function init() {
 
         }
     }, ">-.15")
-    .to(roundtable, {color: 'yellow'}, "<")
-    
-    
-    //tl.play('myLabel')
-    
+    .to(roundtable, {color: 'yellow'}, "<") 
 }
 
-
-
-//tl.timeScale(.5);
-//GSDevTools.create(); /* had to use minifed file to remove error */
+ //GSDevTools.create(); /**** had to use minifed file to remove error ****/
 
 
 window.addEventListener("load", function(event) {

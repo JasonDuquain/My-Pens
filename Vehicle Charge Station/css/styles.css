@@ -16,24 +16,21 @@ body {
     margin: 5em auto;
 }
 
-
 .container {
     width: 800px;
     height: 400px;
-    background-image: linear-gradient(to right, lightblue, blue);
+    background-image: linear-gradient(to right, hsl(185, 53%, 55%), hsl(240, 75%, 40%));
     overflow: hidden;
     position: relative;
     border-radius: 10px;
-    
     visibility: hidden;
 }
-
 
 .image-wrap {
     width: 800px;
     height: 400px;
     display: flex;
-    /*transform: translateX(-200%); */
+    /* NO TRANSITIONS IN CSS as it clashes with GSAP!! */
     /*transition: all 500ms;*/
 }
 
@@ -46,20 +43,16 @@ body {
 
 .triangle {
     color: #fff;
-    background-color: navy;
-    
+    padding: 2em;
+    background-color: hsl(240, 70%, 25%);
     display: flex;
     align-items: center;
-    padding: 2em;
-    
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    
     clip-path: polygon(0 0, 15% 0, 40% 50%, 15% 100%, 0 100%);
-    
     z-index: 3;
     
 }
@@ -67,18 +60,18 @@ body {
 .para-wrap {
     display: flex;
     transform: translateX(-200%);
-    /*transition: all 500ms;*/
+    align-items: center;
 }
 
 .para {
-    font-size: 1.75em;
+    font-size: 2em;
     flex: 0 0 100%;
 }
 
 .para--four {
     font-weight: bold;
     color: hsl(120, 61%, 54%);
-    font-size: 2.1em;
+    font-size: 2.4em;
 }
 
 .image--two-station {
@@ -98,7 +91,6 @@ body {
     height: 100%;
     background-image: url(https://res.cloudinary.com/jduquain/q_auto,f_auto/tea05_qp0nzl.jpg);
     clip-path: polygon(0 0, 25% 0, 50% 50%, 25% 100%, 0 100%);
-    
     z-index: 19500;
 }
 
@@ -148,7 +140,7 @@ body {
 
 .final-para .final-para__five {
     color: #fff;
-    font-size: 1.1em;
+    font-size: 1em;
     margin-top: .3em;
 }
 
@@ -156,6 +148,22 @@ body {
     width: 100%;
     padding-left: 60%;
 }
+
+.inspiration {
+    font-size: .9em;
+    display: block;
+    width: max-content;
+    margin-top: 1.5em;
+    text-align: center;
+    text-decoration: underline;
+    color: #555;
+    transition: all 300ms ease-out;
+}
+
+.inspiration:hover {
+    color: #000;
+}
+
 
 
 
