@@ -2,6 +2,8 @@
 
 :root {
   box-sizing: border-box; 
+  --red: hsl(0, 64%, 62%);
+  --blue: hsl(240, 81%, 70%);
 }
 
 *, ::before, ::after {
@@ -14,7 +16,6 @@
 
 body {
   background-color: #333;
-  
 }
 
 .frame {
@@ -29,7 +30,7 @@ body {
   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
   background: #28715e;
-  color: #333;
+  color: #555;
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -50,10 +51,11 @@ body {
 
 /*** GRID ITEM 1 ****/
 .chart__wrappy {
+  font-size: .9em;
   background-color: hsl(34, 80%, 61%);
   grid-column: 1 / -1;
   grid-row: 1 / 2;
-  padding: .5em 1em;
+  padding: .75em 1em;
   color: #fff;
   border-radius: 5px 5px 0 0;
   
@@ -67,27 +69,40 @@ body {
 }
 
 .chart__heading {
-  font-size: 1em;
+  font-size: 1.2em;
   text-transform: uppercase;
+  margin-bottom: .1em;
 }
 
 .chart__wrap-two {
   
 }
 
+.chart__revenue {
+  text-align: right;
+}
 
+.chart__total {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-top: .1em
+}
 
 /*** GRID ITEM 2 ****/
 .chart__body-wrappy {
   grid-column: 1 / -1;
   grid-row: 2 / 3;
-  padding: 1em;
+  margin: 0 1rem;
+  padding: 1.25rem 0;
+  height: 4rem;
   font-size: .7em;
   font-weight: 400;
   
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  
+  border-bottom: 1px solid hsl(0, 18%, 84%);
 }
 
 .chart__views {
@@ -100,7 +115,7 @@ body {
   content: "";
   height: 3px;
   width: 1.15em;
-  background-color: red;
+  background-color: var(--red);
   top: 50%;
   transform: translateY(-50%);
   left: 0;
@@ -113,33 +128,171 @@ body {
 }
 
 .chart__purchases::before {
-  background-color: blue;
+  background-color: var(--blue);
 }
 
 
 
 /*** GRID ITEM 3 ****/
 .chart__line--one {
-  padding: 3em 0;
   grid-column: 1 / -1;
   grid-row: 3 / 4;
-  padding: 1em;
+  margin: 0 1em;
+  height: 4em;
+  
+  border-bottom: 1px solid hsl(0, 18%, 84%);
+  
+  position: relative;
+}
+
+
+.num {
+  position: absolute;
+  opacity: 0;
+  z-index: -2;
+  background-color: var(--red);
+  transition: all 500ms;
+  font-size: .8em;
+  color: #fff;
+  padding: .25rem;
+  border-radius: 3px;
+}
+
+.num::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-top-color: var(--red);
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.num--one {
+  left: -2%;
+  bottom: 5%;
+}
+
+.num--one.num--visible {
+  bottom: 25%;
+}
+
+.num--two {
+  left: 14%;
+  bottom: 100%;
+}
+
+.num--two.num--visible {
+  bottom: 120%;
+}
+
+.num--three {
+  left: 30%;
+  bottom: 78%;
+}
+
+.num--three.num--visible {
+  bottom: 98%;
+}
+
+.num--four {
+  left: 46%;
+  bottom: 100%;
+}
+
+.num--four.num--visible {
+  bottom: 120%;
+}
+
+.num--five {
+  left: 61%;
+  bottom: 15%;
+}
+
+.num--five.num--visible {
+  bottom: 35%;
+}
+
+.num--six {
+  left: 76%;
+  bottom: 3%;
+}
+
+.num--six.num--visible {
+  bottom: 23%;
+}
+
+.num--seven {
+  left: 92%;
+  bottom: 84%;
+}
+
+.num--seven.num--visible {
+  bottom: 104%;
 }
 
 
 
+.num--visible {
+  opacity: 1;
+  z-index: 5;
+}
+
+.num--one.num--visible {
+  bottom: 20%;
+}
+
+.chart__line--one svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.chart__line--one polyline {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 2px;
+}
+
+/* expand hit area of the svg circles:
+https://stackoverflow.com/questions/24622508/increase-hover-area-of-svg-element */
+circle {
+  fill: var(--red);
+  stroke: var(--red);
+  stroke-width: 8px;
+  stroke-opacity: 0;
+  cursor: pointer;
+}
 
 
 /*** GRID ITEM 4 ****/
-chart__line--two {
-  padding: 3em 0;
+.chart__line--two {
   grid-column: 1 / -1;
   grid-row: 4 / 5;
-  padding: 1em;
+  margin: 0 1em;
+  height: 4em;
+  
+  border-bottom: 1px solid hsl(0, 18%, 84%);
 }
 
+.chart__line--two svg {
+  width: 100%;
+  height: 100%;
+/*  overflow: visible;*/
+}
 
+.chart__line--two polyline {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2px;
+}
 
+.chart__line--two circle {
+  fill: var(--blue);
+  stroke: var(--blue);
+}
 
 
 /*** GRID ITEM 5 ****/
@@ -149,6 +302,10 @@ chart__line--two {
   display: flex;
   justify-content: space-between;
   padding: 1em;
+  
+  font-size: .8em;
+  text-transform: uppercase;
+  color: hsl(0, 4%, 67%);
 }
 
 
