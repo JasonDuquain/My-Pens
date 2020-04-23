@@ -132,7 +132,6 @@ body {
 }
 
 
-
 /*** GRID ITEM 3 ****/
 .chart__line--one {
   grid-column: 1 / -1;
@@ -146,7 +145,7 @@ body {
 }
 
 
-.num {
+.num, .numm {
   position: absolute;
   opacity: 0;
   z-index: -2;
@@ -158,7 +157,7 @@ body {
   border-radius: 3px;
 }
 
-.num::after {
+.num::after, .numm::after {
   content: "";
   position: absolute;
   width: 0;
@@ -233,15 +232,9 @@ body {
   bottom: 104%;
 }
 
-
-
-.num--visible {
+.num--visible, .numm--visible {
   opacity: 1;
   z-index: 5;
-}
-
-.num--one.num--visible {
-  bottom: 20%;
 }
 
 .chart__line--one svg {
@@ -267,20 +260,92 @@ circle {
 }
 
 
+
 /*** GRID ITEM 4 ****/
 .chart__line--two {
   grid-column: 1 / -1;
   grid-row: 4 / 5;
   margin: 0 1em;
   height: 4em;
+  position: relative;
   
   border-bottom: 1px solid hsl(0, 18%, 84%);
+}
+
+.numm {
+  background-color: var(--blue);
+}
+
+.numm::after {
+  border-top-color: var(--blue);
+}
+
+.numm--one {
+  left: -1%;
+  bottom: 75%;
+}
+
+.numm--one.numm--visible {
+  bottom: 95%;
+}
+
+.numm--two {
+  left: 15%;
+  bottom: 95%;
+}
+
+.numm--two.numm--visible {
+  bottom: 115%;
+}
+
+.numm--three {
+  left: 31%;
+  bottom: 57%;
+}
+
+.numm--three.numm--visible {
+  bottom: 77%;
+}
+
+.numm--four {
+  left: 46%;
+  bottom: 85%;
+}
+
+.numm--four.numm--visible {
+  bottom: 105%;
+}
+
+.numm--five {
+  left: 62%;
+  bottom: 74%;
+}
+
+.numm--five.numm--visible {
+  bottom: 94%;
+}
+
+.numm--six {
+  left: 77.5%;
+  bottom: 33%;
+}
+
+.numm--six.numm--visible {
+  bottom: 53%;
+}
+
+.numm--seven {
+  left: 93%;
+  bottom: 54%;
+}
+
+.numm--seven.numm--visible {
+  bottom: 74%;
 }
 
 .chart__line--two svg {
   width: 100%;
   height: 100%;
-/*  overflow: visible;*/
 }
 
 .chart__line--two polyline {
