@@ -1,15 +1,20 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,400,300);
 
 :root {
-	box-sizing: border-box; 
+  box-sizing: border-box; 
 }
 
 *, ::before, ::after {
-	box-sizing: inherit;
-	text-decoration: none;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+  box-sizing: inherit;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; 
+}
+
+body {
+  background-color: #333;
+  
 }
 
 .frame {
@@ -23,17 +28,135 @@
   border-radius: 2px;
   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: #fff;
+  background: #28715e;
   color: #333;
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 }
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+.chart {
+  width: 80%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, auto); 
+  background-color: #fff;
+  border-radius: 5px;
 }
+
+/*** GRID ITEM 1 ****/
+.chart__wrappy {
+  background-color: hsl(34, 80%, 61%);
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  padding: .5em 1em;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chart__wrap-one {
+  
+}
+
+.chart__heading {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.chart__wrap-two {
+  
+}
+
+
+
+/*** GRID ITEM 2 ****/
+.chart__body-wrappy {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  padding: 1em;
+  font-size: .7em;
+  font-weight: 400;
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.chart__views {
+  position: relative;
+  padding: 0 1.75em;
+}
+
+.chart__views::before, .chart__purchases::before {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 1.15em;
+  background-color: red;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  border-radius: 5px;
+}
+
+.chart__purchases {
+  position: relative;
+  padding-left: 1.75em;
+}
+
+.chart__purchases::before {
+  background-color: blue;
+}
+
+
+
+/*** GRID ITEM 3 ****/
+.chart__line--one {
+  padding: 3em 0;
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  padding: 1em;
+}
+
+
+
+
+
+/*** GRID ITEM 4 ****/
+chart__line--two {
+  padding: 3em 0;
+  grid-column: 1 / -1;
+  grid-row: 4 / 5;
+  padding: 1em;
+}
+
+
+
+
+
+/*** GRID ITEM 5 ****/
+.chart__dates-wrap {
+  grid-column: 1 / -1;
+  grid-row: 5 / 6;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+
+
+
+
+
+
+
+
+
