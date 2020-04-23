@@ -1,0 +1,102 @@
+:root {
+  box-sizing: border-box;
+  --timingfn: linear;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.frame {
+  background-color: #3bb58c;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  color: #fff;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.frame__center {
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 3.5em;
+  width: 5.5em;
+}
+.frame__center::before, .frame__center::after {
+  position: absolute;
+  content: "";
+  width: 5.5em;
+  height: .6em;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+}
+.frame__center::before {
+  z-index: 50;
+  top: 0;
+  -webkit-transition: top 300ms var(--timingfn) 500ms, -webkit-transform 300ms var(--timingfn);
+  transition: top 300ms var(--timingfn) 500ms, -webkit-transform 300ms var(--timingfn);
+  transition: transform 300ms var(--timingfn), top 300ms var(--timingfn) 500ms;
+  transition: transform 300ms var(--timingfn), top 300ms var(--timingfn) 500ms, -webkit-transform 300ms var(--timingfn);
+}
+.frame__center::after {
+  bottom: 0;
+  -webkit-transition: bottom 300ms var(--timingfn) 500ms, -webkit-transform 300ms var(--timingfn);
+  transition: bottom 300ms var(--timingfn) 500ms, -webkit-transform 300ms var(--timingfn);
+  transition: transform 300ms var(--timingfn), bottom 300ms var(--timingfn) 500ms;
+  transition: transform 300ms var(--timingfn), bottom 300ms var(--timingfn) 500ms, -webkit-transform 300ms var(--timingfn);
+}
+
+.frame__line {
+  position: absolute;
+  width: 5.5em;
+  height: .6em;
+  background-color: #fff;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 200ms var(--timingfn) 600ms;
+  transition: all 200ms var(--timingfn) 600ms;
+}
+
+.frame__center--animate .frame__line {
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  -webkit-transition: all 200ms var(--timingfn);
+  transition: all 200ms var(--timingfn);
+}
+.frame__center--animate::before {
+  top: 42%;
+  -webkit-transform: rotate(130deg);
+          transform: rotate(130deg);
+  -webkit-transition: top 300ms var(--timingfn), -webkit-transform 300ms var(--timingfn) 500ms;
+  transition: top 300ms var(--timingfn), -webkit-transform 300ms var(--timingfn) 500ms;
+  transition: top 300ms var(--timingfn), transform 300ms var(--timingfn) 500ms;
+  transition: top 300ms var(--timingfn), transform 300ms var(--timingfn) 500ms, -webkit-transform 300ms var(--timingfn) 500ms;
+}
+.frame__center--animate::after {
+  bottom: 42%;
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
+  -webkit-transition: bottom 300ms var(--timingfn), -webkit-transform 300ms var(--timingfn) 500ms;
+  transition: bottom 300ms var(--timingfn), -webkit-transform 300ms var(--timingfn) 500ms;
+  transition: bottom 300ms var(--timingfn), transform 300ms var(--timingfn) 500ms;
+  transition: bottom 300ms var(--timingfn), transform 300ms var(--timingfn) 500ms, -webkit-transform 300ms var(--timingfn) 500ms;
+}

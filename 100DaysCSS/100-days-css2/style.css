@@ -1,0 +1,222 @@
+:root {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #3d4551;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(66%, #7edefc), color-stop(66%, #f0dd75));
+  background-image: linear-gradient(to bottom, #7edefc 66%, #f0dd75 66%);
+  -webkit-animation: scene-darken 3s linear infinite;
+          animation: scene-darken 3s linear infinite;
+}
+
+.center::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.2);
+  top: 66%;
+  -webkit-clip-path: polygon(25% 0%, 80% 0%, 100% 20%, 25% 0%);
+          clip-path: polygon(25% 0%, 80% 0%, 100% 20%, 25% 0%);
+  -webkit-animation: shadow-move 3s linear infinite;
+          animation: shadow-move 3s linear infinite;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #f2db0d;
+  -webkit-animation: sun-move 3s linear infinite;
+          animation: sun-move 3s linear infinite;
+}
+
+.triangle--one {
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-top: 40px solid #dddada;
+  border-left: 40px solid whitesmoke;
+  border-bottom: 40px solid transparent;
+  border-right: 40px solid transparent;
+  -webkit-animation: pyramid-shadow 3s linear infinite both;
+          animation: pyramid-shadow 3s linear infinite both;
+}
+
+/* https://codeburst.io/css-keyframe-animation-with-pause-between-keyframes-50a3b3d14354 */
+@-webkit-keyframes sun-move {
+  0% {
+    -webkit-transform: rotate(180deg) translateX(100px) rotate(-180deg);
+            transform: rotate(180deg) translateX(100px) rotate(-180deg);
+  }
+  16%, 30% {
+    -webkit-transform: rotate(225deg) translateX(100px) rotate(-225deg);
+            transform: rotate(225deg) translateX(100px) rotate(-225deg);
+  }
+  50% {
+    -webkit-transform: rotate(270deg) translateX(100px) rotate(-270deg);
+            transform: rotate(270deg) translateX(100px) rotate(-270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) translateX(100px) rotate(-360deg);
+            transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+@keyframes sun-move {
+  0% {
+    -webkit-transform: rotate(180deg) translateX(100px) rotate(-180deg);
+            transform: rotate(180deg) translateX(100px) rotate(-180deg);
+  }
+  16%, 30% {
+    -webkit-transform: rotate(225deg) translateX(100px) rotate(-225deg);
+            transform: rotate(225deg) translateX(100px) rotate(-225deg);
+  }
+  50% {
+    -webkit-transform: rotate(270deg) translateX(100px) rotate(-270deg);
+            transform: rotate(270deg) translateX(100px) rotate(-270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) translateX(100px) rotate(-360deg);
+            transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+@-webkit-keyframes pyramid-shadow {
+  0% {
+    border-top: 40px solid #dddada;
+    border-left: 40px solid whitesmoke;
+  }
+  40% {
+    border-top: 40px solid #dddada;
+    border-left: 40px solid whitesmoke;
+  }
+  50% {
+    border-top: 40px solid whitesmoke;
+    border-left: 40px solid #dddada;
+  }
+  100% {
+    border-top: 40px solid whitesmoke;
+    border-left: 40px solid #dddada;
+  }
+}
+@keyframes pyramid-shadow {
+  0% {
+    border-top: 40px solid #dddada;
+    border-left: 40px solid whitesmoke;
+  }
+  40% {
+    border-top: 40px solid #dddada;
+    border-left: 40px solid whitesmoke;
+  }
+  50% {
+    border-top: 40px solid whitesmoke;
+    border-left: 40px solid #dddada;
+  }
+  100% {
+    border-top: 40px solid whitesmoke;
+    border-left: 40px solid #dddada;
+  }
+}
+@-webkit-keyframes shadow-move {
+  0% {
+    -webkit-clip-path: polygon(25% 0%, 77% 0%, 100% 20%, 25% 0%);
+            clip-path: polygon(25% 0%, 77% 0%, 100% 20%, 25% 0%);
+  }
+  16%, 30% {
+    -webkit-clip-path: polygon(25% 0%, 77% 0%, 120% 40%, 25% 0%);
+            clip-path: polygon(25% 0%, 77% 0%, 120% 40%, 25% 0%);
+  }
+  50% {
+    -webkit-clip-path: polygon(25% 0%, 77% 0%, 60% 20%, 25% 0%);
+            clip-path: polygon(25% 0%, 77% 0%, 60% 20%, 25% 0%);
+  }
+  75% {
+    -webkit-clip-path: polygon(25% 0%, 77% 0%, 22% 30%, 25% 0%);
+            clip-path: polygon(25% 0%, 77% 0%, 22% 30%, 25% 0%);
+  }
+  100% {
+    -webkit-clip-path: polygon(25% 0%, 77% 0%, -15% 10%, 25% 0%);
+            clip-path: polygon(25% 0%, 77% 0%, -15% 10%, 25% 0%);
+  }
+}
+@keyframes shadow-move {
+  0% {
+    -webkit-clip-path: polygon(25% 0%, 77% 0%, 100% 20%, 25% 0%);
+            clip-path: polygon(25% 0%, 77% 0%, 100% 20%, 25% 0%);
+  }
+  16%, 30% {
+    -webkit-clip-path: polygon(25% 0%, 77% 0%, 120% 40%, 25% 0%);
+            clip-path: polygon(25% 0%, 77% 0%, 120% 40%, 25% 0%);
+  }
+  50% {
+    -webkit-clip-path: polygon(25% 0%, 77% 0%, 60% 20%, 25% 0%);
+            clip-path: polygon(25% 0%, 77% 0%, 60% 20%, 25% 0%);
+  }
+  75% {
+    -webkit-clip-path: polygon(25% 0%, 77% 0%, 22% 30%, 25% 0%);
+            clip-path: polygon(25% 0%, 77% 0%, 22% 30%, 25% 0%);
+  }
+  100% {
+    -webkit-clip-path: polygon(25% 0%, 77% 0%, -15% 10%, 25% 0%);
+            clip-path: polygon(25% 0%, 77% 0%, -15% 10%, 25% 0%);
+  }
+}
+@-webkit-keyframes scene-darken {
+  0% {
+    opacity: 0;
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes scene-darken {
+  0% {
+    opacity: 0;
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
