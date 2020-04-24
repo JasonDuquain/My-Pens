@@ -24,7 +24,7 @@
   border-radius: 2px;
   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: hsl(0, 24%, 35%);
+  background-image: linear-gradient(to right, hsl(21, 51%, 55%), hsl(21, 51%, 37%));
   color: var(--brown);
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -49,13 +49,55 @@
     align-items: center;
   }
   
+  &__img-wrap {
+    margin-top: 2.5em;
+    margin-bottom: 1.5em;
+    position: relative;
+    cursor: default;
+    
+    &::before {
+      position: absolute;
+      content: "";   
+      top: -.45em;
+      right: -.45em;
+      bottom: -.45em;
+      left: -.45em;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+      border-right-color: transparent;
+      transition: all 1300ms ease-in-out;
+    }
+    
+    &::after {
+      position: absolute;
+      content: "";
+      top: -.2em;
+      right: -.2em;
+      bottom: -.2em;
+      left: -.2em;
+      border-radius: 50%;
+      border: 1px solid currentColor;
+      border-left-color: transparent;
+      transition: all 1300ms ease-in-out;
+    }
+  }
+  
+  &__img-wrap:hover::before {
+     transform: rotate(-360deg);
+  }
+  
+  &__img-wrap:hover::after {
+     transform: rotate(360deg);
+  }
+  
   &__img {
+    z-index: 8;
     display: block;
     width: 5em;
     height: 5em;
     border-radius: 50%;
-    margin-top: 2.5em;
-    margin-bottom: 1.5em;
+    position: relative;
+    border: 1px solid white;
   }
   
   &__heading {
@@ -78,24 +120,66 @@
     border-radius: 99em;
     border: 1px solid currentColor;
     text-align: center;
+    transition: all 350ms ease-in;
+    cursor: default;
+  }
+  
+  &__follow:hover, &__message:hover {
+    color: #fff;
+    background-color: var(--brown);
   }
   
   &__follow {
     margin-bottom: .75em;
   }
   
-  &__message {
-    
-  }
-  
-  
+
   /***** FLEX ITEM 2 ****/
   &__stats {
     flex: 0 0 35%;
-    background-color: bisque;
   }
   
+  &__posts {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
   
+  &__posts > * {
+    flex: 1;
+  }
+  
+  &__posts-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(25, 52%, 92%);
+    cursor: pointer;
+    transition: all 350ms ease-out;
+  }
+  
+  &__posts-wrap:hover {
+    background-color: hsl(25, 52%, 77%); 
+  }
+  
+  &__posts-wrap:not(:last-of-type) {
+    border-bottom: 1px solid white;
+  }
+  
+  &__wrappy {
+    text-align: center;
+  }
+  
+  &__total {
+    font-weight: 700;
+    font-size: 1.1em;
+    
+  }
+  
+  &__name {
+    font-size: .75em;
+  }
+    
   
 }
 
