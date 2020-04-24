@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+  box-sizing: border-box; 
+  --brown: hsl(0, 24%, 35%);
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; 
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: hsl(0, 24%, 35%);
+  color: var(--brown);
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 80%;
+  height: 80%;
+  background-color: #fff;
+  border-radius: 4px;
+  display: flex;
+  
+  /***** FLEX ITEM 1 ****/
+  &__main {
+    flex: 0 0 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  &__img {
+    display: block;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    margin-top: 2.5em;
+    margin-bottom: 1.5em;
+  }
+  
+  &__heading {
+    font-size: 1em;
+    margin-bottom: .15em;
+  }
+  
+  &__title {
+    font-weight: 300;
+    font-size: .8em;
+    margin-bottom: 2em;
+  }
+  
+  &__follow, &__message {
+    font-size: .8em;
+    font-weight: 600;
+    color: var(--brown);
+    width: 7.5rem;
+    padding: .5rem;
+    border-radius: 99em;
+    border: 1px solid currentColor;
+    text-align: center;
+  }
+  
+  &__follow {
+    margin-bottom: .75em;
+  }
+  
+  &__message {
+    
+  }
+  
+  
+  /***** FLEX ITEM 2 ****/
+  &__stats {
+    flex: 0 0 35%;
+    background-color: bisque;
+  }
+  
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
