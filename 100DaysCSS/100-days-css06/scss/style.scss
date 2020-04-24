@@ -39,9 +39,15 @@
   height: 75%;
   background-color: #fff;
   border-radius: 3px;
-  
   display: flex;
   flex-direction: column;
+  position: relative; 
+  transition: all 700ms ease-in;
+  z-index: 5;
+  
+  &.move {
+    transform: translateX(10em);
+  }
   
   
   &__header {
@@ -129,7 +135,6 @@
   
 
   
-  
   &__body {
     flex: 4;
     padding-left: 2em;
@@ -137,7 +142,7 @@
   }
   
   &__list {
-    border-left: 2px solid hsl(0, 14%, 78%);
+    border-left: 3px solid hsl(0, 14%, 78%);
     height: 100%;
     padding: 1.5em .75em 0 1em;
   }
@@ -145,6 +150,23 @@
   &__item {
     padding-bottom: 1.5em;
     position: relative;
+    transform: translateY(6em);
+    opacity: 0;
+    transition: all 800ms 400ms ease-in;
+    
+    &.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    &:nth-of-type(2) {
+      transition-delay: 800ms;
+    }
+    
+    &:last-of-type {
+      transition-delay: 1200ms;
+    }
+    
     
     &::after {
       position: absolute;
@@ -154,7 +176,7 @@
       border-radius: 50%;
       border: 2px solid var(--aqua);
       background-color: #fff;
-      left: -1.45em;
+      left: -1.43em;
       top: .1em;
     }
   }
@@ -171,6 +193,77 @@
   &__update span {
     font-weight: 600;
   }
+  
+  
+  &__slideout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsl(208, 37%, 35%);
+    top: 15%;
+    border-radius: 3px;
+    height: 70%;
+    width: 40%;
+    left: 20%;
+    
+    z-index: 2;
+    
+    transition: all 700ms ease-in;
+    
+    
+    &.move {
+      left: 16%
+    }
+    
+    
+  }
+  
+  &__slideout-list {
+    color: rgba(255,255,255,.6);
+    font-size: .9em;
+    
+    padding: 1.5em 0;
+    
+    display: flex;
+    flex-direction: column;
+    
+    height: 100%;
+    
+  }
+  
+  &__slideout-item {
+    display: flex;
+    align-items: center;
+    transition: all 350ms ease-out;
+    padding: 1.15em 1em;
+    color: rgba(255,255,255,.6);
+    
+    &:hover {
+      background-color: darken(hsl(208, 37%, 35%), 20%);
+    }
+    
+    &:hover .notif__slideout-icon {
+      fill: #fff;
+    }
+    
+    &:hover .notif__slideout-text {
+      color: #fff;
+    }
+    
+  }
+  
+  &__slideout-icon {
+    fill: rgba(255,255,255,.6);
+  }
+  
+  &__slideout-text {
+    color: #fff;
+    margin-left: .5em;
+    color: rgba(255,255,255,.6);
+  }
+  
+  
+  
   
 }
 
