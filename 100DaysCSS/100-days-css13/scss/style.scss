@@ -32,6 +32,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  /*&::after {
+      position: absolute;
+      content: "+";
+      top: 2em;
+      right: 2em;
+      width: 1.75em;
+      height: 1.75em;
+      border-radius: 50%;
+      background-color: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8em;
+      color: #fff;
+      transition: all 600ms ease-out;
+      transform: rotate(45deg);
+    
+    
+      z-index: 99;
+    }*/
+  
+  
 }
 
 .gallery {
@@ -39,6 +62,8 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 4px;
+  
+  //position: relative;
   
   &__img-wrap {
     position: relative;
@@ -126,16 +151,102 @@
     height: 55%;
     width: 100%;
     top: calc(45% + 3px);
+    
+    padding: 4.25em 0 2em 0;
 
+  }
+  
+  
+  &__name {
+    text-align: center;
+    margin-bottom: 2em;
+    color: #fff;
+    font-size: 1.05em;
+  }
+  
+  &__icon-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  
+  &__svg-wrap {
+    margin-right: 2em;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 2.75em;
+    height: 2.75em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 300ms ease-in;
+    
+    &:hover {
+      background-color: #fff;
+    }
+    
+    &:hover .gallery__icon {
+      fill: var(--red);
+    }
+  }
+  
+  &__icon {
+    fill: #fff;
+    transition: all 300ms ease-out;
+  }
+  
+  &__svg-wrap:last-of-type {
+    margin-right: 0;
+  }
+  
+  
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    top: .7em;
+    right: .7em;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: var(--red);
+
+    z-index: 100;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5em;
+    
+    transition: all 350ms ease-out;
+    
+    &:hover {
+      color: var(--red);
+      background-color: #fff;
+    }
+    
+  }
+  
+  &__avatar {
+    position: absolute;
+    width: 6em;
+    height: 6em;
+    border: 2px solid white;
+    border-radius: 50%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(https://100dayscss.com/codepen/13-4.jpg);
+    background-size: cover;
+    box-shadow: 2px 2px 6px 0 rgba(0,0,0,.5);
+    
+    z-index: 110;
   }
   
   
   
   
 }
-
-
-
 
 
 
