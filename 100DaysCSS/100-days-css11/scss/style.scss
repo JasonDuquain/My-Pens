@@ -70,15 +70,27 @@
   }
   
   &__definition {
+    
     position: absolute;
     width: 80%;
     font-size: .95em;
     background-color: #000;
-    top: 28%;
+    top: 18%;
+    opacity: 0;
     left: 39%;
     width: 70%;
     transform: translateX(-50%);
     z-index: 100;
+    transition: 600ms ease-out;
+    
+    
+    
+    &.visible {
+      top: 28%;
+      left: 39%;
+      opacity: 1;
+      transform: translateX(-50%);
+    }
     
     &::after {
       position: absolute;
@@ -93,11 +105,35 @@
 
   }
   
+  &__icon {
+    width: 18px;
+    height: 18px;
+    fill: hsl(197, 55%, 35%);
+    margin-left: .5em;
+    transform: translateY(-1px);
+    cursor: pointer;
+    pointer-events: auto;
+    transition: fill 350ms ease-in;
+    
+    &:hover {
+      fill: #000;
+    }
+    
+  }
+  
+  
   &__header {
     background-color: #fff;
     color: hsl(197, 55%, 35%);
     padding: .5em .75em;
+    
+    display: flex;
   }
+  
+ /* &__audio {
+    width: 20px;
+    height: 20px;
+  }*/
   
   
   &__body {
@@ -112,14 +148,6 @@
 
 
 
-
-.really {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background-color: red;
-  left: 50%;
-}
 
 
 
