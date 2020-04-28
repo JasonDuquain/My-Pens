@@ -24,16 +24,50 @@
   border-radius: 2px;
   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: #fff;
-  color: #333;
+  background: #000;
+  color: #fff;
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.center {
+.circle {
+  width: 7em;
+  height: 7em;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+}
+
+.circle--one {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background-color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  //transform: translate(-50%, -50%);
+  animation: rotate 3s infinite;
+  transform-origin: 15px 15px;
 }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0) translate(-90%, -50%);
+  }
+  
+  100% {
+    transform: rotate(360deg) translate(-30%, -50%);
+  }
+}
+
+
+
+
+
+
+
