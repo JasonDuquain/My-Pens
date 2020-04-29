@@ -2,7 +2,7 @@
 
 :root {
   box-sizing: border-box; 
-  
+  --charcol: hsl(42, 7%, 27%);
 }
 
 *, ::before, ::after {
@@ -24,7 +24,7 @@
   border-radius: 2px;
   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: hsl(0, 4%, 30%);
+  background: var(--charcol);
   color: #333;
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -81,69 +81,63 @@
   
   &__center {
     width: 55%;
-    height: 44%;
-    background-color: #27e027;
+    height: 46%;
     text-align: center;
     position: relative;
-    
     overflow: hidden;
   }
   
   &__img {
-    
+    display: block;
+    transform-origin: center bottom;
+    animation: bounce 700ms infinite linear;
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
   }
-  
   
   &__line {
     position: absolute;
     bottom: 0;
     right: -20px;
-    background-color: #4B4841;
-    
-    
-    
+    background-color: var(--charcol);
+    animation: movement 900ms infinite linear;
   }
   
   &__line--one {
     width: 12px;
     height: 3px;
-    animation: movement 1000ms infinite linear;
+    
   }
   
   &__line--two {
     width: 20px;
     height: 3px;
-    animation: movement 1000ms 300ms infinite linear;
-    
-    
+    animation-delay: 300ms; 
   }
   
   &__line--three {
     width: 6px;
     height: 3px;
-    animation: movement 1000ms 600ms infinite linear;
-    
-    
+    animation-delay: 500ms; 
   }
   
   &__line--four {
     width: 10px;
     height: 3px;
-    animation: movement 1000ms 900ms infinite linear;
-    
-    
+    animation-delay: 900ms; 
   }
   
   &__line--five {
     width: 5px;
     height: 3px;
-    animation: movement 1000ms 1200ms infinite linear;
+    animation-delay: 1100ms; 
   }
   
   &__line--six {
     width: 14px;
     height: 3px;
-    animation: movement 1000ms 1500ms infinite linear;
+    animation-delay: 1500ms; 
   }
   
   
@@ -151,12 +145,22 @@
 
 
 @keyframes movement {
+  100% {
+    transform: translateX(-210px);
+  }
+}
+
+@keyframes bounce {
   0% {
-    
+    transform: translateX(-50%) scaleY(1.01);
+  }
+  
+  50% {
+    transform: translateX(-50%) scaleY(.97);
   }
   
   100% {
-    transform: translateX(-210px);
+    transform: translateX(-50%) scaleY(1.01);
   }
 }
 
