@@ -2,7 +2,7 @@
 
 :root {
   box-sizing: border-box; 
-  --red: hsl(0, 63%, 58%);
+  
 }
 
 *, ::before, ::after {
@@ -13,7 +13,7 @@
   padding: 0; 
 }
 
-.frame {
+.card {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -24,7 +24,7 @@
   border-radius: 2px;
   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: #fff;
+  background: hsl(0, 4%, 30%);
   color: #333;
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -32,235 +32,133 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 4px;
-  //position: relative; no!!
   
-  &__img-wrap {
+  &__main {
+    //background-color: #FFCE4E; /* ^$!^$%$%^# */
+    width: 325px;
+    height: 175px;
+    color: #fff;
     position: relative;
-    background-color: #000;
-    cursor: pointer;
-    
-    &:hover .gallery__img {
-      filter: grayscale(0%);
+
+    perspective: 800px;
+    transform-style: preserve-3d;
+
+    &:hover .card__front {
+      transform: rotateX(180deg);
     }
-    
-    &:hover::after  {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
+
+    &:hover .card__back {
+      transform: rotateX(0deg);
     }
-    
-    &::after {
-      pointer-events: none;
-      
-      position: absolute;
-      content: "+";
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(2);
-      width: 2em;
-      height: 2em;
-      border-radius: 50%;
-      background-color: var(--red);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.7em;
-      color: #fff;
-      line-height: 1.4;
-      transition: all 400ms ease-out;
-      opacity: 0;
-    }
-    
   }
   
-  &__img-wrap:first-of-type {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+  &__flip {
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    transition: transform 700ms linear;
   }
 
-  &__img-wrap:nth-of-type(2) {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+  &__front {
+    background-color: red;
+    transform: rotateX(0);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #FFCE4E;
+    
   }
 
-  &__img-wrap:nth-of-type(3) {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-  }
+  &__back {
+    background-color: blue;
+    transform: rotateX(-180deg);
 
-  &__img-wrap:last-of-type {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+  }
+  
+  &__center {
+    width: 55%;
+    height: 44%;
+    background-color: #27e027;
+    text-align: center;
+    position: relative;
+    
+    overflow: hidden;
   }
   
   &__img {
-    display: block;
-    filter: grayscale(100%);
-    transition: filter 950ms ease-out;
+    
   }
   
-  &__tophalf {
+  
+  &__line {
     position: absolute;
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-    z-index: 50;
-    background-color: rgba(0,0,0,.6);
-    background-image: url(https://100dayscss.com/codepen/13-1-header.jpg);
-    height: 45%;
-    width: 100%;
-    transform: translateY(-105%);
-    transition: all 800ms ease-out 300ms;
+    bottom: 0;
+    right: -20px;
+    background-color: #4B4841;
     
-    &.slidein {
-      transform: translateY(0);
-      transition: all 800ms ease-out;
-    }
-  }
-  
-  &__bottomhalf {
-    position: absolute;
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
-    z-index: 50;
-    background-color: var(--red);
-    height: 55%;
-    width: 100%;
-    top: calc(45% + 3px);
-    padding: 4.25em 0 2em 0;
-    transform: translateY(100%);
-    transition: all 800ms ease-out 300ms;
     
-    &.slidein {
-      transform: translateY(0);
-      transition: all 800ms ease-out;
-    }
-
-  }
-  
-  
-  &__name {
-    text-align: center;
-    margin-bottom: 2em;
-    color: #fff;
-    font-size: 1.05em;
-  }
-  
-  &__icon-wrap {
-    display: flex;
-    justify-content: center;
-  }
-  
-  &__svg-wrap {
-    margin-right: 2em;
-    border: 1px solid white;
-    border-radius: 50%;
-    width: 2.75em;
-    height: 2.75em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 300ms ease-in;
-    
-    &:hover {
-      background-color: #fff;
-    }
-    
-    &:hover .gallery__icon {
-      fill: var(--red);
-    }
-  }
-  
-  &__icon {
-    fill: #fff;
-    transition: all 300ms ease-out;
-  }
-  
-  &__svg-wrap:last-of-type {
-    margin-right: 0;
-  }
-  
-  
-  &__close {
-    cursor: pointer;
-    position: absolute;
-    top: .7em;
-    right: .7em;
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-    background-color: var(--red);
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 1.5em;
-    transform: translateY(-150%);
-    
-    &:hover {
-      color: var(--red);
-      background-color: #fff;
-    }
-    
-    &.slidein {
-      transform: translateY(0);
-      transition: transform 800ms ease-out 400ms, color 350ms ease-out, background-color 350ms ease-out;
-    }
     
   }
   
-  &__avatar {
-    position: absolute;
-    width: 6em;
-    height: 6em;
-    border: 2px solid white;
-    border-radius: 50%;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -300%);
-    background-image: url(https://100dayscss.com/codepen/13-4.jpg);
-    background-size: cover;
-    box-shadow: 2px 2px 6px 0 rgba(0,0,0,.5);
-    transition: transform 850ms ease-out;
-    z-index: 110;
-    
-    &.slidein {
-      transform: translate(-50%, -50%);
-      transition: transform 850ms ease-out 400ms;
-    }
+  &__line--one {
+    width: 12px;
+    height: 3px;
+    animation: movement 1000ms infinite linear;
   }
   
+  &__line--two {
+    width: 20px;
+    height: 3px;
+    animation: movement 1000ms 300ms infinite linear;
+    
+    
+  }
   
+  &__line--three {
+    width: 6px;
+    height: 3px;
+    animation: movement 1000ms 600ms infinite linear;
+    
+    
+  }
+  
+  &__line--four {
+    width: 10px;
+    height: 3px;
+    animation: movement 1000ms 900ms infinite linear;
+    
+    
+  }
+  
+  &__line--five {
+    width: 5px;
+    height: 3px;
+    animation: movement 1000ms 1200ms infinite linear;
+  }
+  
+  &__line--six {
+    width: 14px;
+    height: 3px;
+    animation: movement 1000ms 1500ms infinite linear;
+  }
   
   
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@keyframes movement {
+  0% {
+    
+  }
+  
+  100% {
+    transform: translateX(-210px);
+  }
+}
 
 
 
