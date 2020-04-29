@@ -1,17 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
-:root {
-  box-sizing: border-box; 
-  
-}
-
-*, ::before, ::after {
-  box-sizing: inherit;
-  text-decoration: none;
-  list-style-type: none;
-  margin: 0;
-  padding: 0; 
-}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
 
 .frame {
   position: absolute;
@@ -22,18 +10,92 @@
   margin-top: -200px;
   margin-left: -200px;
   border-radius: 2px;
-  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
   background: #fff;
   color: #333;
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.top {
+	background: #f6e8d7;
+	height: 60%;
+	width: 100%;
+}
+.bot {
+	background: #232323;
+	height: 40%;
+	width: 100%;
+}
+.shoe {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+background: url(http://100dayscss.com/codepen/doc-martens.svg) center center no-repeat;
+}
+
+.one {
+		animation: walk 2s linear infinite;
+}
+
+@keyframes walk {
+    0% {
+        left: 80px; 
+				top: 83px;
+				transform: rotate(45deg);
+    }
+    25% {
+        left: 150px; 
+				top: 98px;
+				transform: rotate(0deg);
+    }
+    50% {
+        left: 230px; 
+				top: 83px;
+				transform: rotate(-45deg);
+    }
+	  75% {
+        left: 150px; 
+				top: 98px;
+				transform: rotate(0deg);
+    }
+	  100% {
+        left: 80px; 
+				top: 83px;
+				transform: rotate(45deg);
+    }
+}
+
+.two {
+		animation: walk-two 2s linear infinite;
+}
+
+@keyframes walk-two {
+    0% {
+        left: 230px; 
+				top: 83px;
+				transform: rotate(-45deg);
+    }
+	  25% {
+        left: 150px; 
+				top: 98px;
+				transform: rotate(0deg);
+    }
+	  50% {
+        left: 100px; 
+				top: 83px;
+				transform: rotate(45deg);
+    }
+	  75% {
+        left: 150px; 
+				top: 98px;
+				transform: rotate(0deg);
+    }
+    100% {
+        left: 230px; 
+				top: 83px;
+				transform: rotate(-45deg);
+    }
 }
