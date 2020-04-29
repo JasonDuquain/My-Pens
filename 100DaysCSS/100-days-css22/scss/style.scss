@@ -2,7 +2,7 @@
 
 :root {
   box-sizing: border-box; 
-  
+  --red: hsl(0, 69%, 65%);
 }
 
 *, ::before, ::after {
@@ -21,19 +21,154 @@
   height: 400px;
   margin-top: -200px;
   margin-left: -200px;
-  border-radius: 2px;
+  border-radius: 3px;
   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: #fff;
-  color: #333;
+  background: var(--red);
+  color: #fff;
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  
+  width: 400px;
+  height: 400px;
+  
 }
+
+.circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  background-color: #fff;
+  animation: circleScale 2s both;
+}
+
+/*.line {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background-color: #fff;
+  
+  opacity: 0;
+  animation: lineScale 2s 1400ms;
+  
+}*/
+
+.line--left {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background-color: #fff;
+  opacity: 0;
+  animation: leftLineScaleHalf 2s 1400ms;
+}
+
+.line--right {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background-color: #fff;
+  opacity: 0;
+  animation: rightLineScaleHalf 2s 1400ms;
+}
+
+
+
+@keyframes circleScale {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  15% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+/*@keyframes lineScale {
+  0% {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  
+  15% {
+    transform: translateY(-50%);
+  }
+  
+  100% {
+    transform: translateY(-50%);
+    left: 15%;
+    right: 15%;
+    opacity: 1;
+  }
+}*/
+
+
+@keyframes leftLineScaleHalf {
+  0% {
+    opacity: 1;
+  }
+  
+  50% {
+    left: 15%;
+    right: 50%;
+  }
+  
+  100% {
+    left: 15%;
+    right: 85%;
+    opacity: 1;
+  }
+}
+
+@keyframes rightLineScaleHalf {
+  0% {
+    opacity: 1;
+  }
+  
+  50% {
+    left: 50%;
+    right: 15%;
+  }
+  
+  100% {
+    left: 85%;
+    right: 15%;
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
