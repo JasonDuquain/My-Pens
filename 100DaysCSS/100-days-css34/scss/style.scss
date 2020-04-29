@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+  box-sizing: border-box; 
+  
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; 
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: hsl(161, 63%, 44%);
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  &__svg {
+    
+  }
+  
+  &__circle--one {
+    fill: none;
+    stroke: hsl(161, 73%, 30%);
+    stroke-width: 4px;
+    
+    
+    
+  }
+  
+  &__circle--two {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 4px;
+    stroke-dashoffset: 150;
+    transform-origin: 50% 50%;
+    animation: progress 3500ms linear infinite;
+  }
+  
+}
+
+@keyframes progress {
+  0% {
+    stroke-dashoffset: 314;
+    transform: rotate(0deg);
+  }
+  
+  50% {
+    stroke-dashoffset: 0;
+  }
+  
+  100% {
+    stroke-dashoffset: -314;
+    transform: rotate(360deg);
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
