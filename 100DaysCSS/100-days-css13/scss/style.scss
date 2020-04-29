@@ -2,7 +2,7 @@
 
 :root {
   box-sizing: border-box; 
-  --charcol: hsl(42, 7%, 27%);
+  --charcoal: hsl(42, 7%, 27%);
 }
 
 *, ::before, ::after {
@@ -24,7 +24,7 @@
   border-radius: 2px;
   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: var(--charcol);
+  background: var(--charcoal);
   color: #333;
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -58,25 +58,26 @@
     height: 100%;
     position: absolute;
     border-radius: 5px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     transition: transform 700ms linear;
   }
 
   &__front {
     background-color: red;
     transform: rotateX(0);
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+
     background-color: #FFCE4E;
-    
   }
 
   &__back {
     background-color: blue;
     transform: rotateX(-180deg);
-
+    
+    background-color: #FFCE4E;
   }
   
   &__center {
@@ -100,7 +101,7 @@
     position: absolute;
     bottom: 0;
     right: -20px;
-    background-color: var(--charcol);
+    background-color: var(--charcoal);
     animation: movement 900ms infinite linear;
   }
   
@@ -141,6 +142,76 @@
   }
   
   
+  /** back card - choplifter **/
+  
+  &__center--two {
+    width: 55%;
+    height: 76%;
+    
+  }
+  
+  &__img--two {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fly 1000ms infinite linear reverse;
+    
+    transform-origin: center center;
+    
+    z-index: 100;
+  }
+  
+  &__line--two {
+    position: absolute;
+    right: -20px;
+    width: 12px;
+    height: 3px;
+    background-color: var(--charcoal);
+    animation: movement 600ms infinite linear;
+  }
+  
+  &__line--two--one {
+    top: 0;
+  }
+  
+  &__line--two--two {
+    top: 17%;
+    width: 14px;
+    animation-delay: 300ms; 
+  }
+  
+  &__line--two--three {
+    top: 34%;
+    width: 12px;
+    animation-delay: 500ms; 
+  }
+  
+  &__line--two--four {
+    width: 16px;
+    top: 51%;
+    
+    animation-delay: 900ms; 
+  }
+  
+  &__line--two--five {
+    top: 68%;
+    width: 11px;
+    animation-delay: 1100ms; 
+  }
+  
+  &__line--two--six {
+    top: 86%;
+    width: 17px;
+    animation-delay: 1500ms; 
+  }
+  
+  &__line--two--seven {
+    width: 14px;
+    bottom: 0;
+    
+    animation-delay: 1700ms; 
+  }
+  
 }
 
 
@@ -161,6 +232,20 @@
   
   100% {
     transform: translateX(-50%) scaleY(1.01);
+  }
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(-50%, -65%);
+  }
+  
+  50% {
+    transform: translate(-50%, -50%);
+  }
+  
+  100% {
+    transform: translate(-50%, -65%);
   }
 }
 
