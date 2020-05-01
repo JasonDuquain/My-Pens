@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
 :root {
   box-sizing: border-box; 
@@ -13,7 +12,8 @@
   padding: 0; 
 }
 
-.frame {
+
+.radio {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -24,16 +24,115 @@
   border-radius: 2px;
   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: #fff;
+  
   color: #333;
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  &__wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: relative;
+    
+  }
+  
+  &__btn:first-of-type:checked ~ .radio__overlay {
+    transform: translateX(0);
+  }
+  
+  &__btn:nth-of-type(2):checked ~ .radio__overlay {
+    transform: translateX(-33.333%);
+  }
+  
+  &__btn:last-of-type:checked ~ .radio__overlay {
+    transform: translateX(-66.666%);
+  }
+  
+  &__overlay {
+    width: 300%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: .7;
+    display: flex;
+    z-index: -1;
+    transition: transform 850ms ease-out;
+  }
+  
+  &__box {
+    flex: 1;
+  }
+  
+  &__box--one {
+    background-color: mediumpurple;
+  }
+  
+  &__box--two {
+    background-color: blue;
+  }
+  
+  &__box--three {
+    background-color: darkgreen;
+  }
+  
+  &__btn {
+    display: none;
+  }
+  
+  &__btn:first-of-type:checked ~ .radio__ball {
+    left: 118px;
+  }
+  
+  &__btn:nth-of-type(2):checked ~ .radio__ball {
+    left: 176px;
+  }
+  
+  &__btn:last-of-type:checked ~ .radio__ball {
+    left: 234px;
+  }
+  
+  &__label {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: .5em;
+    cursor: pointer;
+  }
+  
+  &__ball {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 118px;
+    transition: all 650ms ease-out;
+  }
+
 }
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
