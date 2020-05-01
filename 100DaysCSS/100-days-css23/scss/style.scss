@@ -2,7 +2,7 @@
 
 :root {
   box-sizing: border-box; 
-  
+  --green: hsl(155, 52%, 55%);
 }
 
 *, ::before, ::after {
@@ -24,16 +24,185 @@
   border-radius: 2px;
   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: #fff;
-  color: #333;
+  background: hsl(155, 52%, 55%);
+  color: #fff;
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .center {
+  
+}
+
+.input {
+  display: none;
+  
+  &:checked + .finish {
+    animation: sizedown 800ms forwards ease-out;
+  } 
+  
+  &:checked ~ svg {
+    animation: appear 400ms 400ms forwards;
+  } 
+
+  &:checked ~ svg .circle--two {
+    animation: dashoffset 1700ms 700ms forwards;
+  }
+  
+  &:checked ~ .border {
+    animation: submarine 1000ms 1700ms forwards;
+  }
+  
+  &:not(:checked) ~ svg {
+    display: none;
+  }
+  
+  &:not(:checked) ~ .border {
+    display: none;
+  }
+  
+}
+
+
+
+.finish {
+  color: inherit;
+  display: block;
+  font-size: 1.4em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: .65em 1em;
+  width: 11em;
+  border-radius: 99em;
+  border: 2px solid white;
+  transition: all 350ms ease-in;
+  font-weight: 600;
+  
+  &:hover {
+    background-color: darken(hsl(155, 52%, 55%), 15%);
+  }
+  
+}
+
+svg {
+  width: 58px;
+  height: 58px; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  opacity: 0;
+  visibility: hidden;
+  
+  //make sure when animation is complete you can click back to the start state
+  pointer-events: none;
+  
+}
+
+.circle--one {
+  fill: none;
+  stroke: darken(hsl(155, 52%, 55%), 15%);
+  stroke-width: 2px;
+}
+
+.circle--two {
+  fill: rgba(255,255,255,0);
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-dashoffset: 176;
+  stroke-dasharray: 176 176;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+}
+
+svg path {
+  position: absolute;
+  transform: translate(9px, 9px) scale(1.7);
+  fill: var(--green);
+}
+
+.border {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 2px solid #fff;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
 }
+
+
+@keyframes sizedown {
+  42% {
+    opacity: 0;
+  }
+  
+  100% {
+    width: 0;
+    border-radius: 50%;
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  
+  0% {
+    opacity: .1;
+    visibility: visible;
+  }
+  
+  30% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes dashoffset {
+  0% {
+    stroke-dashoffset: 176;
+  }
+  
+  50% {
+    stroke-dashoffset: 0;
+    fill: rgba(255,255,255,0);
+  }
+  
+  75% {
+    fill: rgba(255,255,255,1);
+  }
+  
+  100% {
+    stroke-dashoffset: 0;
+    fill: rgba(255,255,255,1);
+  }
+}
+
+@keyframes submarine {
+  
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(2.4);
+  }
+}
+
+
+
+

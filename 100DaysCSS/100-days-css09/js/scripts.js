@@ -1,8 +1,5 @@
 const circle = document.querySelector("circle");
 const length = circle.getTotalLength();
-
-
-
 const sun = document.querySelector('.timer__icon--sun');
 const moon = document.querySelector('.timer__icon--moon');
 
@@ -41,12 +38,14 @@ function dateConvert(dateobj,format) {
   today.innerHTML = converted_date;
   time.innerHTML = converted_time;
   
+  hours = Number(hours);
+  
   if (hours >= 7 && hours <= 19) {
-    sun.style.display = 'none';
-    moon.style.display = 'block';
-  } else {
     sun.style.display = 'block';
     moon.style.display = 'none';
+  } else {
+    sun.style.display = 'none';
+    moon.style.display = 'block';
   }
   
 }

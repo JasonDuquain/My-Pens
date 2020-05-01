@@ -5,13 +5,7 @@
   
 }
 
-*, ::before, ::after {
-  box-sizing: inherit;
-  text-decoration: none;
-  list-style-type: none;
-  margin: 0;
-  padding: 0; 
-}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
 
 .frame {
   position: absolute;
@@ -22,18 +16,272 @@
   margin-top: -200px;
   margin-left: -200px;
   border-radius: 2px;
-  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  background: #fff;
-  color: #333;
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #1A2238;
+  color: #394568;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.moon {
+	position: absolute;
+	border-radius: 50%;
+	background: #F6EDBD;
+	width: 55px;
+	height: 55px;
+	top: 40px;
+	left: 50px;
+	box-shadow: 0 0 10px 0 #F6EDBD;
+	animation: rise 1s ease-out;
+}
+
+.moon .moon-1, .moon-4 {
+	position: absolute;
+	border-radius: 10px;
+	background: #ECE1A8;
+	width: 8px;
+	height: 8px;
+	top: 9px;
+	left: 20px;
+}
+
+.moon .moon-2, .moon-3 {
+	position: absolute;
+	border-radius: 10px;
+	background: #ECE1A8;
+	width: 15px;
+	height: 15px;
+	top: 30px;
+	left: 10px;
+}
+
+.moon .moon-3 {
+	top: 20px;
+	left: 30px;
+	width: 14px;
+}
+
+.moon .moon-4 {
+	top: 37px;
+	left: 36px;
+}
+
+@keyframes rise {
+	0% {
+		transform: translate(0, 200px);
+	}
+	100% {
+		transform: translate(0, 0px);
+	}
+}
+
+.hill-big-1, .hill-big-2, .hill-front-3 {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	border-radius: 50%;
+	background: #26314F;
+	top: 210px;
+	left: -70px;
+}
+
+.hill-big-2 {
+	top: 210px;
+	left: 150px;
+}
+
+.hill-front-1, .hill-front-2 {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	background: #394568;
+	top: 260px;
+	left: -100px;
+	z-index:1;
+}
+
+.hill-front-3 {
+	background: #394568;
+	top: 230px;
+	left: 50px;
+}
+
+.hill-front-2 {
+	top: 260px;
+	left: 286px;
+}
+
+.front {
+	position: absolute;
+	background: #FFF;
+	left:0px;
+	right:0px;
+	top: 310px;
+	bottom: 0px;
+	z-index: 21;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.front .temp {
+	padding: 20px;
+	width: 20%;
+	line-height: 90px;
+	font-size: 45px;
+}
+
+.front .stats {
+		display: flex;
+		flex-direction: column;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-right: 20px;
+		width: 33%;
+		font-size: 15px;
+		align-items: center;
+		justify-content: center;
+	}
+
+.front .days {
+	flex-direction: column;
+	display: flex;
+	padding: 20px;
+	width: 33%;
+	font-size: 15px;
+	align-items: flex-end;
+}
+
+.drop-big-1, .drop-big-2, .drop-big-3, .drop-big-4, .drop-big-5,
+.drop-big-6, .drop-big-7, .drop-big-8, .drop-big-9, .drop-big-10 {
+	background-color: #AEF4FE;
+	height: 8px;
+	width: 8px;
+	position: absolute;
+  border-radius: 100% 0 55% 50% / 55% 0 100% 50%;
+	transform: rotateZ(-3deg);
+	z-index: 20;
+	animation-name: raindrop;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes raindrop{
+	0% {
+		transform: translate(0, -50px)
+	}
+	100% {
+		transform: translate(-100px, 400px);
+	}
+}
+
+.drop-big-1 {
+	left: 350px;
+	animation-duration: 1.5s;
+}
+
+.drop-big-2 {
+	left: 40px;
+	animation-duration: 3s;
+}
+.drop-big-3 {
+	left: 100px;
+	animation-duration: 2s;
+}
+.drop-big-4 {
+	left: 130px;
+	animation-duration: 1.5s;
+}
+.drop-big-5 {
+	left: 160px;
+	animation-duration: 3s;
+}
+.drop-big-6 {
+	left: 170px;
+	animation-duration: 2s;
+}
+.drop-big-1 {
+	left: 200px;;
+	animation-duration: 1.5s;
+}
+
+.drop-big-7 {
+	left: 250px;
+	animation-duration: 3s;
+}
+.drop-big-8 {
+	left: 300px;
+	animation-duration: 2s;
+}
+
+.drop-big-9 {
+	left: 360;
+	animation-duration: 1.5s;
+}
+
+.drop-big-10 {
+	left: 390px;
+	animation-duration: 2.5s;
+}
+
+.drop-medium-1, .drop-medium-2, .drop-medium-3, .drop-medium-4, .drop-medium-5,
+.drop-medium-6, .drop-medium-7, .drop-medium-8, .drop-medium-9, .drop-medium-10 {
+	background-color: #AEF4FE;
+	height: 4px;
+	width: 4px;
+	position: absolute;
+	border-radius: 90% 0 65% 40% / 55% 0 100% 60%;
+	transform: rotateZ(-3deg);
+	z-index: 20;
+	animation-name: raindrop;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	opacity: 0.6;
+}
+
+.drop-medium-1 {
+	left: 213px;
+	animation-duration: 2s;
+}
+
+.drop-medium-2 {
+	left: 59px;
+	animation-duration: 1.5s;
+}
+.drop-medium-3 {
+	left: 123px;
+	animation-duration: 2.5s;
+}
+.drop-medium-4 {
+	left: 130px;
+	animation-duration: 1.5s;
+}
+.drop-medium-5 {
+	left: 160px;
+	animation-duration: 3s;
+}
+.drop-medium-6 {
+	left: 170px;
+	animation-duration: 2s;
+}
+.drop-medium-7 {
+	left: 250px;
+	animation-duration: 3s;
+}
+.drop-medium-8 {
+	left: 300px;
+	animation-duration: 2s;
+}
+
+.drop-medium-9 {
+	left: 360;
+	animation-duration: 1.5s;
+}
+
+.drop-medium-10 {
+	left: 390px;
+	animation-duration: 2.5s;
 }
