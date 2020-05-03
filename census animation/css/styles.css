@@ -91,6 +91,8 @@ body {
   height: 400px; 
   display: block;
   bottom: -100%;
+
+  
   
   z-index: 8;
 }
@@ -131,6 +133,21 @@ body {
 
 .census {
   color: blue;
+}
+
+.final--screen {
+  position: absolute;
+  background-color: rebeccapurple;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  color: #fff;
+  
+  transform: translateY(100%);
+  
+  z-index: 500;
 }
 
 

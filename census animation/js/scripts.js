@@ -17,6 +17,9 @@ let shape = document.querySelector('.shape');
 let census = document.querySelector('.census');
 
 
+let finalScreen = document.querySelector('.final--screen');
+
+
 function init() {
   
   let tl = gsap.timeline();
@@ -93,13 +96,20 @@ function init() {
     bottom: 0,
     duration: .9
   })
+  .to(imageThree, {
+    scale: 1.02,
+    duration: 1.5
+  })
   
   .set(imageTwo, { display: 'none' })
+  .set('.heading--three', { display: 'none' })
+  .set('.heading--two', { display: 'none' })
   
   .to(home, {
     bottom: 75,
     duration: .9
-  }, ">-.3")
+  }, "<-1.5")
+  
   .to(imageFour, {
     clipPath: 'polygon(0% 0%, 100% 0%, 100% 60%, 47% 60%, 50% 65%, 53% 60%, 0% 60%)',
     duration: 1
@@ -108,15 +118,28 @@ function init() {
     opacity: 0,
     duration: 1
   }, "<+.8")
+  
+  .to(imageFour, {
+    scale: 1.02,
+    duration: 1.5
+  })
+  
   .to(shape, {
     opacity: 1,
     top: '45%'
-  }, "+=.8")
+  }, "<-1.2")
   
   .to(census, {
     bottom: 75,
     duration: .9
-  }, ">-.3")
+  }, ">-.1")
+  
+  .to(finalScreen, {
+    y: 0,
+    duration: 1
+  })
+  
+  
   
   
   tl.timeScale(1.5);
