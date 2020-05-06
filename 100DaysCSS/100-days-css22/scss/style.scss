@@ -92,7 +92,48 @@
   animation: rightLineScaleHalf 2s 1400ms;
 }
 
+.vertical--line-left, .vertical--line-right {
+  position: absolute;
+  background-color: #fff;
+  left: 12%;
+  width: 4px;
+  bottom: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: scaleUpVerticalLine 1800ms 3200ms forwards;
+  opacity: 0;
+}
+
+.vertical--line-right {
+  right: 12%;
+  left: auto;
+  animation: scaleUpVerticalLineRight 1800ms 3200ms forwards;
+}
+
+
+/* add the css for right two lines next 05/06 **/
+.top--line-left {
+  position: absolute;
+  left: 12%;
+  top: 40%;
+  height: 4px;
+  background-color: #fff;
+  right: 80%;
+}
+
+.bottom--line-left {
+  position: absolute;
+  left: 12%;
+  bottom: 40%;
+  height: 4px;
+  background-color: #fff;
+  right: 80%;
+}
+/* add the css for the right two lines next 05/06 **/
+
+
 .moments {
+  padding: 0 .5em;
   position: relative;
   font-size: 3.25em;
   text-transform: uppercase;
@@ -105,7 +146,11 @@
   
   & span {
     display: inline-block;
+    
     opacity: 0;
+    position: relative;
+    animation: makeVisible 200ms 3000ms forwards;
+    
   }
   
   
@@ -113,14 +158,16 @@
   &--cover-top {
     content: "";
     position: absolute;
-    //width: 100%;
-    //height: 100%;
+    
+    width: 100%;
+    height: 100%;
+    
     left: 0;
     right: 0;
     bottom: 49%;
     top: 0;
     background-color: var(--red);
-    animation: scaleUpTop 1000ms 3000ms;
+    animation: scaleUpTop 3000ms 3000ms;
     
     opacity: 0;
     
@@ -129,14 +176,16 @@
   &--cover-bottom {
     content: "";
     position: absolute;
-    //width: 100%;
-    //height: 100%;
+    
+    width: 100%;
+    height: 100%;
+    
     left: 0;
     right: 0;
     bottom: 0;
     top: 49%;
     background-color: var(--red);
-    animation: scaleUpBottom 1000ms 3000ms;
+    animation: scaleUpBottom 3000ms 3000ms;
     
     opacity: 0;
     
@@ -185,13 +234,13 @@
   }
   
   50% {
-    left: 15%;
+    left: 12%;
     right: 50%;
   }
   
   100% {
-    left: 15%;
-    right: 85%;
+    left: 12%;
+    right: 88%;
     opacity: 1;
   }
 }
@@ -203,12 +252,12 @@
   
   50% {
     left: 50%;
-    right: 15%;
+    right: 12%;
   }
   
   100% {
-    left: 85%;
-    right: 15%;
+    left: 88%;
+    right: 12%;
     opacity: 1;
   }
 }
@@ -222,6 +271,7 @@
   
   100% {
     bottom: 100%;
+    top: -100%;
     opacity: 1;
     
   }
@@ -236,17 +286,42 @@
   
   100% {
     top: 100%;
+    bottom: -100%;
     opacity: 1;
     
   }
   
 }
 
+@keyframes makeVisible {
+  1%, 100% {
+    opacity: 1;
+  }
+}
 
+@keyframes scaleUpVerticalLine {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 30%;
+    top: 50%;
+    opacity: 1;
+  }
+}
 
-
-
-
+@keyframes scaleUpVerticalLineRight {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 30%;
+    top: 50%;
+    opacity: 1;
+  }
+  
+  
+}
 
 
 
