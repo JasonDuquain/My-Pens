@@ -127,12 +127,13 @@ body {
   transform: translate(-50%, -50%);
   z-index: 300;
   font-size: 1.4em;
-  color: red;
+  color: #fff;
   opacity: 0;
 }
 
 .census {
   color: blue;
+  opacity: 0;
 }
 
 .final--screen {
@@ -142,12 +143,77 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  
-  color: #fff;
-  
+  color: #fff; 
   transform: translateY(100%);
-  
   z-index: 500;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell--one {
+  padding: .75em;
+  font-weight: 600;
+  font-size: 1.15em;
+  
+  overflow: hidden;
+}
+
+.cell--one--para:first-of-type {
+  text-align: right;
+  line-height: 1.15;
+}
+
+.cell--one--para span {
+  display: block;
+}
+
+.cell--one--para:last-of-type {
+  text-transform: uppercase;
+  font-size: .85em;
+  font-weight: 400;
+  margin-top: .2em;
+}
+
+.line {
+  height: 3.5em;
+  width: 1px;
+  background-color: red;
+  transform-origin: center top;
+}
+
+.cell--two {
+  padding: .75em;
+  padding-top: .6em;
+  font-size: 1.1em;
+  
+  overflow: hidden;
+}
+
+.cell--two--para:first-of-type {
+  font-size: .8em;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: -20px;
+  text-align: right;
+}
+
+.cell--two--para:nth-of-type(2) {
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.cell--two--para:nth-of-type(2) span {
+  font-size: 1.3em;
+}
+
+.cell--two--para:last-of-type {
+  font-size: 1.5em;
+  line-height: .8;
+  margin-top: -5px;
+  text-align: center;
+  font-weight: 600;
 }
 
 

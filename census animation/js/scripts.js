@@ -16,8 +16,11 @@ let imageFour = document.querySelector('.image--four');
 let shape = document.querySelector('.shape');
 let census = document.querySelector('.census');
 
-
 let finalScreen = document.querySelector('.final--screen');
+let startHere = document.querySelector('.cell--one--para:last-of-type');
+let cellTwoWrap = document.querySelector('.cell--two-wrap');
+let line = document.querySelector('.line');
+
 
 
 function init() {
@@ -82,7 +85,7 @@ function init() {
   }, {
     opacity: 1,
     y: 0,
-    duration: .5
+    duration: .4
   }, "<+=.1")
   .fromTo(headingTwoSpanTwo, {
     opacity: 0,
@@ -90,15 +93,15 @@ function init() {
   }, {
     opacity: 1,
     y: 0,
-    duration: .5
+    duration: .4
   }, ">-=.2")
   .to(imageThree, {
     bottom: 0,
-    duration: .9
-  })
+    duration: .8
+  }, "+=1")
   .to(imageThree, {
     scale: 1.02,
-    duration: 1.5
+    duration: 2.4
   })
   
   .set(imageTwo, { display: 'none' })
@@ -113,54 +116,74 @@ function init() {
   .to(imageFour, {
     clipPath: 'polygon(0% 0%, 100% 0%, 100% 60%, 47% 60%, 50% 65%, 53% 60%, 0% 60%)',
     duration: 1
-  })
+  }, "-=.8")
   .to(imageThree, {
     opacity: 0,
     duration: 1
   }, "<+.8")
+  
+  .add('labelthree')
   
   .to(imageFour, {
     scale: 1.02,
     duration: 1.5
   })
   
+  
+  
+  
   .to(shape, {
     opacity: 1,
     top: '45%'
-  }, "<-1.2")
+  }, "<")
   
   .to(census, {
-    bottom: 75,
+    bottom: 35,
+    opacity: 1,
     duration: .9
-  }, ">-.1")
+  }, ">+.2")
+  
+  
   
   .to(finalScreen, {
     y: 0,
-    duration: 1
+    duration: .6
+  }, "+=1")
+  .fromTo(line, {
+    opacity: 0,
+    scaleY: 0
+  }, {
+    opacity: 1,
+    scaleY: 1,
+    duration: .5
   })
+  .fromTo(startHere, {
+    opacity: 0,
+    x: 100
+  }, {
+    opacity: 1,
+    x: 0,
+    duration: .5
+  }, "<+.2")
+  .fromTo(cellTwoWrap, {
+    opacity: 0,
+    x: -100
+  }, {
+    opacity: 1,
+    x: 0,
+    duration: .5
+  }, "<")
   
   
-  
-  
-  tl.timeScale(1.5);
+  //tl.play('labelthree')
+  //tl.timeScale(.2);
   
   
 }
 
 
-/*** add the subtle zoom in effect on img 3 and 4 ***/
-
 
 /*  THIS!!: >-.3   NOT THIS!!: >-=.3   */
-
-
-
-
-
-
-
-
-
 
 window.addEventListener("load", function(event) {
   gsap.set(".wrap", {autoAlpha:1})
