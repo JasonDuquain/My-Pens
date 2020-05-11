@@ -1,0 +1,131 @@
+:root {
+	box-sizing: border-box;
+  background-color: white;
+}
+
+*, ::before, ::after {
+	box-sizing: inherit;
+	text-decoration: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+  
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: goldenrod;
+  
+  overflow: hidden;
+  
+}
+
+
+.inspiration {
+    font-family: 'Krub', sans-serif;
+    color: #333;
+    position: absolute;
+    top: 8em;
+    right: .5em;
+    text-decoration: underline;
+}
+
+.inspiration:hover, .inspiration:focus {
+    color: #000;
+}
+
+.wrap {
+  position: relative;
+  height: 890px;
+  
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  
+  overflow: hidden;
+  
+}
+
+.wrap::before {
+  content: "";
+  position: absolute;
+  top: -190px;
+  left: -340px;
+  background-color: green;
+  width: 500px;
+  height: 750px;
+  
+  transform: rotate(31deg);
+  border-right: 7px solid black;
+  z-index: 50;
+}
+
+.wrap::after {
+  content: "";
+  position: absolute;
+  bottom: -180px;
+  left: -280px;
+  background-color: green;
+  width: 500px;
+  height: 750px;
+  
+  transform: rotate(-31deg);
+  border-right: 7px solid black;
+  
+}
+
+
+
+.quote-wrap--one {
+  padding: 100px 0 0 250px;
+  //height: 100%;
+  height: 890px;
+  width: 640px;
+  background-color: #fff;
+  
+  position: relative;
+}
+
+.quote-wrap--one::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: red;
+  height: 200px;
+  width: 500px;
+  
+  clip-path: polygon(0% 60%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.quote-wrap--one span {
+  display: block;
+  font-size: 4em;
+}
+
+
+.quote--wrap {
+  //height: 100%;
+  height: 890px;
+  width: 400px;
+  background-color: #fff;
+  clip-path: ellipse(70% 80% at 27% 34%);
+  position: relative;
+}
+
+.quote--wrap::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: blue;
+  height: 200px;
+  width: 500px;
+  clip-path: polygon(0% 0%, 100% 60%, 100% 100%, 0% 100%);
+}
+
+
+.sidebar {
+  background-color: goldenrod;
+}
+

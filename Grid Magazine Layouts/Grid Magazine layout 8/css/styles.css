@@ -1,0 +1,43 @@
+:root {
+	box-sizing: border-box;
+}
+
+*, ::before, ::after {
+	box-sizing: inherit;
+	text-decoration: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  background-color: #000;
+}
+
+.inspiration {
+    font-family: 'Krub', sans-serif;
+    color: #333;
+    position: absolute;
+    top: 8em;
+    right: .5em;
+    text-decoration: underline;
+}
+
+.inspiration:hover, .inspiration:focus {
+    color: #000;
+}
+
+
+.mag__image-fluoresence {
+  width: 625px;
+  height: 422px;
+  float: right;
+  shape-outside: url('../img/coral.png')
+  /*shape-outside: polygon(9.76% 53.9%, 7.68% 40.05%, 11.56% 30.34%, 18.64% 22.26%, 44.8% 4.13%, 98.72% 0.72%, 98.8% 97.39%, 20.84% 98.60%, 6.96% 77.5%, 4.08% 64.69%);
+  clip-path: polygon(9.76% 53.9%, 7.68% 40.05%, 11.56% 30.34%, 18.64% 22.26%, 44.8% 4.13%, 98.72% 0.72%, 98.8% 97.39%, 20.84% 98.60%, 6.96% 77.5%, 4.08% 64.69%);*/
+}
+
+
+
+
+

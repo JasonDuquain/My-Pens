@@ -1,0 +1,107 @@
+:root {
+	box-sizing: border-box;
+}
+
+*, ::before, ::after {
+	box-sizing: inherit;
+	text-decoration: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  width: 840px;
+  margin: 0 auto;
+}
+
+.inspiration {
+    font-family: 'Krub', sans-serif;
+    color: #333;
+    position: absolute;
+    top: 8em;
+    right: .5em;
+    text-decoration: underline;
+}
+
+.inspiration:hover, .inspiration:focus {
+    color: #000;
+}
+
+.wrap {
+  overflow: hidden;
+  position: relative;
+  height: 998px;
+}
+
+.wrap::before {
+  position: absolute;
+  content: "";
+  width: 200%;
+  height: 20px;
+  background-color: #fff;
+  z-index: 50;
+  left: -.7%;
+  top: 35.5%;
+  transform-origin: left center;
+  transform: rotate(36deg);
+}
+
+.wrap::after {
+  position: absolute;
+  content: "";
+  width: 83%;
+  height: 19px;
+  background-color: #fff;
+  z-index: 50;
+  right: -.5%;
+  top: 15%;
+  transform-origin: right center;
+  transform: rotate(-34.2deg);
+}
+
+.health {
+  background-color: forestgreen;
+  height: 998px;
+  width: 840px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 15%, 30% 55%, 0% 36%);
+  
+  position: relative;
+  
+}
+
+.health h1 {
+  color: #fff;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+img {
+  width: 840px;
+  height: 998px;
+  opacity: 1;
+}
+
+
+.pic--one {
+  position: absolute;
+  right: 0;
+  top: 0;
+  clip-path: polygon(100% 16%, 31% 55.5%, 100% 97%);
+}
+
+.pic--two {
+  position: absolute;
+  left: 0;
+  top: 0;
+  clip-path: polygon(0% 37%, 53% 70%, 0% 100%);
+}
+
+
+
+
+
+
+
+
+
