@@ -15,9 +15,12 @@
 body {
   max-width: 1280px;
   margin: 0 auto;
-  background-color: goldenrod;
+  background-color: hsl(99, 40%, 55%);
   font-family: 'Mukta', sans-serif;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -25,8 +28,8 @@ body {
     font-family: 'Krub', sans-serif;
     color: #333;
     position: absolute;
-    top: 8em;
-    right: .5em;
+    top: 2em;
+    right: 5em;
     text-decoration: underline;
 }
 
@@ -40,10 +43,12 @@ body {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   overflow: hidden;
+  border: 1px solid #afabab;
 }
 
 .wrappy {
   position: relative;
+  border-right: 3px solid #afabab;
 }
 
 .wrap::before, .wrap::after {
@@ -133,7 +138,7 @@ body {
 .footer--one {
   position: absolute;
   background-color: hsl(99, 52%, 46%);
-  bottom: 180px;
+  bottom: 52px;
   right: 0;
   width: 410px;
   text-align: center;
@@ -284,6 +289,99 @@ cite {
 
 
 .sidebar {
-  background-color: goldenrod;
+  text-align: right;
+  background-color: hsl(99, 40%, 55%);
+  padding: 95px 25px 0 20px;
+  position: relative;
 }
+
+.img-author {
+  display: inline-block;
+  height: 150px;
+  width: auto;
+  border-right: 5px solid hsl(43, 80%, 58%);
+}
+
+.para-wrap--two {
+  font-size: .8em;
+  line-height: 1.5;
+}
+
+.para-wrap--two p:first-of-type {
+  margin-bottom: 1.2em;
+}
+
+h2 {
+  font-size: 3.6em;
+  line-height: 1.1;
+  color: hsl(0, 45%, 37%);
+}
+
+h3 {
+  font-size: 1.25em;
+  text-transform: uppercase;
+  color: hsl(120, 47%, 21%);
+  transform: translateY(-.8em);
+  position: relative;
+}
+
+h3::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  background-color: #fff;
+  width: 180px;
+  right: 0;
+  top: 32px;
+}
+
+.cite--author {
+  display: block;
+  margin-top: 0;
+  font-size: .9em;
+  transform: translateY(-.7em)
+}
+
+.quote {
+  font-family: serif;
+  position: absolute;
+  color: hsl(0, 45%, 37%);
+  font-size: 1.2em;
+  line-height: 1;
+  font-weight: 600;
+  margin-left: -50px;
+  bottom: 50px;
+  right: 25px;
+}
+
+.quote span:first-of-type {
+  display: block;
+}
+
+.quote span:last-of-type {
+  display: block;
+  text-align: center;
+  margin-left: 1em;
+}
+
+.quote::before, .quote::after {
+  font-size: 1.7em;
+  position: absolute;
+  content: '\201c';
+  font-family: sans-serif;
+  color: hsl(43, 80%, 58%);
+  top: 0;
+  left: -22px;
+}
+
+.quote::after {
+  content: '\201d';
+  right: 6px;
+  left: auto;
+  top: auto;
+  bottom: -15px;
+}
+
+
+
 
