@@ -1,0 +1,38 @@
+
+:root {
+	box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	outline: none;
+}
+
+body {
+    font-size: 100%;
+}
+
+.inspiration {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  transition: all 300ms ease-in;
+  font-size: .85em;
+}
+
+.inspiration:hover {
+  
+}
+
+.outline {
+  width: 500px;
+  height: 700px;
+  border: 1px solid hsl(0, 6%, 64%);
+  position: relative;
+  overflow: hidden;
+}
+
