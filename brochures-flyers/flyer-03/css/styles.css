@@ -19,7 +19,6 @@
 *, ::before, ::after {
     box-sizing: inherit;
     text-decoration: none;
-    list-style-type: none;
     margin: 0;
     padding: 0;
 	outline: none;
@@ -29,15 +28,15 @@ body {
   font-size: 100%;
   font-family: 'Fira Sans', sans-serif;
   width: 1280px;
+  height: 850px;
   margin: 0 auto;
   border: 1px solid var(--gray-700);
   color: var(--gray-700);
-  
-  height: 100vh;
 }
 
 h1, h2, h3, h4 {
-  
+  font-family: 'Chakra Petch', sans-serif;
+  text-transform: uppercase;
 }
 
 .inspiration {
@@ -56,45 +55,111 @@ h1, h2, h3, h4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   
+  height: 850px;
+  
   overflow: hidden;
 }
 
 .cell--one {
+  padding: 4em 3.5em 0 3.5em;
   grid-column: 1 / 2;
   position: relative;
   
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 4em;
+  grid-column-gap: 2.5em;
   
-  height: 100vh;
+  
 }
 
-.triangle--gray {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 320px;
-  height: 320px;
-  background-color: var(--gray-300);
-  clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
-  z-index: -1;
-}
+
 
 .header {
   grid-column: 1 / 2;
 }
 
+.header h1 {
+  font-weight: 300;
+  color: var(--green);
+  line-height: 1;
+  font-size: 2.1em;
+  margin-bottom: .05em;
+}
+
+.header h2 {
+  font-weight: 600;
+  font-size: 2em;
+  line-height: 1;
+  position: relative;
+}
+
+.header h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 45%;
+  bottom: -16px;
+  height: 2px;
+  background-color: var(--gray-600);
+}
+
 .para--wrap-one {
+  font-size: .75em;
   grid-column: 1 / 2;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.para--wrap-one p:first-of-type {
+  margin-bottom: 1.2em;
 }
 
 .para--wrap-two {
+  font-size: .75em;
   grid-column: 2 / 3;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.para--wrap-two p:first-of-type {
+  margin-bottom: 1.2em;
 }
 
 .why {
   grid-column: 1 / 2;
+}
+
+.why h4 {
+  text-transform: none;
+  color: var(--green);
+  font-size: .9em;
+  margin-bottom: .25em;
+}
+
+.why ul {
+  font-size: .75em;
+  list-style-position: inside;
+}
+
+.why li {
+  margin-bottom: .25em;
+}
+
+.circle {
+  margin-top: 1em;
+  font-weight: 200;
+  font-size: 2em;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,.7);
+  
 }
 
 .img-forrest {
@@ -104,23 +169,135 @@ h1, h2, h3, h4 {
   
 }
 
+.footer--one {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.footer--one {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
+.footer--one h3:first-of-type {
+  
+}
+
+.footer--one p:first-of-type {
+  font-size: .75em;
+  letter-spacing: 1px;
+}
+
+.footer--one h3:last-of-type {
+  font-size: .9em;
+  margin-top: 1.1em;
+}
+
+.footer--one p:last-of-type {
+  font-size: .7em;
+  margin-top: .2em;
+}
+
+
+.footer--two {
+  text-transform: uppercase;
+  text-align: right;
+  letter-spacing: .03em;
+}
+
+.footer--two h3:first-of-type span:first-of-type {
+  display: block;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.footer--two h3:first-of-type span:last-of-type {
+  display: block;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.footer--two p:first-of-type {
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+.footer--two p:last-of-type {
+  font-size: .65em;
+  text-transform: none;
+  margin-top: .4em;
+}
+
+
+
+.triangle--gray {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 310px;
+  height: 310px;
+  background-color: var(--gray-300);
+  clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+  z-index: -1;
+}
+
 .triangle--green {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 430px;
-  height: 430px;
+  width: 420px;
+  height: 420px;
   background-color: var(--green);
   clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
   z-index: -1;
 }
 
 
-
+/********** MAIN GRID - CELL 2 ******/
 .cell--two {
   grid-column: 2 / 3;
   position: relative;
-  width: 640px;
+  
+}
+
+.header--two {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 70%;
+}
+
+.image--bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 550px;
+  background: url(../img/forrest.jpg) no-repeat center center/cover;
+  clip-path: polygon(0% 0%, 100% 0%, 35% 92%, 0% 58%)
+}
+
+.bifold {
+  box-sizing: content-box;
+  position: absolute;
+  width: 280px;
+  height: 450px;
+  background-color: #000;
+  transform: rotate(39.3deg);
+  left: 72.5%;
+  top: 0;
+  border-bottom: 80px solid var(--gray-300);
+}
+
+.triangle-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 500px;
+  background-color: var(--green);
+  clip-path: polygon(100% 18%, 34% 68%, 100% 105%);
 }
 
 
