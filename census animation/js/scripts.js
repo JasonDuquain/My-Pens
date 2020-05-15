@@ -1,5 +1,4 @@
 
-
 let headingOneSpan = document.querySelector('.span--one');
 let headingOneSpanTwo = document.querySelector('.span--two');
 let imageOne = document.querySelector('.image--one');
@@ -20,7 +19,6 @@ let finalScreen = document.querySelector('.final--screen');
 let startHere = document.querySelector('.cell--one--para:last-of-type');
 let cellTwoWrap = document.querySelector('.cell--two-wrap');
 let line = document.querySelector('.line');
-
 
 
 function init() {
@@ -65,7 +63,7 @@ function init() {
     xPercent: -100,
     opacity: 0,
     duration: 1.4
-  }, "+=.8")
+  }, "+=.95")
   .fromTo(imageTwo, {
     xPercent: 100,
     opacity: 0
@@ -78,7 +76,7 @@ function init() {
   .to(headingTwo, {
     opacity: 1,
     duration: .1
-  }, ">-=.6")
+  }, ">-.8")
   tl.fromTo(headingTwoSpan, {
     opacity: 0,
     y: 30
@@ -111,7 +109,7 @@ function init() {
   .to(home, {
     bottom: 75,
     duration: .9
-  }, "<-1.5")
+  }, "<-2.3")
   
   .to(imageFour, {
     clipPath: 'polygon(0% 0%, 100% 0%, 100% 60%, 47% 60%, 50% 65%, 53% 60%, 0% 60%)',
@@ -129,9 +127,6 @@ function init() {
     duration: 1.5
   })
   
-  
-  
-  
   .to(shape, {
     opacity: 1,
     top: '45%'
@@ -142,9 +137,7 @@ function init() {
     opacity: 1,
     duration: .9
   }, ">+.2")
-  
-  
-  
+
   .to(finalScreen, {
     y: 0,
     duration: .6
@@ -159,11 +152,12 @@ function init() {
   })
   .fromTo(startHere, {
     opacity: 0,
-    x: 100
+    x: 100  
   }, {
     opacity: 1,
     x: 0,
-    duration: .5
+    duration: .4,
+    ease: 'power4'
   }, "<+.2")
   .fromTo(cellTwoWrap, {
     opacity: 0,
@@ -171,7 +165,8 @@ function init() {
   }, {
     opacity: 1,
     x: 0,
-    duration: .5
+    duration: .4,
+    ease: 'power4'
   }, "<")
   
   
