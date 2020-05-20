@@ -186,10 +186,13 @@ body {
   top: -15px;
   bottom: -20px;
   left: 47.5%;
-  width: 1px;
-  background-color: rgba(0,0,0,.2);
+  width: 6px;
+  background-color: transparent;
   transform: translateX(-50%);
-  box-shadow: -1px 0 2px 2px rgba(0,0,0,.2)
+  box-shadow: -3px 0 4px rgba(0,0,0,0.4),
+    -6px 0 4px rgba(0,0,0,0.1),
+    -9px 0 4px rgba(0,0,0,0.05);
+  border-radius: 10px / 100px;
 }
 
 .headline::after {
@@ -200,7 +203,7 @@ body {
   bottom: 0;
   left: 0;
   background-color: var(--yellow);
-  clip-path: polygon(15% 1%, 71% 5%, 68% 20%, 86% 18%, 86% 36%, 47.3% 39%, 47.3% 47.5%, 63% 46%, 55% 88%, 30% 55%);
+  clip-path: polygon(15% 1%, 71% 5%, 68% 20%, 86% 18%, 86% 36%, 46.8% 39%, 46.8% 47.5%, 63% 46%, 55% 88%, 30% 55%);
   z-index: -1;
 }
 
@@ -345,22 +348,22 @@ body {
 .item p {
   font-weight: 200;
   line-height: 1.2;
-  font-size: 1.2em
+  font-size: 1.15em;
 }
 
 .footer {
   position: absolute;
   z-index: 120;
-  bottom: 0;
+  bottom: 2em;;
   right: 2.5em;
-  width: 30%;
+  width: 23%;
   color: #fff;
   text-align: right;
 }
 
 .footer h3 {
-  font-size: 2em;
-  line-height: .9;
+  font-size: 1.9em;
+  line-height: .85;
 }
 
 .footer h3 span:first-of-type {
@@ -372,8 +375,10 @@ body {
 }
 
 .footer p:first-of-type {
+  font-size: .95em;
   font-weight: 200;
-  line-height: 1.2;
+  line-height: 1;
+  margin-top: .15em;
 }
 
 .footer__icons {
@@ -382,11 +387,11 @@ body {
 }
 
 .footer__icon {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   background-color: var(--aqua);
   border-radius: 3px;
-  margin-left: .5em;
+  margin: .3em 0 0 .5em;
 }
 
 .footer__icon svg {
@@ -408,9 +413,12 @@ body {
 }
 
 .footer p:last-of-type {
+  margin-top: .35em;
   font-weight: 200;
   line-height: 1.2;
-  font-size: .8em;
+  font-size: .77em;
+  width: 90%;
+  margin-left: 10%;
 }
 
 
@@ -420,4 +428,130 @@ body {
   grid-column: 2 / 3;
   width: 640px;
   height: 480px;
+  position: relative;
 }
+
+[class*=celltwo-block] {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 370px;
+  transform: rotateX(180deg)
+}
+
+.celltwo-block--gray-two {
+  background-color: var(--gray-300);
+  clip-path: polygon(0% 50%, 19% 45%, 100% 32%, 100% 100%, 0% 100%);
+}
+
+.celltwo-block--striped-two {
+  background: repeating-linear-gradient(
+        -45deg,
+        hsla(185, 85%, 42%,.4),
+        hsla(185, 85%, 42%,.4),
+        transparent 25%,
+        transparent 50%,
+        transparent 50%
+    );
+  background-size: 12px 12px;
+  clip-path: polygon(0% 57%, 0% 57%, 19% 44%, 70% 52%, 62% 21%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.celltwo-block--aqua-two {
+  background-color: var(--aqua);
+  clip-path: polygon(0% 52%, 0% 60%, 19% 50.5%, 25% 52%, 55% 54%, 62% 21%, 100% 8%, 100% 100%, 0% 100%);
+}
+
+.celltwo-block--blue-two {
+  clip-path: polygon(0% 65%, 19% 50%, 52% 66%, 62% 21%, 100% 17.5%, 100% 100%, 0% 100%);
+  background: radial-gradient(circle at center, rgba(255,255,255,.15) 50%, transparent 60%),hsl(240, 41%, 21%,.86); 
+  background-size: 12px 12px;
+}
+
+.celltwo-block--shadow-two {
+  background-color: rgba(0,0,0,.3);
+  clip-path: polygon(0% 91%, 19% 50%, 54% 100%, 0% 100%);
+}
+
+.celltwo-block--black-two {
+  background-color: rgba(0,0,0,.77);
+  clip-path: polygon(100% 35%, 100% 100%, 70% 100%, 52% 66%);
+}
+
+.header--two {
+  position: absolute;
+  top: 3em;
+  right: 2.5em;
+  width: 45%;
+  color: #fff;
+  text-align: right;
+}
+
+.header--two h2 {
+  font-size: 2.8em;
+  text-transform: uppercase;
+  line-height: .9;
+}
+
+.header--two span:first-of-type {
+  display: block;
+}
+
+.header--two span:last-of-type {
+  display: block;
+}
+
+.header--two p {
+  margin-top: .5em;
+  width: 60%;
+  margin-left: 40%;
+  line-height: 1.05;
+  font-size: 1.25em;
+  font-weight: 200;
+}
+
+.icons-two {
+  width: 38%;
+  position: relative;
+  z-index: 300;
+  margin: 275px 0 0 2.5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 24px 16px;
+}
+
+.icon-two {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--aqua);
+}
+
+.icon-two:nth-of-type(2) {
+  background-color: var(--blue);
+}
+
+.icon-two:nth-of-type(3) {
+  background-color: hsl(185, 41%, 60%);
+}
+
+.icon-two:nth-of-type(4) {
+  background-color: var(--gray-500);
+}
+
+.icon-two:nth-of-type(5) {
+  background-color: var(--yellow);
+}
+
+.icon-two:last-of-type {
+  background-color: var(--orange);
+}
+
+.icon-two svg {
+  width: 70px;
+  height: 70px;
+  fill: #fff;
+}
+
+
