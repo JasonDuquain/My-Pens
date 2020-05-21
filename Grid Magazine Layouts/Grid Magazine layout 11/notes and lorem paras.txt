@@ -1,0 +1,14 @@
+p*8>lorem70
+
+8 paras with 70 words
+
+GRID-TEMPLATE-AREAS:
+All strings must have the same number of columns, or else the declaration is invalid.
+
+If a named grid area spans multiple grid cells, but those cells do not form a single filled-in rectangle, the declaration is invalid.*******
+
+If using grid area and you do not use all the grid area names it may cause the layout to look incomplete
+
+DISPLAY: GRID   !^&w#%^%^%$
+
+IF FONTAWESOME ICONS NOT WORKING ADD THIS LINK TO SETTINGS>CSS https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css
