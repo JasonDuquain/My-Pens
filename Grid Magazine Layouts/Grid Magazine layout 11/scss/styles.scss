@@ -11,16 +11,17 @@
     --gray-800: hsl(218, 23%, 23%);
     --gray-900: hsl(220, 26%, 14%);
   
-  --pink: hsl(350, 92%, 55%);
-	--blue: hsl(208, 65%, 68%);
-  
+  --pink: hsl(350, 72%, 50%);
+	--blue: hsl(208, 69%, 69%);
+  --blue-600: hsl(178, 22%, 35%,.8);
 }
 
 body {
   font-size: 100%;
   font-family: 'Frank Ruhl Libre', serif;
-  color: (--var-gray-700);
-  
+  color: var(--var-gray-700);
+  background-image: linear-gradient(120deg, var(--gray-500), var(--gray-700));
+  height: 100vh;
 }
 
 *, ::before, ::after {
@@ -32,16 +33,19 @@ body {
 }
 
 .inspiration {
+  font-size: .7em;
     font-family: 'Fira Sans', sans-serif;
     color: #333;
     position: absolute;
-    top: 8em;
-    right: .5em;
+    left: 1em;
+    top: 5em;
     text-decoration: underline;
+    z-index: 19500;
+    transition: color 300ms ease-in;
 }
 
 .inspiration:hover, .inspiration:focus {
-    color: #000;
+    color: var(--blue);
 }
 
 .grid {
@@ -49,8 +53,8 @@ body {
   height: 900px;
   display: grid;
   grid-template-columns: 40px 2fr 2fr 1.4fr 40px;
-  border: 2px solid red;
   margin: 2em auto;
+ overflow: hidden;
   
   &__bar {
     background-image: radial-gradient(var(--blue) 20%, transparent 20%), radial-gradient(var(--pink) 20%, transparent 20%);
@@ -67,6 +71,8 @@ body {
   &__cell--two {
     grid-template-columns: 2 / 3;
     position: relative;
+    
+    background-color: #fff;
   }
   
   &__feathers {
@@ -91,6 +97,19 @@ body {
     position: absolute;
     top: 14px;
     left: -10px;
+    
+    &::before {
+      position: absolute;
+      content: "";
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background-color: #fff;
+      left: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
   }
   
   &__heading--one {
@@ -174,12 +193,11 @@ body {
     
   }
   
-  
   &__para--wrap {
     font-size: .8em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 0 18px 1em 18px;
+    padding: 0 18px 2.1em 18px;
     grid-column-gap: .75em;
     
     & p:first-of-type {
@@ -271,18 +289,51 @@ body {
     }
   }
   
-  &__image-wrap:last-of-type {
+  &__image-wrap--two {
+    position: absolute;
+    right: -100px;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: .75em;
+    text-align: center;
+    font-weight: 500;
     width: 40%;
     height: 220px;
     right: -140px;
     top: 540px;
     transform: rotate(-8deg);
     
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100px;
+      width: 0px;
+      box-shadow: -7px 0 12px 5px #000;
+      left: 10px;
+      top: 15px;
+      z-index: -1;
+      transform: rotate(-5deg);
+    }
+    
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0px;
+      width: 70px;
+      box-shadow: 0 7px 12px 5px #000;
+      bottom: 10px;
+      left: 12px;
+      z-index: -1;
+      transform: rotate(-8deg);
+    }
+    
     & p {
       position: absolute;
       color: #000;
       left: auto;
       right: 20px;
+      width: 74px;
+      line-height: 1;
+      bottom: 26px;
     }
   }
   
@@ -290,23 +341,62 @@ body {
     width: 100%;
     height: 100%;
     border: 14px solid #fff;
+    object-fit: cover;
+    object-position: 25%;
+    backface-visibility: hidden;
   }
   
   &__image--two {
     width: 100%;
     height: 100%;
     border: 14px solid #fff;
+    object-fit: cover;
+    backface-visibility: hidden;
   }
   
+  &__hex--large {
+    position: absolute;
+    top: 17px;
+    right: -147px;
+    width: 200px;
+    height: 200px;
+  }
+  
+  &__use--one {
+    fill: var(--pink);
+    
+  }
+  
+  &__text--one {
+    font-family: 'Fira Sans', sans-serif;
+    stroke: none;
+    fill: rgba(255,255,255,.85);
+    font-size: 2.1em;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+  
+  &__tspan--blue {
+    fill: var(--blue-600);
+  }
+  
+  &__line {
+    stroke: #fff;
+    stroke-width: 1px;
+  }
   
   &__cell--three {
-    background-image: url(../img/kate.jpg);
+    background-image: url(https://res.cloudinary.com/jduquain/q_auto,f_auto/kate--two.jpg);
     background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    
   }
   
   
   &__cell--four {
     position: relative;
+    background-color: #fff;
   }
   
   &__feathers--three {
@@ -331,15 +421,22 @@ body {
     
   }
   
+  &__hex-and-bar {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 6%;
+    top: 285px;
+  }
+  
   &__svg {
     width: 100%;
     height: 100%;
-    border: 1px solid red;
     margin-left: 6%;
   }
   
-  & symbol {
-    fill: var(--pink);
+  &__use--two {
+    fill: url(#repeat);
   }
 
   & polyline {
@@ -348,15 +445,24 @@ body {
     stroke-width: 14px;
     stroke-linecap: round;
   }
+  
+  &__use--four {
+    fill: #fff;
+  }
+  
+  &__use--three {
+    fill: var(--blue);
+    
+  }
 
   & rect {
     fill: var(--blue);
   }
   
-  & text {
+  &__text--two {
     font-family: 'Fira Sans', sans-serif;
     text-transform: uppercase;
-    font-size: 1.75em;
+    font-size: 1.58em;
     fill: none;
     stroke: white;
     stroke-width: 1px;
@@ -366,25 +472,18 @@ body {
   &__empire {
     width: 95%;
     margin-left: 6%;
-    margin-top: 30px;
+    margin-top: 29px;
   }
   
   &__heading--three {
     text-transform: uppercase;
-    font-size: 1.55em;
+    font-size: 1.6em;
     font-family: 'Fira Sans', sans-serif;
     display: flex;
     justify-content: space-between;
     margin-top: .5em;
-    padding: 0 1.4em 0 .8em;
-    
-    & span:first-of-type {
-      
-    }
-    
-    & span:last-of-type {
-      
-    }
+    margin-left: .9em;
+    padding: 0 .7em 0 0em;
   }
   
   &__flex {
@@ -449,7 +548,6 @@ body {
     
     & div {
       position: relative;
-      
       
       &::before {
         content: "";
@@ -554,15 +652,9 @@ body {
 }
 
 
-
-.ugh {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 6%;
-  top: 285px;
+svg path {
+  fill: inherit;
 }
-
 
 /*
 

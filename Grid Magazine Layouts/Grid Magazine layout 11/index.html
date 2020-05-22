@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;600;700&family=Frank+Ruhl+Libre:wght@300;400;500&family=Galada&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Grid Magazine Layout 11</title>
+    <title>Grid Magazine Layout 10</title>
 </head>
 <body>
     
 	<div class="grid">
-	  <a class="inspiration" href="" target="_blank">Inspiration</a>
-	  
+
 	  <div class="grid__bar grid__bar--one"></div>
 	  
 	  <div class="grid__cell--two">
+    
+      <a class="inspiration" href="http://res.cloudinary.com/jduquain/f_auto,q_auto/magazine-kate.jpg" target="_blank">Inspiration</a>
+    
 	    <div class="grid__feathers"></div>
 	    <p class="grid__great">It's great to be kate</p>
 	    <h1 class="grid__heading--one">
@@ -42,13 +44,30 @@
 	    <div class="grid__feathers"></div>
 	    
 	    <div class="grid__image-wrap">
-	      <img src="img/family.jpg" alt="picture of family" class="grid__image--one">
+	      <img src="http://res.cloudinary.com/jduquain/f_auto,q_auto/family.jpg" alt="picture of family" class="grid__image--one">
 	      <p>Hudson hit the town with her boys in October.</p>
 	    </div>
-	    <div class="grid__image-wrap">
-	      <img src="img/grandmother.jpg" alt="picure of grandmother with grandson" class="grid__image--two">
+	    <div class="grid__image-wrap--two">
+	      <img src="http://res.cloudinary.com/jduquain/f_auto,q_auto/grandmother.jpg" alt="picure of grandmother with grandson" class="grid__image--two">
 	      <p>Grandma Goldie Hawn gets some QT with Rani Rose.</p>
 	    </div>
+	    
+      <div class="grid__hex--large">
+        <svg width="200" height="200">
+          <use class="grid__use--one" xlink:href="#hex" x="0" y="0" width="225" height="225" />
+          <text class="grid__text--one" x="60" y="59">
+            K<tspan class="grid__tspan--blue">a</tspan>t<tspan class="grid__tspan--blue">e</tspan> 
+            <tspan x="30" dy=".8em">H<tspan class="grid__tspan--blue">u</tspan>d<tspan class="grid__tspan--blue">s</tspan>o<tspan class="grid__tspan--blue">n</tspan></tspan>
+          </text>
+          <line class="grid__line" x1="22" y1="52" x2="22" y2="75" />
+          <line class="grid__line" x1="165" y1="52" x2="165" y2="75" />
+          <line class="grid__line" x1="68" y1="20" x2="91" y2="10" />
+          <line class="grid__line" x1="95" y1="10" x2="118" y2="20" />
+          <line class="grid__line" x1="95" y1="120" x2="118" y2="110" />
+          <line class="grid__line" x1="68" y1="110" x2="91" y2="120" />
+        </svg>
+      </div>
+	    
 	  </div>
 	  
 	  
@@ -73,34 +92,34 @@
 	      </h3>
 	      <div class="grid__flex">
 	        <div class="grid__flex-cell">
-	          <img src="img/books.jpg" alt="book cover">
+	          <img src="http://res.cloudinary.com/jduquain/w_80,h_80,f_auto,q_auto/books.jpg" alt="book cover">
 	          <p><span>Books!</span> The simple things in life my friends tell me they don't get why I'm single. Chill at a bar with friends. Weekends at the lake relax.</p>
 	        </div>
 	        <div class="grid__flex-cell grid__flex-cell--reverse">
-	          <img src="img/podcasts.jpg" alt="man and woman">
+	          <img src="http://res.cloudinary.com/jduquain/w_90,h_90,f_auto,q_auto/podcasts.jpg" alt="man and woman">
 	          <p><span>Podcasts!</span> The simple things in life my friends tell me they don't get why I'm single. Chill at a bar with friends.</p>
 	        </div>
 	        <div class="grid__flex-cell">
 	          <div class="grid__wrappy">
-	            <img src="img/clothes.jpg" alt="rack of clothes">
+	            <img src="http://res.cloudinary.com/jduquain/w_80,h_80,f_auto,q_auto/clothes.jpg" alt="rack of clothes">
 	          </div>
 	          <p><span>Clothes!</span> The simple things in life my friends tell me they don't get why I'm single. Chill at a bar with friends.</p>
 	        </div>
 	        <div class="grid__flex-cell grid__flex-cell--reverse">
 	          <div class="grid__wrappy">
-	            <img src="img/movies.jpg" alt="person playing tennis">
+	            <img src="http://res.cloudinary.com/jduquain/f_auto,q_auto/movies.jpg" alt="person playing tennis">
 	          </div>
 	          <p><span>Movies!</span> The simple things in life my friends tell me they don't get why I'm single. Chill at a bar with friends.</p>
 	        </div>
 	        <div class="grid__flex-cell">
-	          <img src="img/booze.png" alt="person playing tennis">
+	          <img src="http://res.cloudinary.com/jduquain/image/upload/v1590180392/booze.png" alt="bottle of vodka">
 	          <p><span>Booze!</span> The simple things in life my friends tell me they don't get why I'm single. Chill at a bar with friends. Weekends at the lake relax.</p>
 	        </div>
 	      </div>
 	    </div>
 	    
 	    
-	    <div class="ugh">
+	    <div class="grid__hex-and-bar">
         <svg class="grid__svg" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink">
           
@@ -111,17 +130,26 @@
              <stop offset="50%" stop-color= "var(--blue)" />
            </linearGradient>
 
-           <linearGradient id="repeat"xlink:href="#Gradient-1"spreadMethod="repeat" />
+           <linearGradient id="repeat" xlink:href="#Gradient-1" spreadMethod="repeat" />
          </defs>
 
           <symbol class="grid__symbol" id="hex" width="124" height="124" viewBox="0 0 150 213" preserveAspectRatio="none">
-            <path fill="url(#repeat)" stroke="none" d="M57 2.8867513459481a10 10 0 0 1 10 0l43.693575034635 25.226497308104a10 10 0 0 1 5 8.6602540378444l0 50.452994616207a10 10 0 0 1 -5 8.6602540378444l-43.693575034635 25.226497308104a10 10 0 0 1 -10 0l-43.693575034635 -25.226497308104a10 10 0 0 1 -5 -8.6602540378444l0 -50.452994616207a10 10 0 0 1 5 -8.6602540378444"></path>
-            <text class="grid__text" x="20" y="48" transform="scale(1, 1.5)">Kate&apos;s</text>
+            <path fill="var(--blue)" d="M57 2.8867513459481a10 10 0 0 1 10 0l43.693575034635 25.226497308104a10 10 0 0 1 5 8.6602540378444l0 50.452994616207a10 10 0 0 1 -5 8.6602540378444l-43.693575034635 25.226497308104a10 10 0 0 1 -10 0l-43.693575034635 -25.226497308104a10 10 0 0 1 -5 -8.6602540378444l0 -50.452994616207a10 10 0 0 1 5 -8.6602540378444"></path>
           </symbol>
 
-          <use xlink:href="#hex" x="93" y="10" />
+          <polyline class="grid__polyline" points="300 7, 7 7, 7 568" />
+          
+          <use class="grid__use--four" transform="scale(1.2)" xlink:href="#hex" x="111" y="5" width="42" height="42" />
+          
+          <use class="grid__use--two" xlink:href="#hex" x="103" y="10" />
+          
+          <text class="grid__text--two" x="116" y="53">Kate&apos;s</text>
 
-          <polyline class="grid__polyline" points="295 7, 7 7, 7 565" />
+          <use class="grid__use--three" xlink:href="#hex" x="90" y="122" width="42" height="42" transform="scale(1.2) rotate(90,70,70)" />
+          <use class="grid__use--three" xlink:href="#hex" x="175" y="122" width="42" height="42" transform="scale(1.2) rotate(90,70,70)" />
+          <use class="grid__use--three" xlink:href="#hex" x="260" y="122" width="42" height="42" transform="scale(1.2) rotate(90,70,70)" />
+          <use class="grid__use--three" xlink:href="#hex" x="340" y="122" width="42" height="42" transform="scale(1.2) rotate(90,70,70)" />
+          <use class="grid__use--three" xlink:href="#hex" x="430" y="122" width="42" height="42" transform="scale(1.2) rotate(90,70,70)" />
 
         </svg>
 	      
