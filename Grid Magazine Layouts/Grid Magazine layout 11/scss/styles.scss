@@ -12,7 +12,7 @@
     --gray-900: hsl(220, 26%, 14%);
   
   --pink: hsl(350, 92%, 55%);
-	--blue: hsl(215, 74%, 63%);
+	--blue: hsl(208, 65%, 68%);
   
 }
 
@@ -49,11 +49,15 @@ body {
   height: 900px;
   display: grid;
   grid-template-columns: 40px 2fr 2fr 1.4fr 40px;
-  border: 1px solid gray;
+  border: 2px solid red;
   margin: 2em auto;
   
   &__bar {
-    background-color: gray;
+    background-image: radial-gradient(var(--blue) 20%, transparent 20%), radial-gradient(var(--pink) 20%, transparent 20%);
+    background-color: #fff;;
+    background-position: 0 0, 50px 50px;
+    background-size: 20px 20px;
+    border: 1px solid var(--gray-500);
   }
   
   &__bar--one {
@@ -66,8 +70,10 @@ body {
   }
   
   &__feathers {
+    border: 1px solid var(--gray-500);
     height: 40px;
-    background-color: goldenrod;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='24' viewBox='0 0 88 24'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='autumn' fill='%2378b1e2' fill-opacity='0.72'%3E%3Cpath d='M10 0l30 15 2 1V2.18A10 10 0 0 0 41.76 0H39.7a8 8 0 0 1 .3 2.18v10.58L14.47 0H10zm31.76 24a10 10 0 0 0-5.29-6.76L4 1 2 0v13.82a10 10 0 0 0 5.53 8.94L10 24h4.47l-6.05-3.02A8 8 0 0 1 4 13.82V3.24l31.58 15.78A8 8 0 0 1 39.7 24h2.06zM78 24l2.47-1.24A10 10 0 0 0 86 13.82V0l-2 1-32.47 16.24A10 10 0 0 0 46.24 24h2.06a8 8 0 0 1 4.12-4.98L84 3.24v10.58a8 8 0 0 1-4.42 7.16L73.53 24H78zm0-24L48 15l-2 1V2.18A10 10 0 0 1 46.24 0h2.06a8 8 0 0 0-.3 2.18v10.58L73.53 0H78z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     width: calc(100% + 40px);
     transform: translateX(-40px);
   }
@@ -284,7 +290,6 @@ body {
     width: 100%;
     height: 100%;
     border: 14px solid #fff;
-    
   }
   
   &__image--two {
@@ -301,7 +306,7 @@ body {
   
   
   &__cell--four {
-    
+    position: relative;
   }
   
   &__feathers--three {
@@ -327,20 +332,220 @@ body {
   }
   
   &__svg {
-    width: 95%;
-    height: 64%;
+    width: 100%;
+    height: 100%;
     border: 1px solid red;
-    margin-left: 5%;
+    margin-left: 6%;
+  }
+  
+  & symbol {
+    fill: var(--pink);
+  }
+
+  & polyline {
+    fill: none;
+    stroke: var(--blue);
+    stroke-width: 14px;
+    stroke-linecap: round;
+  }
+
+  & rect {
+    fill: var(--blue);
+  }
+  
+  & text {
+    font-family: 'Fira Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.75em;
+    fill: none;
+    stroke: white;
+    stroke-width: 1px;
+    font-weight: 700;
+  }
+  
+  &__empire {
+    width: 95%;
+    margin-left: 6%;
+    margin-top: 30px;
+  }
+  
+  &__heading--three {
+    text-transform: uppercase;
+    font-size: 1.55em;
+    font-family: 'Fira Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5em;
+    padding: 0 1.4em 0 .8em;
     
-    & polyline {
-      fill: none;
-      stroke: var(--blue);
-      stroke-width: 16px;
-      stroke-linecap: round;
+    & span:first-of-type {
+      
+    }
+    
+    & span:last-of-type {
+      
     }
   }
   
+  &__flex {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: .75em;
+    margin: 2.7em 0 0 0;
+  }
   
+  &__flex-cell {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    color: var(--pink);
+  }
+  
+  &__flex-cell:last-of-type {
+    margin-bottom: 0;
+  }
+  
+  &__flex-cell {
+    padding-top: .2em;
+    border-bottom: 1px solid var(--gray-500);
+    
+    & img {
+      width: 80px;
+      height: 80px;
+      transform: rotate(-10deg);
+      margin-left: 2.5em;
+    }
+    
+    & p {
+      width: 50%;
+      margin-left: 1em;
+      margin-bottom: 1em;
+    }
+    
+    & p span {
+      color: #222;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    
+  } 
+  
+  &__flex-cell:nth-of-type(2) {
+    
+    & img {
+      width: 90px;
+      height: 90px;
+      transform: rotate(0);
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+    
+    & p {
+      margin-left: 0;
+    }
+    
+  }
+  
+  &__flex-cell:nth-of-type(3) {
+    
+    & div {
+      position: relative;
+      
+      
+      &::before {
+        content: "";
+        position: absolute;
+        height: 25px;
+        width: 0px;
+        box-shadow: -7px 0 5px 5px #000;
+        left: 44px;
+        top: 5px;
+        z-index: -1;
+        transform: rotate(1deg);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 0px;
+        width: 25px;
+        box-shadow: 0 5px 5px 5px #000;
+        bottom: 15px;
+        left: 33px;
+        z-index: -1;
+        transform: rotate(5deg);
+      }
+    }
+    
+    
+    & img {
+      transform: rotate(8deg);
+      border: 6px solid #fff;
+    }
+  }
+  
+  &__flex-cell:nth-of-type(4) {
+    
+    & div {
+      position: relative;
+      
+      
+      &::before {
+        content: "";
+        position: absolute;
+        height: 25px;
+        width: 0px;
+        box-shadow: -7px 0 5px 5px #000;
+        left: 20px;
+        top: 15px;
+        z-index: -1;
+        transform: rotate(-14deg);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 0px;
+        width: 25px;
+        box-shadow: 0 5px 5px 5px #000;
+        bottom: 9px;
+        left: 24px;
+        z-index: -1;
+        transform: rotate(-18deg);
+      }
+    }
+    
+    
+    & img {
+      margin-right: 2em;
+      margin-left: 1em;
+      border: 6px solid #fff; 
+    }
+  }
+  
+  &__flex-cell:last-of-type {
+    position: relative;
+    border-bottom: none;
+    
+    & img {
+      position: absolute;
+      z-index: 500;
+      top: -45px;
+      left: -35px;
+      transform: rotate(14deg);
+      height: 250px;
+      width: 130px;
+    }
+    
+    & p {
+      margin-left: 10em;
+    }
+  }
+  
+  &__flex-cell--reverse {
+    flex-direction: row-reverse;
+    color: var(--blue);
+  }
+
   
   &__bar--two {
     grid-template-columns: 5 / 6;
@@ -350,17 +555,24 @@ body {
 
 
 
+.ugh {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 6%;
+  top: 285px;
+}
 
 
+/*
 
-// 310 x 575
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124" preserveAspectRatio="none"><path stroke="none" fill="#20be86" d="M57 2.8867513459481a10 10 0 0 1 10 0l43.693575034635 25.226497308104a10 10 0 0 1 5 8.6602540378444l0 50.452994616207a10 10 0 0 1 -5 8.6602540378444l-43.693575034635 25.226497308104a10 10 0 0 1 -10 0l-43.693575034635 -25.226497308104a10 10 0 0 1 -5 -8.6602540378444l0 -50.452994616207a10 10 0 0 1 5 -8.6602540378444"></path></svg>
 
+change viewbox to 0 0 290 390 to make smaller to use in the blue polyline
 
+if viewbox has issues you can use scaleY(.7) to shorted the hexagon
 
-
-
-
-
+*/
 
 
 
