@@ -12,22 +12,22 @@
 	
   <div class="grid">
    
-   <h1>Must See</h1>
-   <div class="grid-cell--one grid-div">
+   <h1 class="grid-cell--one-a">Must See</h1>
+   <div class="grid-cell--one-b grid-div business">
      <h4>Small Headline</h4>
      <h3>Business One</h3>
      <p>
        Chilling at a bar with friends skiing rock climbing vinyl records. Video games my eyes if you think we have something in common bacon my goofy smile, I enjoy sleeping late working at a coffee shop mountain biking I'm a good listener. Running shoes outdoor activities degree in philosophy Breaking Bad art school I value art.
      </p>
    </div>
-   <div class="grid-cell--two grid-div">
+   <div class="grid-cell--two grid-div side">
      <h4>Small Headline</h4>
      <h3>Side Shift</h3>
      <p>
        Neutral Milk Hotel Kurosawa snowboarding parallel parking. Just looking to have some fun bacon glass half-full Vampire Weekend it depends on the night, I'm a big fan of working at a coffee shop mountain biking Kurosawa rock climbing. Outdoorsy home brewing feminism I'm a good listener Infinite Jest tacos.
      </p>
    </div>
-   <div class="grid-cell--three grid-div">
+   <div class="grid-cell--three grid-div mean">
      <h4>Small Headline</h4>
      <h3>Mean Stream</h3>
      <p>
@@ -64,7 +64,7 @@
       <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20" fill="url('#hex-img-three')"></polygon> 
    </svg>
    </div>
-   <div class="grid-cell--seven grid-div">
+   <div class="grid-cell--seven grid-div stare">
      <h4>Small Headline</h4>
      <h3>The stare</h3>
      <p>
@@ -91,7 +91,7 @@
       <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20" fill="url('#hex-img-five')"></polygon> 
      </svg>
    </div>
-   <div class="grid-cell--ten grid-div">
+   <div class="grid-cell--ten grid-div distance">
      <h4>Small Headline</h4>
      <h3>In The distance</h3>
      <p>
@@ -118,14 +118,14 @@
       <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20" fill="url('#hex-img-eight')"></polygon> 
    </svg>
    </div>
-   <div class="grid-cell--thirteen grid-div">
+   <div class="grid-cell--thirteen grid-div hooded">
      <h4>Small Headline</h4>
      <h3>The hooded one</h3>
      <p>
        Fascinates me Netflix sleeping late The Daily Show. Fixing my scooter happy hour I love the smell of beach days only looking for something casual, as friends degree in philosophy my beard Netflix I'm a big fan of. Murakami video games training for the marathon someone who shares my sense of humor someone who shares my sense of humor fascinates me.
      </p>
    </div>
-   <div class="grid-cell--fourteen grid-div">
+   <div class="grid-cell--fourteen grid-div cool">
      <h4>Small Headline</h4>
      <h3>Cool off here</h3>
      <p>
@@ -133,13 +133,13 @@
      </p>
    </div>
    <div class="grid-cell--fifteen full-height"></div>
-   <div class="grid-cell--sixteen grid-div">
+   <div class="grid-cell--sixteen grid-div resisting">
      <h2>Resisting temptation</h2>
      <p>
        On The Road introvert running shoes there's no such thing as a typical Friday night. Family is very important to me Neutral Milk Hotel Myers-Briggs fixing my scooter medical school, I'm a big fan of art school you should message me sleeping late degree in philosophy. Trying this for the first time art school everything but country music share a new experience there's no such thing as a typical Friday night activity partners.
      </p>
    </div>
-   <div class="grid-cell--seventeen grid-div">
+   <div class="grid-cell--seventeen grid-div male">
      <h4>Small Headline</h4>
      <h3>Male fashion</h3>
      <p>
@@ -149,6 +149,23 @@
    
    
   </div> 
+  
+  <!-- START POINT: https://stackoverflow.com/questions/34923888/rounded-corner-only-on-one-side-of-svg-rect -->
+  <svg width="100" height="100" viewBox="0 0 8 18">
+    <defs>
+       <linearGradient id="Gradient-1" x1="0" x2="0" y1="0" y2="1">
+         <stop offset="0%" stop-color= "black" />
+         <stop offset="70%" stop-color= "black" />
+         <stop offset="70%" stop-color= "var(--orange)" />
+       </linearGradient>
+     </defs>
+
+    <path d="M0 20 V10 Q0 5 4 5 H6"
+          fill="none" stroke="url(#Gradient-1)" stroke-width="2" />
+    <circle r="2" cx="8" cy="5" fill="none" stroke="black" stroke-width="2" /> 
+  </svg>
+  
+  <!-- <path d="M1 19 V5 Q1 1 5 1 H9" -->
 
 </body>
 </html>
