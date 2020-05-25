@@ -452,7 +452,6 @@ body {
   
   &__use--three {
     fill: var(--blue);
-    
   }
 
   & rect {
@@ -548,6 +547,7 @@ body {
     
     & div {
       position: relative;
+      z-index: 20000;
       
       &::before {
         content: "";
@@ -574,7 +574,6 @@ body {
       }
     }
     
-    
     & img {
       transform: rotate(8deg);
       border: 6px solid #fff;
@@ -585,7 +584,7 @@ body {
     
     & div {
       position: relative;
-      
+      z-index: 20001;
       
       &::before {
         content: "";
@@ -644,7 +643,6 @@ body {
     color: var(--blue);
   }
 
-  
   &__bar--two {
     grid-template-columns: 5 / 6;
   }
