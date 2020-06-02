@@ -57,38 +57,24 @@ body {
   
 }
 
+.pic {
+  clip-path: url(#hay);
+  
+  
+}
 
 svg {
   width: 100%;
   height: 100%;
 }
 
-.circle--border-one, .circle--border-one--wrap {
-  fill: none;
-  stroke: url(#img);
-  stroke-width: 50;
-  stroke-dasharray: 1182 75;
-  stroke-linecap: round;
-  stroke-dashoffset: 630;
+.circle--one {
+  
 }
 
-.circle--border-one--wrap {
-  stroke-opacity: .15;
-  stroke: aqua;
+.pathy {
+  
 }
 
-.circle--border-two, .circle--border-two--wrap {
-  fill: none;
-  stroke: url(#img);
-  stroke-width: 50;
-  stroke-dasharray: 1634 130;
-  stroke-linecap: round;
-  stroke-dashoffset: 830;
-}
-
-.circle--border-two--wrap {
-  stroke-opacity: .5;
-  stroke: aqua;
-}
 
 
