@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Grid Magazine Layout</title>
+</head>
+<body>
+	<a class="inspiration" href="" target="_blank">Inspiration</a>
+	
+  <div class="grid">
+    <div class="top-bar grid--cell-one">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20">
+        <line x1="0" y1="10" x2="1280" y2="10" />
+        <defs>
+          <text id="designmag">design<tspan>mag</tspan></text>
+        </defs>
+        <use xlink:href="#designmag" y=".85em" x="39" />
+        <use xlink:href="#designmag" y=".85em" x="1159" />
+      </svg>
+    </div> 
+    
+    <svg width="0" height="0">
+      <!-- use akarve's solution and David Bonnet's update..also medmunds shows a way to add a fill color by adding a rect element: 
+      https://stackoverflow.com/questions/13069446/simple-fill-pattern-in-svg-diagonal-hatching 
+      
+      <pattern id="diagonalHatch" width="5" height="5" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+        <rect x="0" y="0" width="10" height="10" style="fill:skyblue"/>
+        <line x1="0" y1="0" x2="0" y2="10" style="stroke:black; stroke-width:1" />
+      </pattern>
+      -->
+      <defs>
+        <pattern id="diagonalHatch" width="5" height="5" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="0" x2="0" y2="10" style="stroke:var(--gray-600); stroke-width:1" />
+        </pattern>
+        <pattern id="diagonalHatch--aqua" width="4" height="4" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="0" x2="0" y2="10" style="stroke:var(--aqua); stroke-width:1" />
+        </pattern>
+      </defs>
+    </svg>
+    
+    <div class="startup grid--cell-two">
+      <div class="svg-wrap" width="30" height="120" >
+       <svg width="30" height="120">
+         <rect x="0" y="0" width="30" height="120" fill="url(#diagonalHatch--aqua)" transform="scale(-1,1) translate(-30)" />
+       </svg>
+      </div>
+      <div class="business">Business</div>
+         <h1><span>Startup</span><span>Sensation</span></h1>
+         <h4>By Richard Dunkin</h4>
+         <div class="summary">
+           There are painters who transform the sun to a yellow spot. But there are others who, with the help of their art and intelligence, transform a yellow spot into the sun.
+         </div>
+         <svg width="267" height="22" transform="translate(-0,3)">
+           <rect x="0" y="0" width="267" height="22" fill="url(#diagonalHatch)" />
+         </svg>
+    </div>
+    
+    <div class="para-wrap">
+      <p>
+        The Motorcycle collection everything but country music pics on request making others feel good you should be clean and smart. Hey shooting work hard play hard no drama I won't bite without permission, ages 28 - 32 beekeeping making others feel good shotgunn beers I should have grown up in the 40s. You should message me that's what she said P90X the fact that you are even considering schooling me trapped in an unhappy marriage be my partner in crime.
+      </p>
+      <h4>Coming to America</h4>
+      <p>
+        No crazy girls I'm kind of a genius throwing rocks at trains lol. When I picked this username I didn't realize I couldn't change it I attract girls who are very good-looking snapchat really only soft drugs I hope there are good girls left, I'm the last of a dying breed.
+      </p>
+      <p>
+        I'm an enormous man-child finishing my novel beekeeping shotgunning beers. Laughing hysterically my hobbies include blackjack I did a lot of modeling work in the mid-80s someone to provide for you ask your mother. No robots posing as real people I am a gentleman first and foremost playing devil's advocate on my xmas list I am a hoarder, but only of top shelf stuff.
+      </p>
+      
+      <h4>Where it began</h4>
+      <p>
+        Bald is sexy keep up with me dive bars I'm the last of a dying breed. There's no such thing as a typical Friday night my deep, manly voice no crazy girls I despise if you have to look it up don't bother, but I only smoke when drinking that's what she said MFA making people mad you need a real man. I'm kind of a genius.
+      </p>
+      <p>
+        I will love you forever chivalry is not dead with lots of self-respect I hope there are good girls left. Documentary filmmaker extreme trapped in a deceptive marriage pics on request ages 28 - 32, finishing my novel I don't really keep a budget on the first date dive bars I enjoy. I'm an enormous man-child Juggalo proper grammar one time in middle school I'm a nice guy I will love you forever.
+      </p>
+    </div>
+    
+    
+    <div class="img-wrap"></div>
+    
+    
+    
+    <!--<svg width="90" height="80">-->
+    
+      <!-- https://stackoverflow.com/questions/23899718/scale-and-mirror-svg-object -->
+    
+      <!--  reverse translate if x is used === (x * 2) + width ???  -->
+      <!--<rect class="hay" x="20" width="20" height="40" fill="url(#diagonalHatch)" transform="scale(-1,1)"  />-->
+    <!--</svg>-->
+    
+    
+  </div>  
+    
+    
+</body>
+</html>
