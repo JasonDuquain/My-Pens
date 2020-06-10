@@ -44,15 +44,14 @@ body {
 }
 
 .grid {
-  padding: 1em 0 1.5em 0;
+  padding: 1em 0 2em 0;
   background-color: #fff;
-  
   width: 1280px;
   height: 840px;
   display: grid;
   grid-template-columns: 1.2fr .8fr .75fr .75fr .75fr;
-  grid-template-rows: 20px min-content min-content min-content;
-  
+  grid-template-rows: 45px min-content min-content min-content min-content;
+  grid-column-gap: 1rem;
   overflow: hidden;
 }
 
@@ -65,7 +64,6 @@ body {
 .top-bar svg {
   width: 100%;
   height: 20px;
-  
 }
 
 .top-bar line {
@@ -94,7 +92,7 @@ body {
 
 .startup h1 {
   font-weight: 300;
-  font-size: 3.2em;
+  font-size: 3.4em;
   line-height: .9;
   text-align: right;
   margin-bottom: .15em;
@@ -135,33 +133,93 @@ body {
 
 .summary {
   text-align: right;
-  padding-top: .75rem;
   font-weight: 600;
   color: var(--aqua);
   padding-right: .4rem;
   margin-bottom: -.2rem;
-  padding-bottom: 1rem;
+  padding: .75rem .5rem 1rem 1rem;
 }
 
 .para-wrap {
-  font-size: .7em;
+  font-size: .65em;
   grid-column: 1 / 2;
-  grid-row: 3 / 4;
+  grid-row: 3 / 6;
   column-width: 9em;
   padding: 2rem 1rem 2rem 2rem;
 }
 
+.para-wrap p:first-of-type::first-letter {
+  color: var(--aqua);
+  font-size: 5.5em;
+  font-weight: 300;
+  float: left;
+  line-height: .8;
+  margin-right: .15rem;
+}
+
+.para-wrap h4 {
+  color: var(--aqua);
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+.para-wrap p:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.building {
+  grid-column: 2 / 3;
+  grid-row: 4 / 6;
+  font-size: .65rem;
+  background-color: var(--gray-800);
+  color: #fff;
+  padding: 1.25rem 1rem;
+  line-height: 1.4;
+  height: min-content;
+}
+
+.building h3 {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
 
 
 .img-wrap {
   grid-column: 2 / 3;
-  grid-row: 2 / -2;
-  background: url(../img/300x600.png);
+  grid-row: 2 / 4;
+  background: url(../img/main.jpeg) no-repeat bottom center/cover;
   width: 300px;
-  height: 600px;
-  
+  height: 625px;
+  position: relative;
 }
 
+.img-quote {
+  position: absolute;
+  color: var(--aqua);
+  text-align: right;
+  font-size: .85em;
+  width: 56%;
+  top: 5%;
+  left: 20%;
+}
+
+.img-quote::after {
+  font-family: sans-serif;
+  font-size: 6em;
+  content: "\201C";
+  position: absolute;
+  color: var(--aqua);
+  border-radius: 50%;
+  border: 1px solid var(--aqua);
+  line-height: .7;
+  width: 40px;
+  height: 40px;
+  line-height: 80px;
+  text-align: center;
+  left: -24px;
+  top: 5px;
+}
 
 
 

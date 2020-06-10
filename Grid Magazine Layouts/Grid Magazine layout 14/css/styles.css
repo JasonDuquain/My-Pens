@@ -416,6 +416,7 @@ sup {
 }
 
 .circle--three {
+  opacity: .25;
   background-color: var(--aqua);
   width: 6.25em;
   height: 6.25em;
@@ -471,27 +472,14 @@ sup {
   font-weight: 500;
   color: #fff;
   position: relative;
-  /*shape-outside: url(ransparent.png);
-  clip-path: polygon(0 0, 100% 0, 100% 60%, 60% 60%, 60% 100%, 0% 100%);
-  shape-outside: polygon(0 0, 100% 0, 100% 60%, 60% 60%, 60% 100%, 0% 100%);*/
-  
 }
-
-/*
-.hay {
-  width: 100px;
-  height: 100px;
-  float: right;
-}
-*/
 
 /*.hay::before {
-  
   content: "";
   float: right;
-  width: 40px;
+  width: 70px;
   height: 90px;
-  shape-outside: url('transparent.png');
+  shape-outside: url('http://media.grabaperch.com/examples/noun_109069.png');
 }*/
 
 /*** make sure to add line height in order to seperate the lines ***/
@@ -518,7 +506,7 @@ sup {
   background-color: hsl(43, 42%, 60%);
   grid-column: 5 / 7;
   grid-row: 2 / -1;
-  
+  position: relative;
   margin: .25em 2.3em 0 0;
 }
 
@@ -600,7 +588,7 @@ sup {
 
 .main-para--three {
   margin-top: 1em;
-  padding: 0 1.5rem 2em 1.5rem;
+  padding: 0 1.5rem 1em 1.5rem;
   font-size: .75em;
   column-width: 9.5em;
   column-gap: 1.5em;
@@ -608,6 +596,39 @@ sup {
   hyphens: auto;
   -webkit-hyphens: auto;
 }
+
+.quote--border {
+  width: 240px;
+  height: 120px;
+  position: relative;
+}
+
+.quote--border svg {
+  width: 100%;
+  height: 100%;
+}
+
+.quote--border rect {
+  stroke-dasharray: 35 110 170 110 135;
+  stroke-width: 12px;
+  fill: none;
+  stroke: var(--blue);
+}
+
+.quote--final {
+  text-align: center;
+  font-style: italic;
+  position: absolute;
+  font-size: .85em;
+  line-height: 1.2;
+  width: 150px;
+  height: 80px;
+  top: 20px;
+  left: 20px;
+}
+
+
+
 
 
 
