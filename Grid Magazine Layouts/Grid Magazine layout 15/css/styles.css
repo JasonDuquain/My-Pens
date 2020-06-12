@@ -173,7 +173,7 @@ body {
 .img-wrap {
   grid-column: 2 / 3;
   grid-row: 2 / 9;
-  background: url(../img/main.jpeg) no-repeat bottom center/cover;
+  background: url(http://res.cloudinary.com/jduquain/q_auto,f_auto/main.jpg) no-repeat bottom center/cover;
   width: 300px;
   height: 585px;
   position: relative;
@@ -247,7 +247,7 @@ body {
 .img--two-wrap {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
-  background: url(../img/hands.jpg) no-repeat center/cover;
+  background: url(http://res.cloudinary.com/jduquain/q_auto,f_auto/hands.jpg) no-repeat center/cover;
   height: 95px;
   width: calc(100% - 1rem);
   margin: 0 0 .5rem 1rem;

@@ -36,8 +36,8 @@ body {
 .inspiration {
   color: #333;
   position: absolute;
-  top: 8em;
-  right: .5em;
+  top: 2em;
+  right: 16em;
   text-decoration: underline;
 }
 
@@ -67,7 +67,7 @@ body {
   width: 100%;
   bottom: 80px;
   /* https://stackoverflow.com/questions/14208673/how-to-draw-grid-using-html5-and-canvas-or-svg */
-  background-image: url(../img/raster.svg);
+  background-image: url(http://res.cloudinary.com/jduquain/fl_sanitize/raster.svg);
   background-position: 10%;
 }
 
@@ -263,7 +263,7 @@ h1 span:last-of-type {
 .grid-cell--fourteen.cool {
   grid-column: 8 / 10;
   grid-row: 8 / 9;
-  width: 120%;
+  width: 117%;
   margin: 3em 0 0 3em;
   
   /* allow marker to show on top */
@@ -274,9 +274,7 @@ h1 span:last-of-type {
 .grid-cell--fifteen.full-height {
   grid-column: 10 / 13;
   grid-row: 1 / -1;
-  background: url(../img/person-transparent.png) no-repeat center center/100% 100%;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background: url(http://res.cloudinary.com/jduquain/q_auto,f_auto/person-transparent.png) no-repeat 110% 100%/95% 95%;
   width: 104%;
   z-index: 900;
 }

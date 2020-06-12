@@ -5,12 +5,35 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Grid Magazine Layout</title>
+    <title>Grid Magazine Layout 11</title>
 </head>
 <body>
-	<a class="inspiration" href="" target="_blank">Inspiration</a>
+
+  <!-- START POINT: https://stackoverflow.com/questions/34923888/rounded-corner-only-on-one-side-of-svg-rect -->
+  <svg width="0" height="0">
+    <defs>
+       <linearGradient id="Gradient-1" x1="0" x2="0" y1="0" y2="1">
+         <stop offset="0%" stop-color= "black" />
+         <stop offset="68%" stop-color= "black" />
+         <stop offset="68%" stop-color= "var(--orange)" />
+       </linearGradient>
+     <marker id="circ" style="overflow: visible" viewBox="0 0 4.5 4.5" refX="-.9">
+       <circle r="1.3" fill="none" stroke="black" />
+     </marker>
+     </defs>
+     
+     <symbol id="symb" viewBox="-1 0 10 23">
+       <path d="M0 21 V10 Q0 5 4 5 H6"
+          fill="none" stroke="url(#Gradient-1)" stroke-width="2" marker-end="url(#circ)" />
+     </symbol>
+     <symbol id="symb--two" viewBox="-1 0 23 23">
+       <path d="M0 21 V10 Q0 5 4 5 H11"
+          fill="none" stroke="url(#Gradient-1)" stroke-width="2" marker-end="url(#circ)" />
+     </symbol>
+  </svg>
 	
   <div class="grid">
+	  <a class="inspiration" href="http://res.cloudinary.com/jduquain/q_auto,f_auto/magazine-layout.jpg" target="_blank">Inspiration</a>
    <div class="mag">design<span>mag</span></div>
    <div class="grid-cell--one-a">
      <h1>Must<span>See</span></h1>
@@ -197,31 +220,7 @@
    </div>
 
   </div> 
-  
-  <!-- START POINT: https://stackoverflow.com/questions/34923888/rounded-corner-only-on-one-side-of-svg-rect -->
-  <svg width="0" height="0">
-    <defs>
-       <linearGradient id="Gradient-1" x1="0" x2="0" y1="0" y2="1">
-         <stop offset="0%" stop-color= "black" />
-         <stop offset="68%" stop-color= "black" />
-         <stop offset="68%" stop-color= "var(--orange)" />
-       </linearGradient>
-     <marker id="circ" style="overflow: visible" viewBox="0 0 4.5 4.5" refX="-.9">
-       <circle r="1.3" fill="none" stroke="black" />
-     </marker>
-     </defs>
-     
-     <symbol id="symb" viewBox="-1 0 10 23">
-       <path d="M0 21 V10 Q0 5 4 5 H6"
-          fill="none" stroke="url(#Gradient-1)" stroke-width="2" marker-end="url(#circ)" />
-     </symbol>
-     <symbol id="symb--two" viewBox="-1 0 23 23">
-       <path d="M0 21 V10 Q0 5 4 5 H11"
-          fill="none" stroke="url(#Gradient-1)" stroke-width="2" marker-end="url(#circ)" />
-     </symbol>
-  </svg>
-  
-  <!-- <path d="M1 19 V5 Q1 1 5 1 H9" -->
+
 
 </body>
 </html>
