@@ -155,8 +155,6 @@ line {
 }
 
 
-
-
 .footer-list {
   display: flex;
   flex-wrap: wrap;
@@ -275,7 +273,7 @@ line {
 
 .image-two img {
   width: 100%;
-  height: 225px;
+  height: 235px;
 }
 
 .image-three {
@@ -288,14 +286,34 @@ line {
   height: 320px;
 }
 
-
 .image-four {
   grid-column: 2 / 4;
-  grid-row: 5 / 6;
+  grid-row: 4 / 5;
 }
 
 .image-four img {
+  width: 85%;
+  height: 210px;
+}
+
+.image-five {
+  grid-column: 4 / 6;
+  grid-row: 4 / 5;
+}
+
+.image-five img {
   width: 100%;
+  height: 210px;
+}
+
+.image-six {
+  grid-column: 6 / 8;
+  grid-row: 4 / 5;
+}
+
+.image-six img {
+  width: 100%;
+  height: 210px;
 }
 
 
