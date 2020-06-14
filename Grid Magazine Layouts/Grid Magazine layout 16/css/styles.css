@@ -44,7 +44,7 @@ body {
 }
 
 .grid {
-  padding: 1.5em 2em 0 2em;
+  padding: 1.2em 2em 0 2em;
   background-color: #fff;
   width: 1280px;
   height: 815px;
@@ -52,6 +52,25 @@ body {
   grid-template-columns: 1.2fr .9fr repeat(4, 1fr) .9fr 1.2fr;
   grid-template-rows: 25px 140px 40px 50px 80px 30px 170px 90px 10px;
   overflow: hidden;
+  position: relative;
+}
+
+.grid::before, .grid::after {
+  content: '36';
+  position: absolute;
+  font-size: .7rem;
+  background-color: #000;
+  color: #fff;
+  width: 1.2rem;
+  height: 1.2rem;
+  line-height: 1.35rem;
+  text-align: center;
+  top: .8rem;
+}
+
+.grid::after {
+  content: '37';
+  right: 0;
 }
 
 .line-wrap {
@@ -63,7 +82,7 @@ body {
 }
 
 line {
-  stroke-dasharray: 568 80 568;
+  stroke-dasharray: 572 72 572;
   stroke: #000;
 }
 
@@ -114,20 +133,26 @@ line {
   font-size: .7rem;
   line-height: 1.2;
   padding-right: 25%;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem .2rem;
 }
 
 
 .list-wrap {
   grid-column: 1 / 2;
   grid-row: 3 / 7;
-  counter-reset: counter; 
+  counter-reset: counter;
+  
 }
 
 .list {
   counter-increment: counter;
   position: relative;
-  margin-bottom: .5rem;
+  margin-bottom: .87rem;
+  margin-right: .8rem;
+}
+
+.list:last-of-type {
+  margin-bottom: 0;
 }
 
 .list::before {
@@ -142,6 +167,7 @@ line {
 .wrappy {
   float: left;
   margin-right: .3rem;
+  height: 23px;
 }
 
 .numbered {
@@ -159,6 +185,7 @@ line {
 
 [class*=image-] {
   position: relative;
+  
 }
 
 .hex-wrappy {
@@ -170,7 +197,12 @@ line {
   left: -3px;
 }
 
-
+.hex-wrappy text {
+  font-family: Nunito, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  fill: var(--orange);
+}
 
 .image-two .hex-wrappy {
   left: 8px;
@@ -201,6 +233,7 @@ line {
 .image-one img {
   width: 100%;
   height: 168px;
+  
 }
 
 .image-two {
@@ -268,6 +301,17 @@ line {
 .step {
   grid-column: 8 / 9;
   grid-row: 2 / 4;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.step::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 700px;
+  background-color: #000;
+  left: 1rem;
 }
 
 .step h2 {
@@ -284,12 +328,14 @@ line {
 .step p {
   font-size: .7rem;
   line-height: 1.2;
+  padding-right: .35rem;
 }
 
 .list-wrappy {
   grid-column: 8 / 9;
   grid-row: 4 / 8;
   counter-reset: counter; 
+  padding: 1rem 0 0 2rem;
 }
 
 .svg-wrap--three {
@@ -314,12 +360,16 @@ line {
   left: 5px;
 }
 
+.list-wrap--two .list {
+  margin-right: 0;
+}
+
 .list-wrap--two li {
   margin-bottom: 1.2rem;
 }
 
 .list-wrap--two p {
-  padding-right: 17%;
+  padding-right: 15%;
 }
 
 
@@ -383,16 +433,14 @@ line {
 }
 
 .footer-bar-text div:nth-of-type(2) {
-  font-size: .8rem;
+  font-size: .75rem;
   font-weight: 700;
   margin-right: 4rem;
-  margin-top: .15rem
 }
 
 .footer-bar-text div:last-of-type {
-  font-size: .8rem;
+  font-size: .75rem;
   font-weight: 700;
-  margin-top: .15rem
 }
 
 .numbered--border {
@@ -402,37 +450,92 @@ line {
 }
 
 .footer-item {
-  flex: 0 0 20%;
+  flex: 0 0 18.1%;
+  margin-right: .5rem;
+}
+
+.footer-item:last-of-type {
+  margin-right: 0;
+}
+
+.footer-item-border {
+  border-right: 1px solid #000;
+  margin-right: .75rem;
 }
 
 .footer-item h3 {
   color: var(--orange);
-  font-size: 1rem;
+  font-size: .75rem;
+  margin-left: 1.5rem;
 }
 
 .footer-item img {
-  width: 160px;
+  width: 180px;
   height: auto;
 }
 
 .footer-item .footer-img--three,
 .footer-item .footer-img--four {
-  width: 155px;
+  width: 175px;
   height: 87px;
 }
 
 .footer-item p {
-  font-size: .7rem;
+  font-size: .65rem;
+  padding-right: 1rem;
 }
 
+.footer-item:nth-of-type(4) {
+  margin-right: 3rem;
+}
 
-
-.footer {
-  height: 25px;
+.line-wrap--two {
+  grid-column: 1 / -1;
+  grid-row: 15 / 16;
+  background-color: #fff;
+  height: 10px;
   width: 100%;
 }
 
+.footer {
+  font-family: serif;
+  height: 25px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
+.footer p:first-of-type span:first-of-type,
+.footer p span:nth-of-type(2) {
+  text-transform: none;
+  font-size: 1.15rem;
+  letter-spacing: -1px;
+}
+
+.footer p:first-of-type span:first-of-type,
+.footer p:last-of-type span:nth-of-type(2) {
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer p:first-of-type span:nth-of-type(2) {
+  margin-right: .75rem;
+}
+
+.footer p:last-of-type span:first-of-type {
+  margin-left: .75rem;
+}
+
+.issue {
+  display: inline-block;
+  margin-left: .7rem;
+}
 
 
 
