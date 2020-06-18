@@ -47,14 +47,41 @@ body {
 }
 
 .grid {
-  padding: 0 2em 2em 2em;
+  padding-right: 2rem;
   background-color: #fff;
   width: 1280px;
   height: 840px;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(8, min-content);
+  grid-template-columns: 1fr 1fr 1.5fr .7fr 1fr 1fr .7fr 1.4fr repeat(4, 1fr);
+  grid-template-rows: repeat(9, min-content);
   overflow: hidden;
+  position: relative;
+}
+
+.grid::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: green;
+  left: 50%;
+  z-index: 500;
+}
+
+.bar {
+  position: absolute;
+  top: 168px;
+  width: 870px;
+  height: 500px;
+  background-color: rgba(0,0,0,.5)
+}
+
+polygon {
+  fill: var(--yellow);
+  stroke-linejoin: round;
+  stroke-width: 10px;
+  stroke: var(--yellow);
+  paint-order: stroke;
 }
 
 h1 {
@@ -72,6 +99,7 @@ h1 {
   text-align: center;
   grid-column: 3 / 10;
   grid-row: 1 / 4;
+  
 }
 
 h1::before, h1::after {
@@ -84,13 +112,21 @@ h1::before, h1::after {
 }
 
 h1::before  {
-  top: 46%;
+  top: 40%;
 }
 
 h1::after {
-  bottom: 36%;
+  bottom: 42%;
 }
 
+h1:first-of-type {
+  z-index: 1;
+}
+
+h1:nth-of-type(2) {
+  z-index: 3;
+  text-shadow: none;
+}
 
 .circle {
   grid-column: 1 / 4;
@@ -104,6 +140,7 @@ h1::after {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 2rem;
 }
 
 .circle::before {
@@ -119,9 +156,9 @@ h1::after {
 
 .circle p {
   font-size: 1.1rem;
-  line-height: 1.1;
-  width: 70%;
-  margin-left: .15rem;
+  line-height: 1.05;
+  width: 65%;
+  margin: .3rem 0 0 1.2rem;
   color: #fff;
 }
 
@@ -135,6 +172,8 @@ h1::after {
   column-width: 11em;
   column-gap: 1.25em;
   margin-top: 1.5rem;
+  padding-bottom: 2rem;
+  margin-left: 2rem;
   
 }
 /* set z-index to 1 on the parent in order for the generated content to appear below the text and be visible. Otherwise the generated content is either above everything or not visible at all(if given a z-index of -1) 
@@ -166,12 +205,60 @@ h1::after {
   margin-bottom: -.2rem;
 }
 
-.para-wrap p:not(:last-of-type) {
+.para-wrap p:not(:last-of-type),
+.para-wrap--two p:not(:last-of-type) {
   margin-bottom: 1rem;
 }
 
 .image--main {
   grid-column: 5 / 8;
-  grid-row: 3 / 8
+  grid-row: 3 / 8;
+  position: relative;
+  z-index: 2;
+  
 }
+
+.para-wrap--two {
+  grid-column: 4 / 7;
+  grid-row: 8 / 10;
+  padding-bottom: 2rem;
+  margin-top: 5rem;
+  padding-left: 2rem;
+  width: 90%;
+}
+
+.quote {
+  grid-column: 8 /10;
+  grid-row: 8 / 10;
+  background-color: var(--yellow);
+  color: rgba(255,255,255,.95);
+  border-radius: 50px 50px 0 0;
+  padding: 1rem;
+  margin-top: 5rem;
+  position: relative;
+  z-index: 700;
+}
+
+.quote::after {
+  content: "";
+  position: absolute;
+  top: .75rem;
+  bottom: .75rem;
+  left: .75rem;
+  right: .75rem;
+  border: 2px dotted var(--gray-900);
+  opacity: .9;
+  border-radius: 50px;
+}
+
+.quote p {
+  font-size: 1.08rem;
+  line-height: 1.1;
+  width: 85%;
+  margin: 2rem 0 0 7.5%;
+}
+
+
+
+
 
