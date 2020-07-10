@@ -11,7 +11,8 @@
     --gray-800: hsl(218, 23%, 23%);
     --gray-900: hsl(220, 26%, 14%);
     --aqua: hsl(180, 80%, 40%);
-    --aqua-600: hsl(180, 80%, 20%);
+    --aqua-dark: hsl(180, 80%, 20%);
+    --aqua-600: hsl(180, 75%, 20%);
     --yellow: hsl(51, 77%, 51%);
 }
 
@@ -24,16 +25,17 @@
 }
 
 .inspiration {
-    
+    font-size: .8rem;
+    z-index: 5000;
     color: #333;
     position: absolute;
-    top: 8em;
-    right: .5em;
+    top: 4em;
+    right: 20em;
     text-decoration: underline;
 }
 
 .inspiration:hover, .inspiration:focus {
-    color: #000;
+    color: var(--aqua-dark);
 }
 
 body {
@@ -64,7 +66,7 @@ body {
   width: 1rem;
   height: 120px;
   background-color: var(--yellow);
-  left: 1.55rem;
+  left: 1.75rem;
   z-index: 0;
 }
 
@@ -178,7 +180,7 @@ body {
 
 .para-wrap {
   grid-column: 1 / 4;
-  grid-row: 3 / 12;
+  grid-row: 3 / 7;
   padding-top: 1.25rem;
   font-size: .7rem;
   column-width: 11rem;
@@ -399,11 +401,99 @@ body {
 }
 
 .sidebar {
+  width: 190px;
   grid-row: 1 / 12;
   grid-column: 6 / 7;
   background-color: #000;
   z-index: 2;
   margin: 0 1.8rem 0 .65rem;
+  padding-top: 4.5rem;
+  color: #fff;
 }
+
+.sidebar__svg {
+  width: 222px;
+  height: 70px;
+  fill: var(--gray-900);
+}
+
+.sidebar__svg path:nth-of-type(2) {
+  fill: var(--gray-500);
+}
+
+.sidebar__svg .first--brief tspan:first-of-type {
+  text-transform: uppercase;
+  font-size: 31px;
+  fill: none;
+  stroke-width: 4px;
+  stroke: var(--aqua-dark);
+}
+
+.sidebar__svg .second--brief tspan:first-of-type {
+  text-transform: uppercase;
+  font-size: 31px;
+  fill: var(--aqua-dark);
+  stroke-width: 1px;
+  stroke: var(--gray-500);
+}
+
+.sidebar__svg .first--brief tspan:last-of-type {
+  text-transform: uppercase;
+  font-size: 34px;
+  fill: var(--aqua-dark);
+  font-weight: 600;
+}
+
+.instant {
+  text-transform: uppercase;
+  font-size: .8rem;
+  text-align: center;
+  margin-top: -.3rem;
+}
+
+.sidebar__svg--two {
+  width: 222px;
+  height: 50px;
+  fill: var(--aqua-600);
+}
+
+.sidebar__svg--two path:nth-last-of-type(2) {
+  fill: var(--aqua);
+}
+
+.sidebar__svg--two text {
+  text-transform: uppercase;
+  fill: #fff;
+  text-anchor: middle;
+}
+
+.float {
+  font-size: .6rem;
+  padding: .25rem .75rem;
+}
+
+.float img {
+  width: 50%;
+  height: 75px;
+  float: left;
+  margin-right: .5rem;
+  object-fit: cover;
+}
+
+.float p:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.float p span {
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: .25rem;
+  letter-spacing: .02em;
+  line-height: 1.5;
+}
+
+
+
 
 
