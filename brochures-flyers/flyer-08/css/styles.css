@@ -1,0 +1,130 @@
+:root {
+	box-sizing: border-box;
+	
+	--gray-100: hsl(204, 45%, 98%);
+    --gray-200: hsl(210, 38%, 95%);
+    --gray-300: hsl(214, 32%, 91%);
+    --gray-400: hsl(211, 25%, 84%);
+    --gray-500: hsl(214, 20%, 69%);
+    --gray-600: hsl(216, 15%, 52%);
+    --gray-700: hsl(218, 17%, 35%);
+    --gray-800: hsl(218, 23%, 23%);
+    --gray-900: hsl(220, 26%, 14%);
+    --yellow-pasta: hsl(57, 100%, 88%); 
+}
+
+*, ::before, ::after {
+	box-sizing: inherit;
+	text-decoration: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  font-size: 100%;
+  color: var(--var-gray-700);
+  background-image: linear-gradient(120deg, var(--gray-500), var(--gray-700));
+  height: 100vh;
+  font-family: 'Josefin Slab', serif;
+  /*
+  PASTA
+  font-family: 'BenchNine', sans-serif;
+  
+  ANGEL HAIR FRITTATA
+  font-family: 'Cabin Sketch', cursive;
+  
+  Pasta - fancy
+  font-family: 'Niconne', cursive;
+  */
+}
+
+.inspiration {
+    
+    color: #333;
+    position: absolute;
+    top: 8em;
+    right: .5em;
+    text-decoration: underline;
+}
+
+.inspiration:hover, .inspiration:focus {
+    color: #000;
+}
+
+.grid {
+  width: 750px;
+  height: 890px;
+  background-color: #000;
+  margin: 2em auto;
+}
+
+.cell--one {
+  width: 375px;
+  height: 445px;
+  
+  background-image: url(../img/texture.png);
+  
+  padding: .35rem;
+  position: relative;
+}
+
+.pattern--wrap {
+  margin: 0 auto 0 auto;
+  width: 220px;
+  height: 10px;
+}
+
+.image-container {
+  font-family: 'BenchNine', sans-serif;
+  
+  background-image: url(../img/texture.png);
+  
+  background-size: cover;
+  /*position: relative;*/
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  line-height: .8;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: var(--yellow-pasta);
+  color: black;
+  font-size: 4rem; 
+  height: 180px;
+  width: 30px;
+  text-align: center;
+  mix-blend-mode: screen;
+  margin-right: .4rem;
+}
+
+.text:last-of-type {
+  margin-right: 0;
+}
+
+.text:nth-of-type(2) {
+  height: 170px;
+}
+
+.text:nth-of-type(3) {
+  height: 190px;
+}
+
+.text:nth-of-type(4) {
+  height: 175px;
+}
+
+.fork {
+  position: absolute;
+  width: 150px;
+  display: block;
+  transform: rotate(-90deg) translateY(-30%);
+  top: -60px;
+  left: 50%;
+  
+}
+
