@@ -57,9 +57,15 @@ body {
   height: 890px;
   background-color: #000;
   margin: 2em auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr 1fr;
+  color: #fff;
 }
 
 .cell--one {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   width: 375px;
   height: 445px;
   
@@ -125,6 +131,181 @@ body {
   transform: rotate(-90deg) translateY(-30%);
   top: -60px;
   left: 50%;
+}
+
+.summary {
+  text-align: center;
+  position: relative;
+  margin: .5rem 0 2rem 0;
+}
+
+.summary::before, .summary::after {
+  position: absolute;
+  content: "{";
+  left: -.5rem;
+  top: -1.6rem;
+  font-size: 10rem;
+  font-family: 'Crimson Pro', serif;
+}
+
+.summary::after {
+  content: "}";
+  left: auto;
+  right: -.5rem;
+}
+
+.summary h4 {
+  font-family: 'Niconne', cursive;
+  font-size: 1.4rem;
+}
+
+.summary p {
+  font-size: .8rem;
+  line-height: 1.2;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.footer {
+  font-size: .75rem;
+  text-align: center;
+  position: relative;
+}
+
+.footer::before, .footer::after {
+  position: absolute;
+  content: "";
+  width: 220px;
+  height: 1px;
+  background-color: currentColor;
+  left: 20%;
+  top: -.3rem;
+}
+
+.footer::after {
+  top: auto;
+  bottom: -.35rem;
+}
+
+
+.cell--two {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  background: linear-gradient(to right, rgba(0,0,0,.4), rgba(0,0,0,.6)), url(../img/cell--two.webp) no-repeat 50% 50%/cover;
+  padding-left: 200px;
+  padding-right: .3rem;
+  position: relative;
+}
+
+.types {
+  width: 70px;
+  height: 70px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -10px 0 0 48px;
+  color: var(--gray-900);
+}
+
+.types::after {
+  content: "";
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 2px solid white;
+  left: -9px;
+  top: -9px;
+}
+
+.types p span:first-of-type {
+  display: block;
+  font-family: 'BenchNine', sans-serif;
+  font-size: .67rem;
+  text-transform: uppercase;
+  text-align: right;
+  line-height: .6;
+}
+
+.types p span:last-of-type {
+  display: block;
+  font-family: 'Niconne', cursive;
+  font-size: 1.7rem;
+  line-height: .6;
+
+}
+
+/****************************************/
+
+/* use the column-count solution instead of flexbox:
+
+https://stackoverflow.com/questions/18669216/how-do-i-use-flex-flow-column-wrap*/
+.pasta--list {
+  font-size: .45rem;
+  column-count: 2;
+  column-fill: balance;
+  -webkit-column-fill: balance;
+  column-gap: .9rem;
+  text-align: right;
+  height: 260px;
+  margin-top: 1rem;
+}
+
+[class*=item--] {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: .3rem;
+}
+
+.left {
+  text-align: left;
+}
+
+/****************************************/
+
+.pasta--list h4 {
+  text-transform: uppercase;
+  font-family: 'BenchNine', sans-serif;
+  letter-spacing: 1px;
+}
+
+.fork--absolute {
+  position: absolute;
+  bottom: 2rem;
+  right: 0rem;
+}
+
+.wavy--container {
+  position: absolute;
+  top: 275px;
+  left: 158px;
+  width: 265px;
+  height: 10px;
+  transform: rotate(90deg);
+}
+
+
+.cell--three {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: gray;
+}
+
+.cell--four {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
   
 }
+
+
+
+
+
+
+
+
+
 
