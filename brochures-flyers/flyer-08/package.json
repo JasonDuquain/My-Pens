@@ -14,5 +14,8 @@
     "gulp-group-css-media-queries": "^1.2.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1"
+  },
+  "dependencies": {
+    "svg-path-reverse": "^1.1.1"
   }
 }

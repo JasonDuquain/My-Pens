@@ -4,38 +4,17 @@ var gulp = require('gulp');
 var sass = require('gulp-sass'); 
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
+var reverse = require('svg-path-reverse');
 //var gcmq = require('gulp-group-css-media-queries');
  
+var path = "M0,135a135,135 0 1,0 270,0a135,135 0 1,0 -270,0";
 
-gulp.task('styles', function() {
-    return gulp.src('scss/**/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle: 'expanded'
+var reversed = reverse(path);
 
-    }).on('error', sass.logError))
-        .pipe(autoprefixer({
-                browsers: ['last 2 versions']
-        }))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('css'));
-});
-
-gulp.task('watch', ['styles'], function () {
-    gulp.watch('scss/**/*.scss', ['styles']);
-});
+console.log(reversed);
 
 
-/********* MANUAL TASK TO RUN AT END *********/
-gulp.task('combinemq', function () {
-    gulp.src('css/styles.css')
-        .pipe(gcmq())
-        .pipe(gulp.dest('./css'));
-});
-/****************************************/
 
-
-gulp.task('default', ['watch']);
 
 
 
