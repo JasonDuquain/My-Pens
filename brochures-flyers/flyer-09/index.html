@@ -10,13 +10,23 @@
 <body>
   
   <svg width="0" height="0">
+   <defs>
     <symbol id="icon" viewBox="0 0 13 30">
       <polygon points="5 0 13 0 13 30 5 30 0 15" fill="var(--red-purple)"/>
     </symbol>
+     <pattern id="court" x="-140" y="-50" width="1080" height="723" patternUnits="userSpaceOnUse">
+       <image x="0" y="0" xlink:href="img/court.jpg" width="1280" height="823"></image>
+       <rect x="0" y="0" width="1280" height="823" fill="rgba(255,255,255,.25)"/>
+     </pattern>
+   </defs>
   </svg>  
         
 	<div class="grid">
 	  <a class="inspiration" href="" target="_blank">Inspiration</a>
+	  
+	  <div class="xparent">
+      <img src="img/players-xparent.png" width="425" alt="two women basketball players at tipoff" class="img-tipoff">
+    </div>
 	  
 	  <div class="heading">
 	    <h3><abbr title="National Collegiate Athletic Association">NCAA</abbr> Preview</h3>
@@ -25,14 +35,15 @@
 	  
 	  <div class="bg">
 	    <svg class="circle--svg" viewBox="-75 -10 450 450">
-	      <path id="circ" d="M0,150A150,150 0 1 1300,150A150,150 0 1 10,150" transform="rotate(-42, 150 150)" fill="none"/>
+	      <path id="circ" d="M0,150A150,150 0 1 1300,150A150,150 0 1 10,150" transform="rotate(-41, 150 150)" fill="none"/>
 	      <text>
 	        <textPath xlink:href="#circ">
-	          <tspan dy="-20">The NCAA Regional matchup between UCSD and HSU </tspan><tspan dx="-238" dy="12">makes the third time in as many weeks the teams have met. </tspan>
-	          <tspan dx="280" fill="var(--red-purple)">and this time, the stakes can't get any higher.</tspan>
+	          <tspan dy="-10">The NCAA <tspan dx="28">Regional matchup between UCSD and HSU</tspan> </tspan><tspan dx="-233" dy="12">makes the <tspan dx="23">3rd time in as many weeks the teams have met. </tspan></tspan>
+	          <tspan dx="216" fill="var(--red-purple)">and this time, <tspan dx="55">the stakes can't get any higher.</tspan></tspan>
 	        </textPath>
 	      </text>
 	    </svg>
+	    
 	  </div>
 	  
 	  <div class="main">
@@ -48,9 +59,55 @@
 	          <span>To Watch</span>
 	        </h4>
 	      </div>
+	      
+	      <div class="players">
+	        <div class="tiffany player">
+          <img src="img/player--1-xparent.png" width="70" alt="Tiffany Hunter" class="img-player--one">
+	          <h5>Tiffany Hunter</h5>
+	          <div class="stats--wrap">
+	            <span>Junior Forward</span>
+	            <span>2nd team all&ndash;NCAA</span>
+	            <span>11.3 ppg</span>
+	            <span>72 rebounds</span>
+	            <span>49.1 FG%</span>
+	          </div>
+	        </div>
+	        <div class="chelsea player">
+          <img src="img/player--2-xparent.png" width="75" alt="Chelsea Carlisle" class="img-player--two">
+	          <h5>Chelsea Carlisle</h5>
+	          <div class="stats--wrap">
+	            <span>Sophmore Guard</span>
+	            <span>1st team all&ndash;NCAA</span>
+	            <span>Team leader in points, assists and steals</span>
+	            <span>12.5 ppg</span>
+	            <span>6.5 apg</span>
+	            <span>2.2 steals</span>
+	          </div>
+	        </div>
+	        <div class="annette player">
+          <img src="img/player--3-xparent.png" width="85" alt="Annette Ilg" class="img-player--three">
+	          <h5>Annette Ilg</h5>
+	          <div class="stats--wrap">
+	            <span>Senior Guard</span>
+	            <span>2nd team all&ndash;NCAA</span>
+	            <span>10.3 ppg</span>
+	            <span>55 rebounds</span>
+	            <span>1.8 steals</span>
+	          </div>
+	        </div>
+	      </div>
+	      
 	    </div>
 	    <div class="panel--two">
-	      hahuahuhauhuhau
+	      <svg class="svg--up" width="211" height="240">
+	        <g transform="translate(-6,0)" fill="url('#court') #fff">
+	          <text class="upintheair" x="41" y="120">
+	            <tspan class="up">Up</tspan>
+	            <tspan class="air" x="45" dy="105">Air</tspan>
+	          </text>
+	          <text class="in" x="13" dy="120" transform="rotate(-71,97,142)">in the</text>
+	        </g>
+	      </svg>
       </div>
       <div class="panel panel--three">
 	      <div class="svg--icon-wrap">
@@ -64,6 +121,7 @@
 	          <span>West Regional</span>
 	        </h4>
 	      </div>
+	      
       </div>
 	  </div>
 	  
