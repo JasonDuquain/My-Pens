@@ -352,7 +352,7 @@ body {
 
 .cal {
   position: relative;
-  padding: 0 1rem;
+  padding: .1rem 1rem 0 1rem;
   font-size: .45rem;
 }
 
@@ -403,3 +403,126 @@ body {
 .paddingbottom {
   padding-bottom: 3px;
 }
+
+.nums {
+  padding: 2px 1rem 0 1rem;
+}
+
+.nums h5 {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-size: .52rem;
+  border-bottom: 1px solid var(--brown-gray-700);
+  margin-bottom: .2rem;
+  padding-bottom: .1rem;
+}
+
+.line--wrap {
+  font-family: 'Roboto', sans-serif;
+  font-size: .46rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin-bottom: .15rem;
+}
+
+div.line {
+  height: 2px;
+  background-color: var(--red-purple);
+  flex: 0 0 64%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.comparison--wrap {
+  font-size: .44rem;
+}
+
+.main--stat {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: .2rem;
+}
+
+.compare--title {
+  flex: 0 0 100%;
+  margin-left: 38px;
+}
+
+.compare--title--two {
+  margin-left: 44px;
+}
+
+.compare--title--three {
+  margin-left: 36px;
+}
+
+.compare--title--four {
+  margin-left: 42px;
+}
+
+.compare--title--five {
+  margin-left: 39px;
+}
+
+.compare--title--six {
+  margin-left: 39px;
+}
+
+.compare--title--seven {
+  margin-left: 39px;
+}
+
+.compare {
+  display: flex;
+  align-items: center;
+}
+
+.compare p:first-of-type {
+  transform: translateX(5px);
+}
+
+.compare p:last-of-type {
+  margin-left: 13px;
+}
+
+/* &nbsp; is not working */
+.compare p span {
+  display: inline;
+  opacity: 0;
+}
+
+.bar--nums {
+  flex: 0 0 83px;
+  height: 7px;
+  background-image: linear-gradient(to right, var(--red-purple) 0%, var(--red-purple) 58%, var(--brown-gray-700) 58%);
+  margin: 0 .25rem 0 0;
+  transform: translateX(12px)
+}
+
+.bar--nums--two {
+  background-image: linear-gradient(to right, var(--red-purple) 0%, var(--red-purple) 64%, var(--brown-gray-700) 64%);
+}
+
+.bar--nums--three {
+  background-image: linear-gradient(to right, var(--red-purple) 0%, var(--red-purple) 30%, var(--brown-gray-700) 30%);
+}
+
+.bar--nums--four {
+  background-image: linear-gradient(to right, var(--red-purple) 0%, var(--red-purple) 46%, var(--brown-gray-700) 46%);
+}
+
+.bar--nums--five {
+  background-image: linear-gradient(to right, var(--red-purple) 0%, var(--red-purple) 68%, var(--brown-gray-700) 68%);
+}
+
+.bar--nums--six {
+  background-image: linear-gradient(to right, var(--red-purple) 0%, var(--red-purple) 73%, var(--brown-gray-700) 73%);
+}
+
+.bar--nums--seven {
+  background-image: linear-gradient(to right, var(--red-purple) 0%, var(--red-purple) 31%, var(--brown-gray-700) 31%);
+}
+
+
+
