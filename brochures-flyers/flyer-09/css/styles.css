@@ -29,20 +29,20 @@ body {
   background-image: linear-gradient(120deg, var(--gray-500), var(--gray-700));
   height: 100vh;
   font-family: 'Source Serif Pro', serif;
-  /* font-family: 'Roboto', sans-serif; */
 }
 
 .inspiration {
-    
+    font-size: .7rem;
     color: #333;
     position: absolute;
-    top: 8em;
-    right: .5em;
+    top: 1.4em;
+    right: 10em;
     text-decoration: underline;
+    z-index: 30000;
 }
 
 .inspiration:hover, .inspiration:focus {
-    color: #000;
+    color: var(--red-purple);
 }
 
 .grid {
@@ -53,7 +53,7 @@ body {
   padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1.3fr 1fr;
-  grid-template-rows: 90px 330px 1fr;
+  grid-template-rows: 91px 330px 1fr;
   position: relative;
 }
 
@@ -70,14 +70,62 @@ body {
   z-index: 0;
 }
 
+.top {
+  position: absolute;
+  font-size: .5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1.8rem 1.5rem 0 1.5rem;
+  border-left: 2px solid white;
+  border-right: 3px solid white;
+  z-index: 19500;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+}
+
+.cellone {
+  grid-column: 1 / 2;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.celltwo {
+  grid-column: 2 / 3;
+  justify-self: end;
+  font-weight: 900;
+  font-size: .7rem;
+  font-family: 'Roboto', sans-serif;
+  transform: translateY(2px);
+}
+
+.cellthree {
+  grid-column: 1 / 2;
+  color: var(--brown-gray-700);
+  font-size: .45rem;
+}
+
+.cellfour {
+  grid-column: 2 / 3;
+  justify-self: end;
+  font-size: .45rem;
+}
+
+.border {
+  width: 548px;
+  height: 1px;
+  background-color: var(--brown-gray);
+  grid-column: 1 / 3;
+}
+
 .heading {
   background-color: var(--red-purple);
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 61px, 50% 100%, 0 61px);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 62px, 50% 100%, 0 62px);
   text-transform: uppercase;
   text-align: center;
   padding-top: 1.2rem;
+  z-index: 20000;
 }
 
 .heading h3 {
@@ -99,7 +147,7 @@ body {
   margin-top: 28px;
   grid-column: 1 / 4;
   grid-row: 1 / 3;
-  background-image: linear-gradient(to right, rgba(0,0,0,.5), rgba(255,255,255,.6)), url(../img/court.jpg);
+  background-image: linear-gradient(to right, rgba(0,0,0,.5), rgba(255,255,255,.6)), url(http://res.cloudinary.com/jduquain/f_auto,q_auto/court.jpg);
   background-size: 155%;
   background-position: 50% 50%;
   clip-path: polygon(0% 0%, 50% 77px, 100% 0%, 100% 100%, 50% 300px, 0% 100%);
@@ -110,7 +158,7 @@ body {
   position: absolute;
   top: 84px;
   left: 65px;
-  z-index: 5000;
+  z-index: 25000;
 }
 
 .img-tipoff {
@@ -131,7 +179,7 @@ body {
 
 .main {
   grid-column: 1 / 4;
-  height: 102.5%;
+  height: 101.3%;
   transform: translateY(-16.2%);
   clip-path: polygon(0% 100%, 0% 91px, 50% 0%, 100% 91px, 100% 100%);
    display: grid;
