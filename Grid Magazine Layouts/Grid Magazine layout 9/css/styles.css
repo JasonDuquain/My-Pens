@@ -14,20 +14,29 @@
 body {
   background-color: #000;
   font-family: 'Oxygen', sans-serif;
-  background-color: gray;
+  background-color: hsl(0, 23%, 87%);
 }
 
 .inspiration {
-    font-family: 'Krub', sans-serif;
-    color: #333;
+    color: #fff;
     position: absolute;
-    top: 8em;
-    right: .5em;
+    top: 2em;
+    left: 3.5rem;
     text-decoration: underline;
+  transition: color 300ms ease-in;
 }
 
 .inspiration:hover, .inspiration:focus {
-    color: #000;
+    color: var(--red);
+}
+
+.mag__image-fluoresence {
+  position: absolute;
+  width: 900px;
+  height: auto; 
+  opacity: 1;
+  top: 0;
+  left: 25%;
 }
 
 .mag {
@@ -41,8 +50,8 @@ body {
   font-size: .6rem;
   padding: 0 3.5rem 2rem 3.5rem;
   display: grid;
-  grid-template-columns: .65fr 1fr .5fr .5fr .8fr;
-  grid-template-rows: 145px 450px 150px;
+  grid-template-columns: .65fr 1fr .15fr 1fr .65fr;
+  grid-template-rows: 145px 450px 150px 14px;
 }
 
 .mag__header {
@@ -66,7 +75,7 @@ body {
 
 .mag__astrobiology {
   text-transform: uppercase;
-  font-size: .46rem;
+  font-size: .48rem;
   color: var(--red);
   font-weight: 700;
 }
@@ -78,6 +87,7 @@ body {
   -webkit-hyphens: auto;
   hyphens: auto;
   margin-right: 1rem;
+  padding-top: .2rem;
 }
 
 .para--two--wrap {
@@ -86,13 +96,7 @@ body {
   text-align: justify;
   -webkit-hyphens: auto;
   hyphens: auto;
-  
-}
-
-.mag__image-uv {
-  width: 375px;
-  grid-column: 1 / 3;
-  grid-row: 3 / 4;
+  padding-top: .2rem;
 }
 
 .shape {
@@ -102,16 +106,110 @@ body {
   shape-outside: polygon(32.89% 8.97%, 18.02% 19.96%, 7.58% 34.1%, 17.6% 44.45%, 8.4% 54%, 5.2% 67.99%, 14.4% 83.11%, 46.40% 101.99%, 55% 0%);
 }
 
-.mag__image-fluoresence {
-  position: absolute;
-  width: 900px;
-  height: auto; 
-  opacity: .7;
-  top: 0;
-  left: 25%;
-  
+.uv {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+  display: flex;
+  border-bottom: 1px solid #fff;
 }
 
+.mag__image-uv {
+  width: 388px;
+  height: 130px;
+  margin-right: 1.25rem;
+  position: relative;
+  z-index: 10;
+}
 
+.mag__callout {
+  color: var(--red);
+  width: 21%;
+  padding-top: 1.4rem;
+  font-size: .5rem;
+  border-left: 1px solid #fff;
+  padding-left: .75rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
 
+.mag__callout::first-letter {
+  font-size: 1.3rem;
+  font-weight: 700;
+  float: left;
+  line-height: 1;
+  margin-right: .1rem;
+}
+
+.callout-and-para {
+  grid-column: 4 / 5;
+  grid-row: 3 / 4;
+  display: flex;
+  border-bottom: 1px solid #fff;
+}
+
+.callout--two {
+  border-left: 0;
+  padding-left: 0;
+  padding-right: .75rem;
+  width: 38%;
+  border-right: 1px solid #fff;
+}
+
+.mag__para--five {
+  width: 70%;
+  margin-left: 1.25rem;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  padding-top: 1.4rem;
+}
+
+.para--three--wrap {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto; 
+  z-index: 20;
+}
+
+.shape--two {
+  width: 150px;
+  height: 550px;
+  float: left;
+  shape-outside: polygon(10.76% 81.69%, 44.16% 71.95%, 86.79% 67.38%, 90.81% 56.46%, 86.93% 44.55%, 83.6% 34.34%, 77.06% 17.65%, 59.73% 8.53%, 67.4% -1.82%);
+}
+
+.mag__para--six {
+  padding: .3rem 0 1.1rem 1rem;
+  border-bottom: 1px solid #fff;
+}
+
+.footer {
+  text-transform: uppercase;
+  grid-column: 1 / -1;
+  grid-row: 4 / 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.astronomy {
+  font-size: .48rem;
+  color: var(--red);
+  font-weight: 700; 
+}
+
+.date {
+  font-size: .52rem;
+  font-weight: 700;
+}
+
+.date:nth-of-type(2) {
+  margin-left: 11.2rem;
+}
+
+.date:nth-of-type(3) {
+  transform: translateX(-11.2rem)
+}
 
