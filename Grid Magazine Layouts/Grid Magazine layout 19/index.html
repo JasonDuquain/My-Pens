@@ -13,16 +13,75 @@
 	    <defs>
       <!-- bbox: {x: 0, y: 0, width: 20, height: 44} ** but this doesnt include stroke width ** -->
 	      <path id="arrow" d="M0 0 L10 6, 20 0, 20 17, 12.5 22, 12.5 33, 20 28, 20 34, 10 44, 0 34, 0 28, 7.5 33, 7.5 22, 0 17 Z"></path>	
-	      
-	     <pattern></pattern>     
-	                  
+	                   
 	    </defs>
+	    
+	    <symbol id="star" viewBox="0 0 48 45">
+	      <!-- star -- bbox: {x: 1, y: 1, width: 48, height: 45} -->
+	      <path fill="#222" d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"></path>
+	    </symbol>
+	    
+	    <symbol id="line" viewBox="0 0 15 3">
+	      <line x1="0" y1="0" x2="15" y2="0" stroke="var(--gray)" stroke-width="2" />
+	    </symbol>
+	    <symbol id="dot" viewBox="0 0 4 4">
+	      <circle r="2" cx="2" cy="2" fill="#000" />
+	    </symbol>
 	  </svg>
     
 	  <div class="grid">
 	    <a class="inspiration" href="" target="_blank">Inspiration</a>
 	    <div class="cell--one">
-	      <h3 class="awards">Invention Awards</h3>
+        <div class="awards--wrap">
+          <h3 class="awards">Invention Awards</h3>
+          <span class="date">05.14</span>
+        </div>
+        <div class="awards--stamp">
+          <div class="svg--wrap">
+            <svg width="100" height="100">
+              <circle r="50" cx="50" cy="50" fill="#222"/>
+              <circle r="46" cx="50" cy="50" fill="#fff"/>
+              <!--<circle r="42" cx="50" cy="50" fill="pink" stroke="#000" stroke-width="1" />-->
+              
+              <!-- getTotalLength() === 263.93 -->
+              <path transform="rotate(44,50,50)" id="textcircle" d="M8,50A42,42 0 1 192,50A42,42 0 1 18,50" fill="none" stroke="#000" stroke-width="1"></path>
+              
+              <text class="text--award" aria-label="Aviation Invention Awards">
+                <textPath xlink:href="#textcircle" >
+                  <tspan class="outer" dy="15" >Aviation <tspan rotate="180" dy="-20" dx="37.5" class="inner">sdrawa noitnevni</tspan></tspan>
+                </textPath>
+              </text>
+              <text class="a" y="67" x="32">A</text>
+              
+              <use xlink:href="#star" width="10" height="10" x="16" y="36" />
+              <use xlink:href="#star" width="10" height="10" x="75" y="36" />
+              <use xlink:href="#line" width="15" height="3" x="13.5" y="48.5" />
+              <use xlink:href="#line" width="15" height="3" x="72.5" y="48.5" />
+              <use xlink:href="#dot" width="2.5" height="2.5" x="14.5" y="53" />
+              <use xlink:href="#dot" width="2.5" height="2.5" x="83" y="53" />
+            </svg>
+          </div>
+          <div class="quote--wrap">
+            <blockquote>
+              "We&apos;re at the dawn of a new era in flight, where highly reliable and efficient propulsion will create aircraft as safe and easy to use as automobiles."
+            </blockquote>
+            <cite>Mark Moore, NASA Langley Research Center</cite>
+          </div>
+        </div>
+        
+        <div class="list--one--two">
+          <div class="list--one">
+            <div class="one">1</div>
+            <h4>Safety and Efficiency</h4>
+            <p>A dozen compact electric motors operate three times more efficiently than a typical personal airplane&apos;s combustion engines. Bonus: More motors improve redundancy and lower the risk of accidents.</p>
+          </div>
+          <div class="list--two">
+            <div class="two">2</div>
+            <h4>Flexibility</h4>
+            <p>Retraceable arcs reposition the motors to transition between virual takeoff, forward flight, and landing.</p>
+          </div>
+        </div>
+        
 	    </div>
 	    
 	    

@@ -91,11 +91,118 @@ body {
 .date {
   color: var(--red);
   font-weight: 700;
-  font-size: .75rem;
+  font-size: .72rem;
   display: block;
   letter-spacing: .15em;
 }
 
+.awards--stamp {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  width: 320px;
+}
+
+.svg--wrap {
+  width: 110px;
+  height: 110px;
+  margin-right: 1rem;
+}
+
+.awards--stamp svg {
+  width: 100px;
+  height: 100px;
+}
+
+.text--award {
+  font-size: .8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: .2rem;
+}
+
+.inner {
+  font-size: .57rem;
+  letter-spacing: .12rem;
+}
+
+.a {
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+  font-size: 3rem;
+  fill: var(--red);
+}
+
+.quote--wrap {
+  
+}
+
+.quote--wrap blockquote {
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: .53rem;
+  font-weight: 700;
+}
+
+.quote--wrap cite {
+  font-size: .6rem;
+  font-weight: 500;
+}
+
+.list--one--two {
+  grid-column: 3 / 5;
+  grid-row: 1 / 2;
+  font-size: .55rem;
+}
+
+.list--one, .list--two {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: .2rem
+}
+
+.one, .two {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .55rem;
+  font-weight: 700;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: var(--red);
+  color: #fff;
+}
+
+.list--one--two h4 {
+  text-transform: uppercase;
+  color: var(--red);
+  font-size: .45rem;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  align-self: center;
+}
+
+.list--one--two p {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  font-size: .55rem;
+}
+
+.list--one {
+  width: 80%;
+  margin-left: 20%;
+}
+
+.list--two {
+  width: 60%;
+  margin-left: 40%
+}
 
 
 .cell--two {
