@@ -54,7 +54,9 @@ body {
   outline: 1px solid red;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-auto-rows: min-content;
   padding: .75rem .75rem .75rem 1.75rem;
+  position: relative;
 }
 
 #arrow {
@@ -70,11 +72,16 @@ body {
   display: grid;
   grid-column: repeat(4, 1fr);
   padding: 1.5rem 0 0 0;
+  position: relative;
+}
+
+.wrappy {
+  grid-column: 1 / 3;
 }
 
 .awards--wrap {
-  grid-column: 1 / 3;
-  
+  width: max-content;
+  margin-bottom: .2rem;
 }
 
 .awards {
@@ -134,14 +141,10 @@ body {
   fill: var(--red);
 }
 
-.quote--wrap {
-  
-}
-
 .quote--wrap blockquote {
   color: var(--red);
   text-transform: uppercase;
-  font-size: .53rem;
+  font-size: .6rem;
   font-weight: 700;
 }
 
@@ -156,14 +159,14 @@ body {
   font-size: .55rem;
 }
 
-.list--one, .list--two {
+.list--one, .list--two, .list--three {
   display: grid;
   grid-template-columns: min-content 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: .2rem
+  grid-template-rows: min-content 1fr;
+  grid-column-gap: .25rem;
 }
 
-.one, .two {
+.one, .two, .three {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   align-self: center;
@@ -179,7 +182,7 @@ body {
   color: #fff;
 }
 
-.list--one--two h4 {
+.list--one--two h4, .main--heading--wrap h4 {
   text-transform: uppercase;
   color: var(--red);
   font-size: .45rem;
@@ -188,26 +191,131 @@ body {
   align-self: center;
 }
 
-.list--one--two p {
-  grid-column: 1 / 3;
+.list--one--two p, .main--heading--wrap p {
+  grid-column: 2 / 3;
   grid-row: 2 / 3;
-  font-size: .55rem;
+  font-size: .53rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/** make sure the border is applied to the <span>, not the <p>..otherwise the effect will not work **/
+.box--decoration {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  border-bottom: 1px solid var(--gray);
 }
 
 .list--one {
-  width: 80%;
-  margin-left: 20%;
+  width: 300px;
+  /*margin-left: 20%;*/
 }
 
 .list--two {
-  width: 60%;
-  margin-left: 40%
+  width: 65%;
+  /*margin-left: 40%;*/
+  margin-top: 1.5rem;
 }
+
+.main--heading--wrap {
+  
+}
+
+.main--heading {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: .2rem;
+}
+
+.main--heading span {
+  display: block;
+  border-bottom: 1px solid var(--gray);
+  width: max-content;
+}
+
+.main--heading span:first-of-type {
+  margin-bottom: .2rem;
+}
+
+.main--heading--wrap h2 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin-top: .2rem;
+  float: left;
+  margin-right: .75rem;
+  padding-bottom: .5rem;
+  padding-right: 2.25rem;
+  position: relative;
+  background-color: 
+  z-index: 10;
+}
+
+.list--three {
+  width: 44%;
+  padding: .5rem;
+  margin-top: 1.2rem;
+  position: relative;
+  z-index: 20;
+  background-color: #fff;
+}
+
+[class*=para--] {
+  font-size: .55rem;
+  border-right: 3px solid var(--gray);
+  padding: 0 .35rem;
+  margin-top: 4rem;
+  /*align-self: end;*/
+  
+}
+
+.para--one--wrap {
+  grid-column: 1 / 2;
+  padding-left: 0;
+}
+
+.para--one--wrap p {
+  margin-top: .25rem
+}
+
+.para--one--wrap span {
+  font-weight: 700;
+}
+
+.para--two--wrap {
+  grid-column: 2 / 3;
+}
+
+.para--three--wrap {
+  grid-column: 3 / 4;
+}
+
+.para--four--wrap {
+  grid-column: 4 / 5;
+}
+
+.lines--pattern--wrap {
+  position: absolute;
+  z-index: 0;
+  width: 570px;
+  height: 155px;
+  top: 237px;
+  left: 60px;
+}
+
+.svg--pattern {
+  width: 100%;
+  height: 100%;
+}
+
 
 
 .cell--two {
   grid-column: 2 / 3;
   background-color: var(--yellow);
 }
-
 
