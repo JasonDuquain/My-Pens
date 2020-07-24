@@ -251,7 +251,7 @@ body {
   padding-bottom: .5rem;
   padding-right: 2.25rem;
   position: relative;
-  background-color: 
+  background-color: #fff;
   z-index: 10;
 }
 
@@ -265,12 +265,16 @@ body {
 }
 
 [class*=para--] {
-  font-size: .55rem;
-  border-right: 3px solid var(--gray);
+  font-size: .58rem;
   padding: 0 .35rem;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
+  border-right: 3px solid var(--gray);
   /*align-self: end;*/
   
+}
+
+.para--four--wrap {
+  border-right: none;
 }
 
 .para--one--wrap {
@@ -288,15 +292,107 @@ body {
 
 .para--two--wrap {
   grid-column: 2 / 3;
+  margin-top: 20rem;
 }
 
 .para--three--wrap {
   grid-column: 3 / 4;
+  margin-top: 15rem;
 }
+
+.figure--one {
+  width: 100%;
+  text-align: right;
+  margin: 1.25rem 0 .75rem 0;
+}
+
+.image--jimmy {
+  width: 65%;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  opacity: .9;
+}
+
+.name--jimmy {
+  font-size: .5rem;
+}
+
 
 .para--four--wrap {
   grid-column: 4 / 5;
+  margin-top: 20rem;
+  font-size: .42rem;
 }
+
+.icon--one {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content min-content;
+  grid-column-gap: 1rem;
+}
+
+.inventor, .cost, .company, .market {
+  text-transform: uppercase;
+  margin-bottom: .1rem;
+}
+
+.inventor--name, .cost--name, .company--name {
+  font-weight: 700;
+}
+
+.cost {
+  text-transform: uppercase;
+}
+
+.cost--name {
+  font-weight: 700;
+}
+
+.cost span {
+  display: block;
+}
+
+.cell--wrap--one {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  border-bottom: 1px dotted #000;
+}
+
+.cell--wrap--two {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  border-bottom: 1px dotted #000;
+  padding-bottom: .25rem;
+}
+
+.cell--wrap--three {
+  margin-top: .25rem;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.cell--wrap--four {
+  margin-top: .25rem;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.market--name {
+  display: flex;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--gray);
+  margin-right: 2px;
+}
+
+.dot--black {
+  background-color: #000;
+}
+
 
 .lines--pattern--wrap {
   position: absolute;
@@ -310,6 +406,11 @@ body {
 .svg--pattern {
   width: 100%;
   height: 100%;
+}
+
+.plane {
+  position: absolute;
+  top: 205px;
 }
 
 
