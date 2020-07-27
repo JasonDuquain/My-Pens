@@ -49,11 +49,11 @@ body {
   width: 1280px;
   height: 840px;
   background-color: #fff;
-  
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: min-content;
-  padding: .75rem .75rem .75rem 1.75rem;
+  padding: .75rem .75rem 0 1.75rem;
   position: relative;
   border-bottom: 2px solid var(--gray);
 }
@@ -69,8 +69,8 @@ body {
 .cell--one {
   grid-column:  1 / 2;
   display: grid;
-  grid-column: repeat(4, 1fr);
-  padding: 1.5rem 0 0 0;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1.5rem 4rem 0 0;
   position: relative;
 }
 
@@ -143,12 +143,13 @@ body {
 .quote--wrap blockquote {
   color: var(--red);
   text-transform: uppercase;
-  font-size: .6rem;
+  font-size: .55rem;
   font-weight: 700;
+  width: 85%;
 }
 
 .quote--wrap cite {
-  font-size: .6rem;
+  font-size: .52rem;
   font-weight: 500;
   display: inline-block;
   transform: translateY(-4px);
@@ -208,15 +209,14 @@ body {
 }
 
 .list--one {
-  /* fragile fix for grid track lengths */
-  /************************************/
   width: 75%;
+  margin-left: 1rem;
 }
 
 .list--two {
   width: 50%;
   margin-top: 1.5rem;
-  margin-left: 20%
+  margin-left: 6rem;
 }
 
 .main--heading {
@@ -240,19 +240,19 @@ body {
 
 .main--subheading {
   font-family: 'Barlow Semi Condensed', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 900;
   float: left;
   margin-right: .75rem;
   padding-bottom: .25rem;
-  padding-right: 2.25rem;
+  padding-right: 1.75rem;
   position: relative;
   background-color: #fff;
   z-index: 10;
 }
 
 .list--three {
-  width: 44%;
+  width: 49%;
   padding: .5rem;
   margin-top: 1.2rem;
   position: relative;
@@ -262,31 +262,24 @@ body {
 
 [class*=para--] {
   font-size: .58rem;
-  padding: 0 .35rem;
-  margin-top: 2.5rem;
+  padding: 0 .35rem 1rem .35rem;
+  
   border-right: 3px solid var(--gray);
 }
 
 .para--three--wrap {
   border-right: none;
-  
-  /* fragile fix for grid track lengths */
-  /************************************/
-  width: 165px;
 }
 
 .para--four--wrap {
   border-left: 3px solid var(--gray);
   border-right: none;
-  
-  /* fragile fix for grid track lengths */
-  /************************************/
-  width: 165px;
 }
 
 .para--one--wrap {
   grid-column: 1 / 2;
   padding-left: 0;
+  margin-top: 4.25rem;
 }
 
 .para--one--wrap p {
@@ -299,12 +292,12 @@ body {
 
 .para--two--wrap {
   grid-column: 2 / 3;
-  margin-top: 21rem;
+  margin-top: 18.5rem;
 }
 
 .para--three--wrap {
   grid-column: 3 / 4;
-  margin-top: 17.5rem;
+  margin-top: 15rem;
 }
 
 .figure--one {
@@ -326,7 +319,7 @@ body {
 
 .para--four--wrap {
   grid-column: 4 / 5;
-  margin-top: 21rem;
+  margin-top: 20rem;
   font-size: .42rem;
 }
 
@@ -407,10 +400,10 @@ body {
 .lines--pattern--wrap {
   position: absolute;
   z-index: 0;
-  width: 570px;
-  height: 155px;
-  top: 237px;
-  left: 60px;
+  width: 480px;
+  height: 150px;
+  top: 230px;
+  left: 80px;
 }
 
 .svg--pattern {
@@ -431,7 +424,7 @@ body {
   font-weight: 700;
   position: absolute;
   bottom: 0rem;
-  right: 1rem;
+  right: 2.5rem;
   writing-mode: vertical-lr;
 	transform: rotate(180deg);
   z-index: 40;
@@ -441,5 +434,65 @@ body {
 .cell--two {
   grid-column: 2 / 3;
   background-color: var(--yellow);
+  display: grid;
+  grid-template-columns: .5fr 1fr 1fr;
+  grid-template-rows: min-content min-content min-content;
+  padding: 1.5rem 1.5rem 1rem 1rem;
+  position: relative;
+  
 }
 
+.awards--wrap--two {
+  grid-column: 3 / 4;
+  text-align: right;
+}
+
+.awards--stamp--two {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  width: auto;
+}
+
+.main--heading--wrap--two {
+  grid-column: 2 / 3;
+}
+
+.main--heading--two {
+  margin-bottom: .3rem;
+  margin-top: 1.25rem;
+}
+
+.main--subheading span {
+  display: block;
+  line-height: 1;
+}
+
+.img--cars {
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.icon--two {
+  grid-column: 1 / 2;
+  justify-self: end;
+  font-size: .42rem;
+  grid-column: 1 / 2;
+  width: max-content;
+  margin-top: 1.5rem;
+}
+
+.market--name {
+  text-align: right;
+}
+
+.company--name--two span,
+.market span {
+  display: block;
+}
+
+.cell-wrap--border {
+  border-bottom: 1px dotted #000;
+}
