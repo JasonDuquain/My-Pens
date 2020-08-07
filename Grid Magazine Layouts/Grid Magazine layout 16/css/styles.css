@@ -10,7 +10,7 @@
     --gray-700: hsl(218, 17%, 35%);
     --gray-800: hsl(218, 23%, 23%);
     --gray-900: hsl(220, 26%, 14%);
-  --orange: hsl(35, 88%, 51%);
+  --orange: hsl(32, 90%, 55%);
 }
 
 *, ::before, ::after {
@@ -32,22 +32,24 @@ body {
 }
 
 .inspiration {
+    font-size: .7rem;
     color: #333;
     position: absolute;
-    top: 8em;
-    right: .5em;
+    top: .7em;
+    right: 16em;
     text-decoration: underline;
+  transition: color 300ms ease-out;
 }
 
 .inspiration:hover, .inspiration:focus {
-    color: #000;
+    color: var(--orange);
 }
 
 .grid {
   padding: 1.2em 2em 0 2em;
   background-color: #fff;
   width: 1280px;
-  height: 815px;
+  height: 800px;
   display: grid;
   grid-template-columns: 1.2fr .9fr repeat(4, 1fr) .9fr 1.2fr;
   grid-template-rows: 25px 140px 40px 50px 80px 30px 170px 90px 10px;
@@ -98,6 +100,11 @@ line {
 .ride {
   width: 55px;
   height: 49px;
+}
+
+.ride svg {
+  width: 100%;
+  height: 100%;
 }
 
 .ride-wrap use {
@@ -340,7 +347,7 @@ line {
 
 .svg-wrap--three {
   width: 185px;
-  height: 700px;
+  height: 650px;
   position: relative;
 }
 
@@ -435,7 +442,7 @@ line {
 .footer-bar-text div:nth-of-type(2) {
   font-size: .75rem;
   font-weight: 700;
-  margin-right: 4rem;
+  margin-right: 5rem;
 }
 
 .footer-bar-text div:last-of-type {
@@ -467,11 +474,31 @@ line {
   color: var(--orange);
   font-size: .75rem;
   margin-left: 1.5rem;
+  margin-bottom: .2rem;
 }
 
 .footer-item img {
   width: 180px;
-  height: auto;
+  height: 87px;
+}
+
+.wrapitup {
+  overflow: hidden;
+}
+
+.xlate {
+  transform: translateX(28px);
+}
+
+.footer-img--five {
+  display: inline-block;
+  transform: scale(1.08);
+}
+
+.footer-img--two,
+.footer-img--four {
+  display: inline-block;
+  transform: translateX(-5px);
 }
 
 .footer-item .footer-img--three,
@@ -483,6 +510,7 @@ line {
 .footer-item p {
   font-size: .65rem;
   padding-right: 1rem;
+  line-height: 1.2;
 }
 
 .footer-item:nth-of-type(4) {
@@ -493,13 +521,13 @@ line {
   grid-column: 1 / -1;
   grid-row: 15 / 16;
   background-color: #fff;
-  height: 10px;
+  height: 2px;
   width: 100%;
 }
 
 .footer {
   font-family: serif;
-  height: 25px;
+  height: 24px;
   width: 100%;
   background-color: #fff;
   display: flex;
@@ -507,6 +535,10 @@ line {
   font-size: .65rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.footer p {
+  transform: translateY(-3px);
 }
 
 .footer p:first-of-type span:first-of-type,
