@@ -10,8 +10,9 @@
     --gray-700: hsl(218, 17%, 35%);
     --gray-800: hsl(218, 23%, 23%);
     --gray-900: hsl(220, 26%, 14%);
+  --grey: hsl(0, 0%, 65%);
   --red: hsl(353, 83%, 53%);
-  --red-700: hsl(353, 65%, 50%);
+  --red-700: hsl(353, 56%, 33%);
   --green: hsl(65, 70%, 59%);
   --yellow: hsl(54, 97%, 64%);
 }
@@ -53,7 +54,8 @@ body {
   margin: 1em auto;
   padding: 1.5rem 1.5rem 0 1.5rem;
   display: grid;
-  grid-template-columns: 640px 640px;
+  grid-template-columns: 620px 40px 620px;
+  position: relative;
 }
 
 .cell--one {
@@ -63,11 +65,12 @@ body {
 
 .sky {
   background: url(../img/drone-sky-bg.jpg);
-  width: 642px;
+  width: 620px;
   height: 480px;
   display: grid;
   grid-template-columns: 1fr 200px;
   padding: 1.5rem 2rem;
+  border-bottom: 6px solid #000;
 }
 
 .reasons {
@@ -81,7 +84,7 @@ body {
   line-height: .85;
 }
 
-.reasons--heading span:not(.red) {
+.reasons--heading .block {
   display: block;
 }
 
@@ -107,25 +110,28 @@ body {
   width: 80%;
   margin-top: .5rem;
   line-height: 1.5;
+  position: relative;
+  z-index: 10;
 }
 
 .reasons--byline span {
   box-decoration-break: clone;
-  border-bottom: 1px solid #a7a7a7;
+  border-bottom: 1px solid var(--grey);
 }
 
 
 .one {
   grid-column: 2 / 3;
-  padding: 0rem 1.4rem 0 2rem;
+  padding: 0rem 0 0 .35rem;
   border-left: 1px solid #000;
   margin-top: 4rem;
+  margin-left: 3.25rem;
 }
 
 .one--heading-three {
   font-family: 'Arvo', serif;
-  font-size: .85rem;
-  margin-top: .15rem;
+  font-size: .75rem;
+  margin-top: -.25rem;
 }
 
 .one--heading-three span {
@@ -135,7 +141,7 @@ body {
 .one--heading-three span:last-of-type {
   display: block;
   font-family: 'Barlow Semi Condensed', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   border-bottom: 2px solid rgba(0,0,0,.6);
   width: max-content;
   line-height: 1;
@@ -144,17 +150,23 @@ body {
 
 .one--heading-four {
   font-size: 1.3rem;
-  line-height: 1.1;
+  line-height: 1;
   margin-bottom: .25rem;
+}
+
+.one--heading-four span {
+  display: block;
 }
 
 .para {
   font-family: 'Arvo', serif;
   font-size: .5rem;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .one--para {
-  width: 90%
+  width: 80%;
 }
 
 .one--para:last-of-type {
@@ -162,6 +174,122 @@ body {
 }
 
 
+.weknow {
+  display: grid;
+  grid-template-columns: 1fr 325px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.summary--wrap {
+  grid-column: 1 / 2;
+  padding-left: 2rem;
+}
+
+.summary {
+  font-size: .77rem;
+  margin-bottom: .5rem;
+}
+
+.two--para {
+  font-size: .57rem
+}
+
+.two--para:first-of-type {
+  text-indent: .5rem;
+}
 
 
+.two--para--wrap {
+  column-width: 8rem;
+  column-rule: 1px solid var(--grey);
+  -webkit-column-fill: balance;
+  column-fill: balance;
+  margin-bottom: 1rem;
+}
 
+.popular {
+  font-size: .55rem;
+  text-transform: uppercase;
+}
+
+.circle {
+  background: url(../img/shotgun.png) no-repeat 80% 100%/150px
+}
+
+.circle--red {
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  border: 7px solid var(--red);
+  margin: 7rem 0 0 3.5rem;
+  text-align: center;
+}
+
+.and {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: .86rem;
+  letter-spacing: 3px;
+  line-height: 1.35;
+}
+
+.and span {
+  display: block;
+}
+
+.dotted {
+  position: absolute;
+  top: 433px;
+  left: 313px;
+  transform: rotate(55deg);
+  transform-origin: left center;
+}
+
+.bar {
+  position: absolute;
+  left: 467px;
+  top: 55px;
+  width: 780px;
+  height: 30px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: .5rem
+}
+
+.bar p {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: .7em;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.cell--two {
+  grid-column: 2 / 3;
+  align-self: end;
+}
+
+.credits {
+  font-size: .5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  writing-mode: tb;
+  transform: rotate(180deg);
+  align-self: end;
+  margin-bottom: 4rem;
+  margin-left: 1.25rem;
+}
+
+.cell--three {
+  grid-column:  3 / 4;
+  
+}
