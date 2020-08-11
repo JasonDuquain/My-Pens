@@ -64,9 +64,9 @@ body {
 }
 
 .sky {
-  background: url(../img/drone-sky-bg.jpg);
+  background: linear-gradient(to right, rgba(255,255,255,0.05), rgba(255,255,255,.2)), url(../img/drone-sky-bg.jpg) no-repeat;
   width: 620px;
-  height: 480px;
+  height: 500px;
   display: grid;
   grid-template-columns: 1fr 200px;
   padding: 1.5rem 2rem;
@@ -106,7 +106,7 @@ body {
 
 .reasons--byline {
   font-family: 'Arvo', serif;
-  font-size: .54rem;
+  font-size: .51rem;
   width: 80%;
   margin-top: .5rem;
   line-height: 1.5;
@@ -114,7 +114,7 @@ body {
   z-index: 10;
 }
 
-.reasons--byline span {
+.box-decoration {
   box-decoration-break: clone;
   border-bottom: 1px solid var(--grey);
 }
@@ -198,7 +198,7 @@ body {
 }
 
 .two--para {
-  font-size: .57rem
+  font-size: .57rem;
 }
 
 .two--para:first-of-type {
@@ -207,7 +207,7 @@ body {
 
 
 .two--para--wrap {
-  column-width: 8rem;
+  column-width: 7.5rem;
   column-rule: 1px solid var(--grey);
   -webkit-column-fill: balance;
   column-fill: balance;
@@ -262,7 +262,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: .5rem
+  padding-right: .5rem;
+  z-index: 30;
 }
 
 .bar p {
@@ -291,5 +292,132 @@ body {
 
 .cell--three {
   grid-column:  3 / 4;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-left: .75rem;
+  margin-top: 4.75rem
+}
+
+.two-to-five {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.two {
+  grid-column: 1 / 2;
+}
+
+.img--wrap {
+  width: 23rem;
+  height: 17rem;
+  position: relative;
+}
+
+.img--photographer {
+  width: 23em;
+  height: 17em;
+  object-fit: cover;
+}
+
+.circle--two {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background-color: var(--green);
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}
+
+.circle--two::after {
+  position: absolute;
+  content: "";
+  width: 71px;
+  height: 71px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  top: 7px;
+  left: 7px;
+}
+
+.circle--two p {
+  font-size: .9rem;
+  text-align: center;
+  width: 3.5rem;
+  line-height: 1.15;
+  transform: rotate(-10deg);
+  margin-top: .8rem;
   
 }
+
+.box-decoration.dark {
+  border-bottom-color: #333;
+}
+
+.two--wrap {
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  background: url(../img/drone--black.png) no-repeat 100% 10%/40%;
+}
+
+.wrappy {
+  grid-column: 1 / 2;
+  
+}
+
+.wrappy h1 {
+  font-size: 7rem;
+  font-weight: 900;
+  color: var(--red);
+  line-height: .11;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.wrappy h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 74%;
+  line-height: 1.1;
+}
+
+.float {
+  float: left;
+  margin-right: 1rem;
+}
+
+.three--para {
+  font-size: .62rem;
+  font-weight: 400;
+  width: 90%;
+  margin-top: .8rem;
+  transform: translateY(-4px)
+}
+
+.parrot {
+  grid-column: 2 / 3;
+  font-size: .55rem;
+  padding-top: 5.65rem;
+  position: relative;
+}
+
+.parrot::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 132px;
+  background-color: var(--grey);
+  opacity: .8;
+  left: -.5rem;
+  bottom: .2rem;
+}
+
+
+
+
+
+
