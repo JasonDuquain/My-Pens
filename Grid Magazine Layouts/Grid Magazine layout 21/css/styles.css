@@ -1,0 +1,170 @@
+:root {
+	box-sizing: border-box;
+	
+	--gray-100: hsl(204, 45%, 98%);
+    --gray-200: hsl(210, 38%, 95%);
+    --gray-300: hsl(214, 32%, 91%);
+    --gray-400: hsl(211, 25%, 84%);
+    --gray-500: hsl(214, 20%, 69%);
+    --gray-600: hsl(216, 15%, 52%);
+    --gray-700: hsl(218, 17%, 35%);
+    --gray-800: hsl(218, 23%, 23%);
+    --gray-900: hsl(220, 26%, 14%);
+  --yellow: hsl(42, 98%, 53%);
+  
+}
+
+*, ::before, ::after {
+	box-sizing: inherit;
+	text-decoration: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  font-size: 100%;
+  color: var(--var-gray-700);
+  background-image: linear-gradient(120deg, var(--gray-500), var(--gray-700));
+  height: 100vh;
+  width: 1180px;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Noto Serif JP', serif;
+  margin: 1em auto;
+}
+
+.inspiration {
+    
+    color: #333;
+    position: absolute;
+    top: 8em;
+    right: .5em;
+    text-decoration: underline;
+}
+
+.inspiration:hover, .inspiration:focus {
+    color: #000;
+}
+
+.grid {
+  width: 1180px;
+  height: 840px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  padding: 4rem 2.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.art {
+  font-family: 'Roboto', sans-serif;
+  font-size: .53rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  padding: .2rem 1.1rem .45rem 1.15rem;
+  border-bottom: 1px solid #fff;
+  left: 2.75rem;
+  top: 1.5rem;
+}
+
+.art::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  left: 0;
+  bottom: 3px;
+}
+
+.cell--one {
+  border-top: 8px solid var(--yellow);
+}
+
+.summary {
+  font-family: 'Roboto', sans-serif;
+  width: 112%;
+  font-size: .65rem;
+  background-color: #000;
+  color: #fff;
+  padding: .75rem .35rem;
+}
+
+.para--wrap {
+  font-size: .55rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1fr;
+}
+
+.para--wrap p {
+  margin-right: 1rem;
+}
+
+.para--wrap p:not(:last-of-type) {
+  margin-bottom: .75rem;
+}
+
+.para--wrap p:first-child {
+  margin-top: 2.25rem;
+}
+
+.para--wrap p:first-child::first-letter {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 2.7rem;
+  float: left;
+  line-height: .9;
+  margin-right: .15rem;
+}
+
+.para--cell--two {
+  margin-top: 4.75rem;
+}
+
+.para--cell--two h3 {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-size: .8rem;
+  padding-bottom: .25rem;
+  border-bottom: 5px double #000;
+  margin-bottom: .35rem;
+  margin-right: 1.1rem;
+}
+
+.para--cell--two h3 span {
+  display: block;
+}
+
+.img--tatoo--one {
+  width: 185px;
+  height: 220px;
+  border: 1px solid #333;
+  object-fit: cover;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 50;
+}
+
+.callout {
+  background-color: #000;
+  color: #fff;
+  margin-top: 2.75rem;
+  font-size: .4rem;
+  padding: 1.15rem;
+  padding-left: 2.5rem;
+  padding-right: 1.5rem
+}
+
+.callout h4 {
+  font-family: 'Dancing Script', cursive;
+  font-size: .75rem;
+  margin-bottom: .25rem;
+}
+
+
