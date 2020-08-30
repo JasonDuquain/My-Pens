@@ -17,6 +17,19 @@
       <path fill="#000" d="M 54 0, L 72 0, 89 20, 72 40, 54 40, 70 20 z"></path>
       <!--<path fill="#000" d="M 81 0, L 99 0, 116 20, 99 40, 81 40, 97 20 z"></path>-->
     </pattern>
+    <pattern id="pattern--chevron--white" width="90" height="40" x="0" y="0" patternUnits="userSpaceOnUse">
+      <!-- SVGRect {x: 0, y: 0, width: 35, height: 40} --> 
+      <path fill="#fff" d="M 0 0, L 18 0, 35 20, 18 40, 0 40, 16 20 z"></path>
+      <path fill="#fff" d="M 27 0, L 45 0, 62 20, 45 40, 27 40, 43 20 z"></path>
+      <path fill="#fff" d="M 54 0, L 72 0, 89 20, 72 40, 54 40, 70 20 z"></path>
+      <!--<path fill="#000" d="M 81 0, L 99 0, 116 20, 99 40, 81 40, 97 20 z"></path>-->
+    </pattern>
+    
+    <symbol id="chevy">
+      <path fill="#fff" d="M 0 0, L 18 0, 35 20, 18 40, 0 40, 16 20 z"></path>
+    </symbol>
+    
+    
   </svg>
 	<div class="grid">
 	  <a class="inspiration" href="" target="_blank">Inspiration</a>
@@ -69,18 +82,50 @@
 
 	  </div>
 	  <div class="cell--two">
-	    
+     <div class="svg--wrap">
+      <svg width="89" height="40">
+        <rect width="89" height="40" x="0" y="0" fill="url(#pattern--chevron--white)"/>
+      </svg>
+     </div>
+     <div class="svg--wrap--two">
+      <svg width="490" height="160" overflow="visible">
+        <path fill="#000" d="M 0 30, L 30 30, 30 4"></path>
+        <path d="M 0 30, L 490 30, 490 130, 0 130 Z" fill="var(--yellow)"/>
+        <path fill="#000" d="M 460 130, L 490 130, 460 160"></path>
+        <text x="245" y="77">
+          <tspan>Mistica</tspan>
+          <tspan x="245" dy="45">Voluptatem</tspan>
+        </text>
+      </svg>
+     </div>
+	    <img class="img--tatoos--tie" src="img/man-with-tattos.jpg" alt="man with tattoos in shirt and tie">
 	  </div>
 	  <div class="cell--three">
-	    
-	    
-	    
-	    
-	    <!--<svg width="89" height="40">
+	    <img class="img--girl-tattos" src="img/girl-with-tatoo.png" alt="girl with tattoo in wedding dress">
+	    <div class="img--wrap--three">
+	     <img class="img--man-back" src="img/man-back.jpg" alt="man with tatoos on back">
+	     
+	     <div class="svg--wrap--four">
+	       <svg width="120" height="27" viewBox="0 0 89 40">
+	         <use xlink:href="#chevy" />
+	         <use xlink:href="#chevy" x="30" />
+	         <use xlink:href="#chevy" x="60" />
+	         <use xlink:href="#chevy" x="90" />
+	       </svg>
+	     </div>
+	     
+	     
+	    </div>
+	    <div class="svg--wrap--three">
+	      <svg width="89" height="40" transform="scale(1.1,1)">
+        <rect width="89" height="40" x="0" y="0" fill="url(#pattern--chevron)"/>
+       </svg>
+       <svg width="89" height="40" transform="translate(89, -45) scale(1.1,1)">
         <rect width="89" height="40" x="0" y="0" fill="url(#pattern--chevron)"/>
       </svg>
-      <svg width="89" height="40" transform="translate(-12, 0)">
-        <rect width="89" height="40" x="0" y="0" fill="url(#pattern--chevron)"/>
+	    </div>
+	    
+	    <!--
       </svg>-->
 	  </div>
 	  

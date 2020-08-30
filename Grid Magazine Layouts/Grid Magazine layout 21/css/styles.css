@@ -94,6 +94,8 @@ body {
   background-color: #000;
   color: #fff;
   padding: .75rem .35rem;
+  position: relative;
+  z-index: 60;
 }
 
 .para--wrap {
@@ -157,7 +159,7 @@ body {
   margin-top: 2.75rem;
   font-size: .4rem;
   padding: 1.15rem;
-  padding-left: 2.5rem;
+  padding-left: 2.75rem;
   padding-right: 1.5rem
 }
 
@@ -167,4 +169,87 @@ body {
   margin-bottom: .25rem;
 }
 
+.cell--two {
+  grid-column: 2 / 3;
+  position: relative;
+}
 
+.svg--wrap {
+  position: absolute;
+  width: 89px;
+  height: 40px;
+  top: 58px;
+  left: 12px;
+}
+
+.img--tatoos--tie {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.svg--wrap--two {
+  position: absolute;
+  left: -30px;
+  width: 490px;
+  height: 160px;
+  bottom: 120px;
+}
+
+text {
+  text-anchor: middle;
+  font-size: 54px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  fill: #000;
+}
+
+.cell--three {
+  grid-column: 3 / 4;
+  position: relative;
+}
+
+.cell--three::before {
+  position: absolute;
+  content: "";
+  width: calc(100% + 2.75rem);
+  height: 55px;
+  background-color: var(--yellow);
+}
+
+.img--girl-tattos {
+  height: 220px;
+  width: 120px;
+  position: absolute;
+  top: -45px;
+  left: 20px;
+}
+
+.img--wrap--three {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160px;
+  height: 245px;
+}
+
+.img--man-back {
+  width: 160px;
+  height: 245px;
+  object-fit: cover;
+}
+.svg--wrap--four {
+  position: absolute;
+  bottom: 6px;
+  left: -23px;
+}
+
+
+.svg--wrap--three {
+  width: 178px;
+  height: 40px;
+  position: absolute;
+  left: -41px;
+  top: 180px;
+}
