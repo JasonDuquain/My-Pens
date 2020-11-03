@@ -35,11 +35,11 @@ body {
 }
 
 .inspiration {
-    
+    font-size: .7rem;
     color: #333;
     position: absolute;
-    top: 8em;
-    right: .5em;
+    top: 1.5em;
+    right: 4.1em;
     text-decoration: underline;
 }
 
@@ -56,6 +56,28 @@ body {
   padding: 4rem 2.75rem;
   position: relative;
   overflow: hidden;
+}
+
+.grid::before, .grid::after {
+  position: absolute;
+  content: "10";
+  background-color: #000;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  font-size: .65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-.2em);
+  bottom: .5rem;
+  left: 1rem;
+}
+
+.grid::after {
+  content: "11";
+  right: 1rem;
+  left: auto;
 }
 
 .art {
@@ -223,7 +245,7 @@ text {
   width: 120px;
   position: absolute;
   top: -45px;
-  left: 20px;
+  left: 27px;
 }
 
 .img--wrap--three {
@@ -253,3 +275,66 @@ text {
   left: -41px;
   top: 180px;
 }
+
+.caption {
+  position: absolute;
+  top: 255px;
+  right: 0;
+  width: 130px;
+  text-align: right;
+}
+
+.caption h3 {
+  font-family: 'Dancing Script', cursive;
+  background-color: #000;
+  color: #fff;
+  font-size: .75rem;
+  width: max-content;
+  position: absolute;
+  right: 0;
+}
+
+.caption p {
+  margin-top: 1.2rem;
+  font-size: .55rem;
+  line-height: 1.15;
+}
+
+.para--wrap--two {
+  font-size: .55rem;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-gap: .5rem;
+}
+
+.para--wrap--two p + p{
+  margin-top: .7rem;
+}
+
+
+.para--cell--three {
+  font-size: .55rem;
+  margin-top: 280px;
+  grid-column: 1/ 2;
+  margin-left: 2.5rem;
+}
+
+.para--cell--three h3 {
+  font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: .8rem;
+    padding-bottom: .25rem;
+    border-bottom: 5px double #000;
+    margin-bottom: .35rem;
+    margin-right: 1.1rem;
+}
+
+.para--cell--three span {
+  display: block;
+}
+
+.para--cell--four {
+  grid-column: 2 / 3;
+  margin-top: 380px;
+}
+

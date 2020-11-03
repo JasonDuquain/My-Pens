@@ -13,6 +13,11 @@
    --red-orange: hsl(8, 87%, 57%);
   --aqua: hsl(187, 54%, 66%);
   --brown-Z: hsl(264, 8%, 88%);
+  
+  --pattern--gray: hsl(180, 100%, 100%);
+  --dark--gray: hsl(330, 1%, 73%);
+  --darker--gray: hsl(330, 0%, 56%);
+  --darkest--gray: hsl(16, 85%, 3%);
 }
 
 *, ::before, ::after {
@@ -34,7 +39,6 @@ body {
 }
 
 .inspiration {
-    
     color: #333;
     position: absolute;
     top: 8em;
@@ -52,8 +56,6 @@ body {
   background-color: #fff;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
-  padding: 1.75rem 1.75rem .75rem 1.75rem;
 }
 
 .cell--one {
@@ -61,7 +63,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 32px repeat(4, auto);
   position: relative;
-  
+  padding: 1.75rem 1.75rem .75rem 1.75rem;
 }
 
 .cell--one::before {
@@ -70,7 +72,8 @@ body {
   width: 27px;
   height: 32px;
   background-image: linear-gradient(to right, var(--red-orange) 0%, var(--red-orange) 50%, var(--aqua) 50%, var(--aqua) 100%);
-  top: -1.75rem;
+  top: 0;
+  left: 1.75rem;
 }
 
 .engineering {
@@ -110,12 +113,40 @@ body {
   font-weight: 900;
 }
 
-.img--shades {
+.wrap--img {
   grid-column: 1 / 3;
+  grid-row: 3 / 4;
+  position: relative;
+}
+
+.img--shades {
   width: 100%;
   filter: brightness(.8);
   padding-right: .25rem;
-  grid-row: 3 / 4;
+}
+
+.pattern--wrap {
+  position: absolute;
+  width: 200px;
+  height: 175px;
+  bottom: -1.5rem;
+  left: .5rem;
+}
+
+.main-color {
+  fill: hsl(180, 100%, 100%);
+}
+
+.dark-color {
+  fill: hsl(13, 85%, 8%);
+}
+
+.light-color {
+  fill: hsl(330, 1%, 73%);
+}
+
+.darker-color {
+  fill: hsl(330, 0%, 56%);
 }
 
 .right--bar {
@@ -129,7 +160,7 @@ body {
   color: #fff;
   background-color: #000;
   font-size: .53rem;
-  width: 65%;
+  width: 70%;
   padding: .35rem;
   transform: translateX(-25px);
   margin-bottom: .5rem;
@@ -172,6 +203,8 @@ body {
   width: 24px;
   height: 24px;
   position: absolute;
+  top: 0;
+  left: -1.75rem;
 }
 
 .svg--circle--triangle {
@@ -210,3 +243,62 @@ polygon {
   font-weight: 900;
   font-size: .6rem
 }
+
+.credit {
+  text-transform: uppercase;
+  font-size: .45rem;
+  position: absolute;
+  right: .5rem;
+  bottom: 2.7rem;
+  writing-mode: vertical-lr;
+	transform: rotate(180deg);
+}
+
+.cell--two {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,.3), rgba(0,0,0,.3)), url(../img/half-pipe.jpg);
+  padding: 1.75rem 1.75rem .75rem 1.75rem;
+  position: relative;
+}
+
+.engineering--two {
+  font-size: .65rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding-top: .75rem;
+  color: #fff;
+  text-align: right;
+}
+
+.arrow-wrap-one {
+  position: absolute;
+  width: 200px;
+  height: 280px;
+  top: 250px;
+  left: 110px;
+}
+
+.arrow-wrap-one path {
+  stroke-dasharray: 2;
+  fill: none;
+  stroke: #fff;
+}
+
+.scotty {
+  font-size: .53rem;
+  width: 75px;
+  text-align: right;
+  color: #fff;
+  position: absolute;
+  top: 120px;
+  right: 1.75rem;
+}
+
+
+
+
+
+
+
+
+
+

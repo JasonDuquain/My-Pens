@@ -33,12 +33,13 @@ body {
 }
 
 .inspiration {
-    
+    font-size: .7rem;
     color: #333;
     position: absolute;
-    top: 8em;
-    right: .5em;
+    top: 3.4em;
+    right: 38.2em;
     text-decoration: underline;
+  z-index: 80000;
 }
 
 .inspiration:hover, .inspiration:focus {
@@ -68,13 +69,34 @@ body {
   left: 28px;
 }
 
+.curved--line {
+  position: absolute;
+  width: 300px;
+  left: 175px;
+  height: 275px;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.curved--line__path {
+  stroke: var(--red);
+  stroke-width: 1px;
+  fill: none;
+  stroke-opacity: .6;
+}
+
+.tiny--triangle {
+  stroke-opacity: .6;
+  fill: var(--red);
+  transform-origin: 50% 50%;
+}
+
 #arrow {
   fill: var(--red);
   stroke: var(--red);
   stroke-width: 1px;
   stroke-linejoin: round;
 }
-
 
 .cell--one {
   grid-column:  1 / 2;
@@ -192,6 +214,7 @@ body {
   border-radius: 50%;
   background-color: var(--red);
   color: #fff;
+  z-index: 20001;
 }
 
 .list--heading  {
@@ -220,13 +243,13 @@ body {
 
 .list--one {
   width: 75%;
-  margin-left: 1rem;
+  margin-left: 4.1rem;
 }
 
 .list--two {
   width: 50%;
   margin-top: 1.5rem;
-  margin-left: 6rem;
+  margin-left: 7.2rem;
 }
 
 .main--heading {
@@ -257,7 +280,6 @@ body {
   padding-bottom: .25rem;
   padding-right: 1.75rem;
   position: relative;
-  background-color: #fff;
   z-index: 10;
 }
 
@@ -266,7 +288,7 @@ body {
   padding: .5rem;
   margin-top: 1.2rem;
   position: relative;
-  z-index: 20;
+  z-index: 1;
   background-color: #fff;
 }
 
