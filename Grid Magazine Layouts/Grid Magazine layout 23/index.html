@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,700;1,400&family=Source+Sans+Pro:wght@300;400;500;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <title>Grid Magazine Layout 21</title>
 </head>
@@ -14,9 +14,43 @@
     <symbol id="arrow" viewBox="0 0 105 183.5">
      <path d="M0 0 L5 2 10 0 5 15 Z" fill="var(--gray-800)"/> 
     </symbol>
+
+    <g id="steps">
+        <path d="M5,15 L105,15 105,132 5,132 Z" fill="#000" />
+        <path d="M15,15 L28,15 Q56,-12 82,15 L95,15 95,125 15,125 Z" fill="var(--yellow-800)" />
+        <line x1="8.5" y1="15" x2="8.5" y2="132" stroke="white" stroke-width="1" />
+        <line x1="11.5" y1="15" x2="11.5" y2="132" stroke="white" stroke-width="1" />
+        <line x1="98.5" y1="15" x2="98.5" y2="132" stroke="white" stroke-width="1" />
+        <line x1="101.5" y1="15" x2="101.5" y2="132" stroke="white" stroke-width="1" />  
+    </g>
    </svg>
     
 	<div class="grid">
+  
+    <div class="absolute--steps">
+     <!-- .83 -->
+      <svg width="130" height="182" viewBox="0 0 110 125">
+        <use xlink:href="#steps" />
+        <text class="three no-stroke" x="41" y="50">3</text>
+        <text class="three" x="38" y="47">3</text>
+        
+        <defs>
+          <path id="text--path" d="M25,81 Q55,61 85,81" fill="none" stroke="#000" />
+        </defs>
+        
+        <text class="steps">
+          <textPath href="#text--path" startOffset="5">
+            Steps
+          </textPath>
+        </text>
+        
+        <text class="perfectly" x="48.5" y="86">
+          <tspan class="to">to</tspan>
+          <tspan x="33" y="102" class="perfect">perfect</tspan>
+          <tspan x="21" y="116" class="tranquility">tranquility</tspan>
+        </text>
+      </svg>
+    </div>
 	  <a class="inspiration" href="" target="_blank">Inspiration</a>
 	  <div class="cell--one">
     <!-- 65.3 * 64 -->
@@ -55,6 +89,68 @@
 	        </div>
 	        <p><span>Personalize it</span> and keep it that way.</p>
 	      </div>
+	    </div>
+	    
+	    <div class="paras">
+        <div class="paras--wrap">
+          <p class="stay">
+            <svg transform="translate(0,6) "width="12" height="17" viewBox="0 0 120 150">
+              <use xlink:href="#steps" />
+            </svg>
+            <span>Stay:</span> The Death Star plans are not in the main com&shy;puter. Where are those trans&shy;mis&shy;sions you inter&shy;cepted? What have you done with those plans? We inter&shy;cepted no trans&shy;mis&shy;sions. Aaah. This is a con&shy;sular ship. 
+          </p>
+
+          <p class="eat">
+            <svg transform="translate(0,6) "width="12" height="17" viewBox="0 0 120 150">
+              <use xlink:href="#steps" />
+            </svg>
+            <span>Eat:</span> The Death Star plans are not in the main com&shy;puter. Where are those trans&shy;mis&shy;sions you inter&shy;cepted? What have you done with those plans? aah. 
+          </p>
+        </div>
+        <div class="paras--wrap">
+          <p class="stay" style="margin-top: 8px">
+            The Death Star plans are not in the main com&shy;puter. Where are those trans&shy;mis&shy;sions you inter&shy;cepted? What have you done with those plans? We inter&shy;cepted no trans&shy;mis&shy;sions. Aaah. This is a con&shy;sular ship. Were on a dip&shy;lo&shy;matic mission. If this is a cons&shy;ular ship where is the Amb&shy;as&shy;sador? Comm&shy;ander, tear this ship apart until you've found those plans and bring me the Amb&shy;as&shy;sador. I want her alive! 
+          </p>
+        </div>
+        <div class="paras--wrap">
+          <p class="stay" style="margin-top: 8px">
+            The Death Star plans are not in the main com&shy;puter. Where are those trans&shy;mis&shy;sions you inter&shy;cepted? What have you done with those plans? We inter&shy;cepted no trans&shy;mis&shy;sions. Aaah. This is a con&shy;sular ship. Were on a dip&shy;lo&shy;matic mission.
+          </p>
+          <p class="eat">
+            <svg transform="translate(0,6) "width="12" height="17" viewBox="0 0 120 150">
+              <use xlink:href="#steps" />
+            </svg>
+            <span>Shop:</span> The Death Star plans are not in the main com&shy;puter. Where are those trans&shy;mis&shy;sions you inter&shy;cepted?  
+          </p>
+        </div>
+        <div class="paras--wrap">
+          <p class="uh" style="margin-top: 8px">
+            The Death Star plans are not in the main com&shy;puter. Where are those trans&shy;mis&shy;sions you inter&shy;cepted? What have you done with those plans? We inter&shy;cepted no trans&shy;mis&shy;sions. Aaah. This is a con&shy;sular ship. Were on a dip&shy;lo&shy;matic mission. If this is a cons&shy;ular ship where is the Amb&shy;as&shy;sador? Comm&shy;ander, tear this ship apart until you've found those plans and bring me the Amb&shy;as&shy;sador. I want her alive! 
+          </p>
+        </div>
+        <div class="paras--wrap">
+          <p class="go">
+            <svg transform="translate(0,6) "width="12" height="17" viewBox="0 0 120 150">
+              <use xlink:href="#steps" />
+            </svg>
+            <span>Go:</span> The Death Star plans are not in the main com&shy;puter. Where are those trans&shy;mis&shy;sions you inter&shy;cepted? What have you done with those plans? We inter&shy;cepted no trans&shy;mis&shy;sions. Aaah. This is a con&shy;sular ship. Were on a dip&shy;lo&shy;matic mission. If this is a cons&shy;ular ship where is the Amb&shy;as&shy;sador? Aaah. Comm&shy;ander, tear this ship apart until you've found those plans.
+          </p>
+        </div>
+        <div class="nbsp">
+          
+        </div>
+        <div class="paras--wrap">
+          <p class="uh" style="margin-top: 8px">
+            The Death Star plans are not in the main com&shy;puter. Where are those trans&shy;mis&shy;sions you inter&shy;cepted? What have you done with those plans? We inter&shy;cepted no trans&shy;mis&shy;sions. Aaah. This is a con&shy;sular ship. Were on a dip&shy;lo&shy;matic mission. If this is a cons&shy;ular ship where is the Amb&shy;as&shy;sador? Comm&shy;ander, tear this ship apart until you've found those plans and bring me the Amb&shy;as&shy;sador. I want her alive!
+          </p>
+        </div>
+        <div class="paras--wrap">
+          <p class="uh" style="margin-top: 8px">
+            The Death Star plans are not in the main com&shy;puter. Where are those trans&shy;mis&shy;sions you inter&shy;cepted? What have you done with those plans? We inter&shy;cepted no trans&shy;mis&shy;sions. Aaah. This is a con&shy;sular ship. Were on a dip&shy;lo&shy;matic mission. If this is a cons&shy;ular ship where is the Amb&shy;as&shy;sador? Comm&shy;ander, tear this ship apart until you've found those plans and bring me the Amb&shy;as&shy;sador. I want her alive!
+          </p>
+        </div>
+        
+        
 	    </div>
 	    
 	  </div>
