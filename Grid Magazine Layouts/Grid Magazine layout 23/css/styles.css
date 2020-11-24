@@ -53,11 +53,123 @@ body {
   background-color: #fff;
   display: grid;
   grid-template-columns: 4fr 1fr;
+  position: relative;
 }
 
 .cell--one {
   grid-column: 1 / 2;
-  background-color: darkgoldenrod;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,.2), rgba(255,255,255,.2)), url(../img/float.jpg);
+  background-size: cover;
+  margin-right: 1rem;
+  padding: 2.5rem;
+}
+
+.clippy {
+  width: 65px;
+  height: 95px;
+  position: absolute;
+  top: 0;
+}
+
+.clippy path {
+  stroke-linejoin: bevel;
+}
+
+.clippy text {
+  font-size: 33px;
+  fill: #fff;
+  font-weight: 600;
+}
+
+.clippy h3 {
+  color: var(--red);
+  text-transform: uppercase;
+  font-size: .8rem;
+  font-weight: 600;
+  transform: translateX(13px);
+  border-bottom: 2px solid var(--gray-800);
+  width: max-content;
+  position: relative;
+}
+
+.clippy h3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 1px;
+  background-color: var(--gray-800);
+}
+
+h1 {
+  font-size: 3.85rem;
+  text-transform: uppercase;
+  padding-top: 400px;
+  letter-spacing: -2px;
+  line-height: 1
+}
+
+.el {
+  width: 42%;
+  font-size: .78rem;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+.el span {
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 700;
+}
+
+.icons--wrap {
+  font-size: .6rem;
+  border-top: 2px solid var(--gray-800);
+  border-bottom: 2px solid var(--gray-800);
+  width: 45%;
+  display: flex;
+  padding: .45rem 0;
+}
+
+.icons {
+  
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon + .icon {
+  border-left: 1px solid var(--gray-800);
+}
+
+.icon p {
+  flex: 0 0 70%;
+  line-height: 1;
+}
+
+.circle--small {
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  flex: 0 0 20px;
+  margin-right: .35rem;
+  margin-left: .25rem;
+}
+
+.icomoon {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+
+.icon p span {
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 700;
 }
 
 
@@ -85,11 +197,17 @@ body {
 }
 
 .absolute--three {
-  background-color: red;
   width: 170px;
   height: 145px;
   top: 25rem;
   left: 4rem;
+}
+
+.absolute--four {
+  width: 100px;
+  height: 127px;
+  top: 37rem;
+  left: 7rem;
 }
 
 .absolute path {
@@ -142,14 +260,25 @@ body {
 .circle {
   width: 80px;
   height: 80px;
-  background-image: url('../img/dog.jpg');
-  background-color: red;
+  background-image: url('../img/cathedral.jpg');
   background-size: cover;
   box-shadow: 0px 0px 0 3px var(--yellow),
               0px 0px 0 4px var(--gray-700);
   padding: .5rem;
   border-radius: 50%;
   margin: 0 auto;
+}
+
+.circle--two {
+  background-image: url('../img/dog.jpg');
+}
+
+.circle--three {
+  background-image: url('../img/building.jpg');
+}
+
+.circle--four {
+  background-image: url('../img/desert.jpg');
 }
 
 .circle--group h3 {
@@ -246,7 +375,7 @@ body {
 .absolute--police {
   text-align: right;
   transform: translateX(1.25rem);
-  margin-top: .75rem;
+  margin-top: .8rem;
 }
 
 .img--police {
